@@ -11,12 +11,9 @@ body {
     "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  max-width: 100%;
 }
 
 input {
-  font-size: "Avenir Next";
+  font-family: "Avenir Next";
 }
-
-/* @import url("../src/fonts/AvenirNext/AvenirNextLTPro-Regular.otf");
-@import url("../src/fonts/AvenirNext/AvenirNextLTPro-Bold.otf");
-@import url("../src/fonts/AvenirNext/AvenirNextLTPro-Bold.otf"); */
