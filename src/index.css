@@ -1,13 +1,22 @@
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../src/fonts/AvenirNext/AvenirNextLTPro-Regular.otf") format("woff");
+  font-display: swap;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Avenir Next", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+input {
+  font-size: "Avenir Next";
 }
+
+/* @import url("../src/fonts/AvenirNext/AvenirNextLTPro-Regular.otf");
+@import url("../src/fonts/AvenirNext/AvenirNextLTPro-Bold.otf");
+@import url("../src/fonts/AvenirNext/AvenirNextLTPro-Bold.otf"); */

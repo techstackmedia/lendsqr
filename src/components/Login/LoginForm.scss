@@ -1,0 +1,70 @@
+$bgColor: #39cdcc;
+$textFontSize: 20px;
+$relativePosition: relative;
+$upperTextTransFoem: uppercase;
+
+.loginForm {
+  // box-shadow: 0px 15px 90px rgba(0, 0, 0, 0.03);
+  // height: 100vh;
+
+  h1 {
+    color: #213f7d;
+    font-weight: 700;
+    font-size: 40px;
+  }
+
+  h1 + p {
+    color: #545f7d;
+    font-size: $textFontSize;
+    position: $relativePosition;
+    bottom: 16px;
+  }
+
+  form {
+    div:nth-child(2) {
+      position: $relativePosition;
+    }
+  }
+
+  input {
+    width: 500px;
+    height: 50px;
+    border-radius: 5px;
+    margin-top: 25px;
+    border: 2px solid rgba(84, 95, 125, 0.15);
+    text-indent: 28px;
+    outline: none;
+    font-size: 14px;
+  }
+
+  input + p {
+    color: $bgColor;
+    position: absolute;
+    top: 35px;
+    right: 28px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 12px;
+  }
+
+  form + p {
+    font-family: "Avenir Next";
+    font-weight: 600;
+    font-size: 12px;
+    color: $bgColor;
+    text-transform: uppercase;
+    margin-top: $textFontSize;
+    margin-bottom: 30px;
+  }
+
+  button {
+    height: 48px;
+  }
+}
+
+@media (max-width: 1108px) {
+  .loginForm {
+    margin-top: 100px;
+    justify-content: center;
+  }
+}

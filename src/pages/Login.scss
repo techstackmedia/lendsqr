@@ -1,0 +1,13 @@
+.login {
+  display: flex;
+  justify-content: space-around;
+  height: 100vh;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1108px) {
+  .login {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,22 @@
+.leadSqrLogo {
+  img,
+  h3 {
+    position: absolute;
+    height: 25px;
+  }
+}
+
+.leadSqrLogo {
+  img {
+    width: 24.75px;
+    left: 5%;
+    width: 24.75;
+    top: 50.67px;
+  }
+
+  h3 {
+    left: calc(5% + 35px);
+    top: 35px;
+    color: #213f7d;
+  }
+}
