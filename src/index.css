@@ -17,3 +17,7 @@ body {
 input {
   font-family: "Avenir Next";
 }
+
+img {
+  object-fit: contain;
+}

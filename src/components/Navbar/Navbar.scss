@@ -11,8 +11,8 @@
     display: flex;
     align-items: center;
     position: relative;
-    margin-left: 5%;
-    img {
+    margin-left: 3%;
+    img:first-child {
       width: 20.63px;
     }
     span {
@@ -29,7 +29,7 @@
       width: 350px;
       height: 40px;
       text-indent: 10px;
-      margin-left: 140px;
+      margin-left: 60px;
       outline: none;
       font-family: "Work Sans", sans-serif;
     }
@@ -43,13 +43,17 @@
       border-bottom-left-radius: 0;
       height: 40px;
       width: 8%;
+
+      img {
+        width: auto !important;
+      }
     }
   }
 
   div:nth-child(2) {
     display: flex;
     align-items: center;
-    margin-right: 5%;
+    margin-right: 3%;
     a,
     button,
     svg {
@@ -58,7 +62,10 @@
     a {
       color: #213f7d;
     }
-    img {
+    a + img {
+      margin-right: 30px;
+    }
+    img + img {
       width: 35px;
       height: 35px;
       border-radius: 50%;
@@ -69,6 +76,12 @@
       font-family: "Work Sans", sans-serif;
       color: #213f7d;
       font-weight: 500;
+    }
+
+    span + img {
+      position: relative;
+      top: 4px;
+      left: 8px;
     }
   }
 }
