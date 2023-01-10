@@ -7,6 +7,8 @@
   height: 100px;
   box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
   background-color: #fff;
+  position: relative;
+  z-index: 1;
 
   div:nth-child(1) {
     display: flex;
