@@ -62,7 +62,7 @@ const Sidebar = () => {
   });
 
   const dashboardSettingsItems = dashboardSettingsList.map(
-    (item: any, key: any) => {
+    (item: any) => {
       return (
         <div key={item}>
           <img
