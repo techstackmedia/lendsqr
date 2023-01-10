@@ -88,3 +88,13 @@
     }
   }
 }
+
+@media (max-width: 1000px) {
+  .navbar {
+    div:nth-child(1) {
+      input {
+        margin-left: 110px;
+      }
+    }
+  }
+}
