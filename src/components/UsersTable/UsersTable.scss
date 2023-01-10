@@ -1,0 +1,15 @@
+.UsersTable {
+  margin-left: calc(258px + 26px);
+  overflow-x: auto;
+  margin-bottom: 200px;
+
+  table {
+    width: 1000px;
+    th {
+        text-align: left;
+    }
+  }
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
