@@ -1,12 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,400;0,500;0,600;1,300&display=swap");
+
 .UsersTable {
   margin-left: calc(258px + 26px);
   overflow-x: auto;
   margin-bottom: 200px;
-
+  background-color: #ffffff;
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  margin-right: 15px;
   table {
-    width: 1000px;
+    padding: 28px;
     th {
-        text-align: left;
+      text-align: left;
+      font-size: 12px;
+      font-weight: 600;
+      font-family: "Work Sans", sans-serif;
+      color: #545f7d;
+      width: 17%;
+      span {
+        position: relative;
+        bottom: 4px;
+        right: 5px;
+      }
+    }
+    tbody {
+      tr {
+        font-family: "Work Sans", sans-serif;
+        font-size: 14px;
+        color: #545f7d;
+        border-bottom: 1px solid #000;
+        td {
+          padding: 0;
+          padding-top: 20px;
+          padding-bottom: 20px;
+        }
+      }
     }
   }
   &::-webkit-scrollbar {
