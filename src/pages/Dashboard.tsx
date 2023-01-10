@@ -12,7 +12,7 @@ const Dashboard = () => {
     <>
       <Navbar />
       <section className="Dashboard">
-        <span>{slugText.replaceAll("-", " ")}</span>
+        <span>{slug ? `${slugText.replaceAll("-", " ")}` : "Users"}</span>
       </section>
       <div
         style={{

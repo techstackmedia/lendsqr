@@ -37,7 +37,7 @@ const Sidebar = () => {
   const dashboardCustomerItems = dashboardCustomersList.map((item: any) => {
     return (
       <div key={item}>
-        <Link to={`/${item.toLowerCase().replaceAll(" ", "-")}`}>
+        <Link to={`/dashboard/${item.toLowerCase().replaceAll(" ", "-")}`}>
           <img
             src={require(`../../images/${item
               .toLowerCase()
@@ -53,7 +53,12 @@ const Sidebar = () => {
   const dashboardBusinessesItems = dashboardBusinessesList.map((item: any) => {
     return (
       <div key={item}>
-        <Link to={`/${item.toLowerCase().replaceAll(" ", "-")}`}>
+        <Link
+          to={`/dashboard/${item
+            .toLowerCase()
+            .replaceAll(" ", "-")
+            .replace("loan-requests", "loan-products")}`}
+        >
           <img
             src={require(`../../images/${item
               .toLowerCase()
@@ -69,7 +74,9 @@ const Sidebar = () => {
   const dashboardSettingsItems = dashboardSettingsList.map((item: any) => {
     return (
       <div key={item}>
-        <Link to={`/${item.toLowerCase().replaceAll(" ", "-")}`}>
+        <Link
+          to={`/dashboard/${item.toLowerCase().replaceAll(" ", "-").repla}`}
+        >
           <img
             src={require(`../../images/${item
               .toLowerCase()
