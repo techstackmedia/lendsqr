@@ -24,6 +24,9 @@
         right: 5px;
       }
     }
+    th:nth-child(6) {
+      padding-left: 18px;
+    }
     tbody {
       tr {
         font-family: "Work Sans", sans-serif;
@@ -34,6 +37,9 @@
           padding: 0;
           padding-top: 20px;
           padding-bottom: 20px;
+        }
+        td:nth-child(6) {
+          padding-left: 18px;
         }
       }
     }
