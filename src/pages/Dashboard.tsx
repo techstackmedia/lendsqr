@@ -12,17 +12,10 @@ const Dashboard = () => {
   return (
     <>
       <Navbar />
-      <section className="Dashboard">
+      <section className="DashboardURLSlug">
         <span>{slug ? `${slugText.replaceAll("-", " ")}` : "Users"}</span>
       </section>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          position: "relative",
-          zIndex: 0,
-        }}
-      >
+      <div className="userCountSidebar">
         <UsersCount />
         <Sidebar />
       </div>

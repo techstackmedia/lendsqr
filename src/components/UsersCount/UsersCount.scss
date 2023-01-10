@@ -62,13 +62,11 @@ section {
 @media (max-width: 755px) {
   section {
     flex-wrap: nowrap;
-    overflow-x: auto;
     &::-webkit-scrollbar {
       display: none;
     }
     .usersCount {
       position: static;
-      padding: 16px;
     }
   }
 }
