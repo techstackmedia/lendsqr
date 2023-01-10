@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,400;0,500;0,600;1,300&display=swap");
 $cursorPointer: pointer;
 $textIconOpacity: 0.6;
+$textColor: #213f7d;
 
 .dashboard {
   position: relative;
@@ -25,7 +26,7 @@ $textIconOpacity: 0.6;
       padding-left: 22px;
       display: flex;
       align-items: center;
-      color: #213f7d;
+      color: $textColor;
       font-family: "Work Sans", sans-serif;
       span {
         margin-inline: 8px;
@@ -61,7 +62,7 @@ $textIconOpacity: 0.6;
         border-left: 4px solid #39cdcc;
       }
       a {
-        color: #213f7d;
+        color: $textColor;
         text-decoration: none;
       }
     }
