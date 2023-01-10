@@ -12,7 +12,7 @@
     display: flex;
     align-items: center;
     position: relative;
-    margin-left: 18px;
+    margin-left: 22px;
     img:first-child {
       width: 20.63px;
     }
@@ -25,7 +25,7 @@
     }
     input {
       background: #ffffff;
-      border: 1px solid #efefef;
+      border: 1px solid rgba(33, 63, 125, 0.2);
       border-radius: 4px;
       width: 350px;
       height: 40px;
@@ -54,7 +54,7 @@
   div:nth-child(2) {
     display: flex;
     align-items: center;
-    margin-right: 18px;
+    margin-right: 22px;
     a,
     button,
     svg {

@@ -22,7 +22,7 @@ $textIconOpacity: 0.6;
 
     div,
     p {
-      margin-left: 18px;
+      padding-left: 22px;
       display: flex;
       align-items: center;
       color: #213f7d;
@@ -49,9 +49,16 @@ $textIconOpacity: 0.6;
     }
     p ~ div {
       opacity: $textIconOpacity;
-      padding: 10px 0;
+      padding: 10px {
+        left: 22px;
+      }
       margin-bottom: 8px;
       cursor: $cursorPointer;
+      border-left: 4px solid transparent;
+      &:hover {
+        background-color: rgba(57, 205, 204, 0.06);
+        border-left: 4px solid #39cdcc;
+      }
     }
   }
 }
