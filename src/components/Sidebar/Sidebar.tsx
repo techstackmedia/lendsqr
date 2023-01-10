@@ -2,6 +2,7 @@ import "./Sidebar.scss";
 import switchOrganization from "../../images/switch-organization.png";
 import keyDropDown from "../../images/keydropdown.png";
 import dashboard from "../../images/dashboard.png";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const dashboardCustomersList = [
@@ -36,13 +37,15 @@ const Sidebar = () => {
   const dashboardCustomerItems = dashboardCustomersList.map((item: any) => {
     return (
       <div key={item}>
-        <img
-          src={require(`../../images/${item
-            .toLowerCase()
-            .replaceAll(" ", "-")}.png`)}
-          alt={`${item.toLowerCase()} icon`}
-        />
-        <span>{item}</span>
+        <Link to={item.toLowerCase().replaceAll(" ", "-")}>
+          <img
+            src={require(`../../images/${item
+              .toLowerCase()
+              .replaceAll(" ", "-")}.png`)}
+            alt={`${item.toLowerCase()} icon`}
+          />
+          <span>{item}</span>
+        </Link>
       </div>
     );
   });
@@ -50,21 +53,7 @@ const Sidebar = () => {
   const dashboardBusinessesItems = dashboardBusinessesList.map((item: any) => {
     return (
       <div key={item}>
-        <img
-          src={require(`../../images/${item
-            .toLowerCase()
-            .replaceAll(" ", "-")}.png`)}
-          alt={`${item.toLowerCase()} icon`}
-        />
-        <span>{item.replace("Requests", "Products")}</span>
-      </div>
-    );
-  });
-
-  const dashboardSettingsItems = dashboardSettingsList.map(
-    (item: any) => {
-      return (
-        <div key={item}>
+        <Link to={item.toLowerCase().replaceAll(" ", "-")}>
           <img
             src={require(`../../images/${item
               .toLowerCase()
@@ -72,10 +61,26 @@ const Sidebar = () => {
             alt={`${item.toLowerCase()} icon`}
           />
           <span>{item.replace("Requests", "Products")}</span>
-        </div>
-      );
-    }
-  );
+        </Link>
+      </div>
+    );
+  });
+
+  const dashboardSettingsItems = dashboardSettingsList.map((item: any) => {
+    return (
+      <div key={item}>
+        <Link to={item.toLowerCase().replaceAll(" ", "-")}>
+          <img
+            src={require(`../../images/${item
+              .toLowerCase()
+              .replaceAll(" ", "-")}.png`)}
+            alt={`${item.toLowerCase()} icon`}
+          />
+          <span>{item.replace("Requests", "Products")}</span>
+        </Link>
+      </div>
+    );
+  });
 
   return (
     <aside className="dashboard">

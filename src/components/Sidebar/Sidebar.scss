@@ -47,7 +47,8 @@ $textIconOpacity: 0.6;
       font-size: 12px;
       font-weight: 500;
     }
-    p ~ div {
+    p ~ div,
+    p ~ a {
       opacity: $textIconOpacity;
       padding: 10px {
         left: 22px;
@@ -58,6 +59,10 @@ $textIconOpacity: 0.6;
       &:hover {
         background-color: rgba(57, 205, 204, 0.06);
         border-left: 4px solid #39cdcc;
+      }
+      a {
+        color: #213f7d;
+        text-decoration: none;
       }
     }
   }
