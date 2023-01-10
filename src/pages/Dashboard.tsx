@@ -3,11 +3,12 @@ import Navbar from "../components/Navbar/Navbar";
 import Sidebar from "../components/Sidebar/Sidebar";
 import UsersCount from "../components/UsersCount/UsersCount";
 import "./Dashboard.scss";
+import UsersTable from "../components/UsersTable/UsersTable";
 
 const Dashboard = () => {
   const { slug } = useParams();
-  console.log(slug);
   const slugText = `${slug?.toUpperCase()[0]}${slug?.slice(1)}`;
+
   return (
     <>
       <Navbar />
@@ -25,6 +26,7 @@ const Dashboard = () => {
         <UsersCount />
         <Sidebar />
       </div>
+      <UsersTable />
     </>
   );
 };
