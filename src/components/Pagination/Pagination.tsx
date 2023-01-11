@@ -33,9 +33,12 @@ const Pagination = () => {
         <span>
           <img src={arrowRight} alt="arrow pointing to the right" />
         </span>
-        <button className="active">1</button> <button>2</button>{" "}
-        <button>3</button> <button>...</button> <button>15</button>{" "}
-        <button>16</button>
+        <button type="button" className="active">
+          1
+        </button>{" "}
+        <button type="button">2</button> <button type="button">3</button>{" "}
+        <button type="button">...</button> <button type="button">15</button>{" "}
+        <button type="button">16</button>
         <span>
           <img src={arrowRight} alt="arrow pointing to the right" />
         </span>
