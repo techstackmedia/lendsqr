@@ -24,6 +24,7 @@
         position: relative;
         bottom: 4px;
         right: 5px;
+        text-transform: uppercase;
       }
       &:nth-child(4),
       &:nth-child(6) {
@@ -38,7 +39,8 @@
         font-size: 13px;
         color: #545f7d;
         border-bottom: 1px solid #000;
-        td, span {
+        td,
+        span {
           padding: 0;
           padding-top: 20px;
           padding-bottom: 20px;
@@ -51,7 +53,7 @@
           background-color: rgba(84, 95, 125, 0.06);
           border-radius: 100px;
           color: #545f7d;
-          }
+        }
       }
       div {
         border-bottom: 1px solid rgba(33, 63, 125, 0.1);

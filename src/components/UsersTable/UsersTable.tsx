@@ -9,6 +9,20 @@ const UsersTable = () => {
     padding: "10px 20px",
   };
 
+  let note = "adedejijohn@lendsqr.com";
+  const textTruncate = () => {
+    const text = note.split("");
+    if (text.length > 20) {
+      text.splice(20, note.length - 20, "...");
+      const toString = text.join("");
+      return toString;
+    } else {
+      return note;
+    }
+  };
+
+  const email = textTruncate();
+
   return (
     <div className="UsersTable">
       <table>
@@ -48,7 +62,7 @@ const UsersTable = () => {
           <tr>
             <td>Lendsqr</td>
             <td>Adedeji</td>
-            <td>adedeji@lendsqr.com</td>
+            <td title={note}>{email}</td>
             <td>08078903721</td>
             <td>May 15, 2020 10:00 AM</td>
             <td>
@@ -63,7 +77,7 @@ const UsersTable = () => {
           <tr>
             <td>Lendsqr</td>
             <td>Adedeji</td>
-            <td>adedeji@lendsqr.com</td>
+            <td title={note}>{email}</td>
             <td>08078903721</td>
             <td>May 15, 2020 10:00 AM</td>
             <td>
@@ -78,7 +92,7 @@ const UsersTable = () => {
           <tr>
             <td>Lendsqr</td>
             <td>Adedeji</td>
-            <td>adedeji@lendsqr.com</td>
+            <td title={note}>{email}</td>
             <td>08078903721</td>
             <td>May 15, 2020 10:00 AM</td>
             <td>
