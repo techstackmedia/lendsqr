@@ -11,6 +11,8 @@
   margin-right: 15px;
   table {
     padding: 28px;
+    padding-bottom: 0;
+    width: 1001px;
     th {
       text-align: left;
       font-size: 12px;
@@ -23,28 +25,56 @@
         bottom: 4px;
         right: 5px;
       }
+      &:nth-child(4),
+      &:nth-child(6) {
+        padding-left: 18px;
+      }
     }
-    th:nth-child(6) {
-      padding-left: 18px;
-    }
+
     tbody {
+      position: relative;
       tr {
         font-family: "Work Sans", sans-serif;
         font-size: 14px;
         color: #545f7d;
         border-bottom: 1px solid #000;
-        td {
+        td, span {
           padding: 0;
           padding-top: 20px;
           padding-bottom: 20px;
+          &:nth-child(4),
+          &:nth-child(6) {
+            padding-left: 18px;
+          }
+          /**/
+          
+          /**/
         }
-        td:nth-child(6) {
-          padding-left: 18px;
+        &:nth-child(6) span {
+          background-color: rgba(84, 95, 125, 0.06);
+          border-radius: 100px;
+          color: #545f7d;
+          }
+      }
+      div {
+        border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+        width: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        &:last-child {
+          display: none;
         }
       }
     }
   }
   &::-webkit-scrollbar {
     display: none;
+  }
+}
+
+@media (max-width: 1274px) {
+  .UsersTable {
+    margin-left: 276px;
   }
 }

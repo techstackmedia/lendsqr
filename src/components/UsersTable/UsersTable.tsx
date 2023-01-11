@@ -2,6 +2,13 @@ import "./UsersTable.scss";
 import filterButton from "../../images/filter-button.png";
 import verticalMenu from "../../images/vertical-menu.png";
 const UsersTable = () => {
+  const checkActiveStyle = {
+    backgroundColor: "rgba(84, 95, 125, 0.06)",
+    borderRadius: "100px",
+    color: "#545f7d",
+    padding: "10px 20px",
+  };
+
   return (
     <div className="UsersTable">
       <table>
@@ -44,25 +51,45 @@ const UsersTable = () => {
             <td>adedeji@lendsqr.com</td>
             <td>08078903721</td>
             <td>May 15, 2020 10:00 AM</td>
-            <td>Inactive</td>
+            <td>
+              <span style={checkActiveStyle}>Inactive</span>{" "}
+            </td>{" "}
             <td>
               {" "}
               <img src={verticalMenu} alt="verival menu icon on table header" />
             </td>
           </tr>
-
+          <div></div>
           <tr>
             <td>Lendsqr</td>
             <td>Adedeji</td>
             <td>adedeji@lendsqr.com</td>
             <td>08078903721</td>
             <td>May 15, 2020 10:00 AM</td>
-            <td>Inactive</td>
+            <td>
+              <span style={checkActiveStyle}>Inactive</span>{" "}
+            </td>
             <td>
               {" "}
               <img src={verticalMenu} alt="verival menu icon on table header" />
             </td>
           </tr>
+          <div></div>
+          <tr>
+            <td>Lendsqr</td>
+            <td>Adedeji</td>
+            <td>adedeji@lendsqr.com</td>
+            <td>08078903721</td>
+            <td>May 15, 2020 10:00 AM</td>
+            <td>
+              <span style={checkActiveStyle}>Inactive</span>{" "}
+            </td>{" "}
+            <td>
+              {" "}
+              <img src={verticalMenu} alt="verival menu icon on table header" />
+            </td>
+          </tr>
+          <div></div>
         </tbody>
       </table>
     </div>
