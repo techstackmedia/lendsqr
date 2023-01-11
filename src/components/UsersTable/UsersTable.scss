@@ -3,7 +3,6 @@
 .UsersTable {
   margin-left: calc(258px + 26px);
   overflow-x: auto;
-  margin-bottom: 200px;
   background-color: #ffffff;
   border: 1px solid rgba(33, 63, 125, 0.06);
   box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
@@ -39,6 +38,7 @@
         font-size: 13px;
         color: #545f7d;
         border-bottom: 1px solid #000;
+        position: relative;
         td,
         span {
           padding: 0;
@@ -54,17 +54,26 @@
           border-radius: 100px;
           color: #545f7d;
         }
-      }
-      div {
-        border-bottom: 1px solid rgba(33, 63, 125, 0.1);
-        width: 100%;
-        position: absolute;
-        left: 0;
-        right: 0;
-        &:last-child {
-          display: none;
+        &:not(table tr:first-child)::after {
+          position: absolute;
+          content: "";
+          border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+          width: 100%;
+          position: absolute;
+          left: 0;
+          right: 0;
         }
       }
+      // div {
+      //   border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+      //   width: 100%;
+      //   position: absolute;
+      //   left: 0;
+      //   right: 0;
+      //   &:last-child {
+      //     display: none;
+      //   }
+      // }
     }
   }
   &::-webkit-scrollbar {

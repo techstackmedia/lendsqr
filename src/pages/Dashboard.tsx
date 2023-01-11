@@ -4,6 +4,7 @@ import Sidebar from "../components/Sidebar/Sidebar";
 import UsersCount from "../components/UsersCount/UsersCount";
 import "./Dashboard.scss";
 import UsersTable from "../components/UsersTable/UsersTable";
+import Pagination from "../components/Pagination/Pagination";
 
 const Dashboard = () => {
   const { slug } = useParams();
@@ -20,6 +21,7 @@ const Dashboard = () => {
         <Sidebar />
       </div>
       <UsersTable />
+      <Pagination />
     </>
   );
 };
