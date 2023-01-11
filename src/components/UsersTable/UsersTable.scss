@@ -35,7 +35,7 @@
       position: relative;
       tr {
         font-family: "Work Sans", sans-serif;
-        font-size: 14px;
+        font-size: 13px;
         color: #545f7d;
         border-bottom: 1px solid #000;
         td, span {
@@ -46,9 +46,6 @@
           &:nth-child(6) {
             padding-left: 18px;
           }
-          /**/
-          
-          /**/
         }
         &:nth-child(6) span {
           background-color: rgba(84, 95, 125, 0.06);
