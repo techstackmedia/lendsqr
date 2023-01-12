@@ -67,4 +67,19 @@ $textColor: #213f7d;
       }
     }
   }
+  hr {
+    border: none;
+    border-bottom: 1px solid rgb(33, 63, 125, 0.1);
+    margin-top: 70px;
+    margin-bottom: 20px;
+    & + div span {
+      color: #213f7d;
+      font-weight: 500;
+    }
+  }
+  .version {
+    margin-left: 25px;
+    font-size: 12px;
+    color: #213f7d;
+  }
 }

@@ -10,11 +10,19 @@ const Dashboard = () => {
   const { slug } = useParams();
   const slugText = `${slug?.toUpperCase()[0]}${slug?.slice(1)}`;
 
+  const splitByDashes = slugText.split("-");
+  const dashboardHeader = splitByDashes
+    .map((item) => {
+      const text = `${item?.toUpperCase()[0]}${item?.slice(1)}`;
+      return text;
+    })
+    .join(" ");
+
   return (
     <>
       <Navbar />
       <section className="DashboardURLSlug">
-        <span>{slug ? `${slugText.replaceAll("-", " ")}` : "Users"}</span>
+        <span>{slug ? dashboardHeader : "Users"}</span>
       </section>
       <div className="userCountSidebar">
         <UsersCount />

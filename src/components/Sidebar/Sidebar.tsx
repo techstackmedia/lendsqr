@@ -2,6 +2,7 @@ import "./Sidebar.scss";
 import switchOrganization from "../../images/switch-organization.png";
 import keyDropDown from "../../images/keydropdown.png";
 import dashboard from "../../images/dashboard.png";
+import logout from "../../images/logout.png";
 import { Link } from "react-router-dom";
 
 const Sidebar = () => {
@@ -32,6 +33,7 @@ const Sidebar = () => {
     "Preferences",
     "Fees and Pricing",
     "Audit Logs",
+    "Systems Messages",
   ];
 
   const dashboardCustomerItems = dashboardCustomersList.map((item: any) => {
@@ -74,9 +76,7 @@ const Sidebar = () => {
   const dashboardSettingsItems = dashboardSettingsList.map((item: any) => {
     return (
       <div key={item}>
-        <Link
-          to={`/dashboard/${item.toLowerCase().replaceAll(" ", "-").repla}`}
-        >
+        <Link to={`/dashboard/${item.toLowerCase().replaceAll(" ", "-")}`}>
           <img
             src={require(`../../images/${item
               .toLowerCase()
@@ -88,6 +88,15 @@ const Sidebar = () => {
       </div>
     );
   });
+
+  const dashboardLogOut = (
+    <div>
+      <Link to="/dashboard/logout">
+        <img src={logout} alt="logout icon" />
+        <span>Logout</span>
+      </Link>
+    </div>
+  );
 
   return (
     <aside className="dashboard">
@@ -107,6 +116,9 @@ const Sidebar = () => {
         {dashboardBusinessesItems}
         <p>Settings</p>
         {dashboardSettingsItems}
+        <hr />
+        {dashboardLogOut}
+        <span className="version">v1.2.0</span>
       </div>
     </aside>
   );
