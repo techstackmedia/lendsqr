@@ -90,7 +90,7 @@ const Sidebar = () => {
   });
 
   const dashboardLogOut = (
-    <div>
+    <div style={{ marginBottom: 20 }}>
       <Link to="/dashboard/logout">
         <img src={logout} alt="logout icon" />
         <span>Logout</span>
