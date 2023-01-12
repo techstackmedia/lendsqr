@@ -18,10 +18,14 @@ div.paginationButtons {
     color: rgb(84, 95, 125, 0.6);
     margin: 4px;
     cursor: pointer;
-  }
-  .active {
-    color: #545f7d;
-    font-weight: 500;
+    min-width: 14.422px;
+    .active {
+      color: #545f7d;
+      font-weight: 500;
+    }
+    .dot {
+      color: rgb(84, 95, 125, 0.6);
+    }
   }
 
   div:last-child {

@@ -4,7 +4,7 @@ import arrowRight from "../../images/arrow-right.png";
 import { useState } from "react";
 
 const Pagination = () => {
-  const [buttonTextContent, setButtonTextContext] = useState(1);
+  const [buttonTextContent, setButtonTextContext] = useState<any>(1);
 
   const buttonText = (i: number) => {
     const list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -20,7 +20,12 @@ const Pagination = () => {
       } else {
         splicer = i + 1;
       }
-      lastValues = list.length - 1;
+
+      if (i === 2) {
+        lastValues = list.length - 2;
+      } else {
+        lastValues = list.length - 1;
+      }
     }
     if (lastValues - splicer === 1) {
       list.splice(splicer, lastValues - (i + 1), dots);
@@ -35,18 +40,29 @@ const Pagination = () => {
         list[1] = 2;
         list.splice(2, 0, dots);
       }
+      if (initialList - 3 === i) {
+        list.splice(4, 0, i + 1);
+      }
     }
 
     const handleClick = (event: any) => {
       const text = event.currentTarget.textContent;
-      setButtonTextContext(+text);
+      if (text !== "...") {
+        setButtonTextContext(+text);
+      } else {
+        setButtonTextContext(null);
+      }
     };
 
-    const Button = list.map((item, index) => {
+    const Button = list.map((item: number | string, index) => {
       let button: any;
-      if (item === i) {
+      if (item === i || item === "...") {
         button = (
-          <button className="active" key={index} type="button">
+          <button
+            className={item !== "..." ? "active" : "dot"}
+            key={index}
+            type="button"
+          >
             {item}
           </button>
         );
