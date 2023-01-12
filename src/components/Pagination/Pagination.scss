@@ -3,7 +3,7 @@
 div.paginationButtons {
   margin-left: 284px;
   margin-bottom: 200px;
-  margin-top: 24px;
+  margin-top: 19px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,6 +17,7 @@ div.paginationButtons {
     font-size: 14px;
     color: rgb(84, 95, 125, 0.6);
     margin: 4px;
+    cursor: pointer;
   }
   .active {
     color: #545f7d;
@@ -26,9 +27,11 @@ div.paginationButtons {
   div:last-child {
     span:first-child {
       margin-right: 4px;
+      cursor: pointer;
     }
     span:last-child {
       margin-left: 4px;
+      cursor: pointer;
     }
     span {
       position: relative;
