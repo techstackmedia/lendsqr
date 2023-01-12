@@ -2,6 +2,7 @@ $bgColor: #39cdcc;
 $textFontSize: 20px;
 $relativePosition: relative;
 $upperTextTransFoem: uppercase;
+$formChildrenMarginRight: 5%;
 
 .loginForm {
   box-shadow: 0px 15px 90px rgba(0, 0, 0, 0.03);
@@ -14,7 +15,7 @@ $upperTextTransFoem: uppercase;
     color: #213f7d;
     font-weight: 700;
     font-size: 40px;
-    margin-right: 5%;
+    margin-right: $formChildrenMarginRight;
     margin-top: 40px;
   }
 
@@ -40,7 +41,7 @@ $upperTextTransFoem: uppercase;
     text-indent: 28px;
     outline: none;
     font-size: 14px;
-    margin-right: 5%;
+    margin-right: $formChildrenMarginRight;
   }
 
   input + p {
@@ -52,7 +53,6 @@ $upperTextTransFoem: uppercase;
     font-weight: 600;
     font-size: 12px;
     cursor: pointer;
-    margin-right: 5%;
   }
 
   form + p {
@@ -63,12 +63,12 @@ $upperTextTransFoem: uppercase;
     text-transform: uppercase;
     margin-top: $textFontSize;
     margin-bottom: 30px;
-    margin-right: 5%;
+    margin-right: $formChildrenMarginRight;
   }
 
   button {
     height: 48px;
-    margin-right: 5%;
+    margin-right: $formChildrenMarginRight;
   }
 }
 
