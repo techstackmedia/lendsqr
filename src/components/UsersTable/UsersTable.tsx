@@ -10,19 +10,76 @@ const UsersTable = () => {
     padding: "10px 20px",
   };
 
-  let note = "adedejijohn@lendsqr.com";
-  const textTruncate = () => {
-    const text = note.split("");
-    if (text.length > 20) {
-      text.splice(20, note.length - 20, "...");
-      const toString = text.join("");
-      return toString;
+  let emailContent: string = "adedejijohndsdsds.com";
+  let userNameContent: string = "Bello Osagisdsdse";
+  let organizationContent: string = "Techstack Media Bello";
+  let dateContent: string = "SEPT 15, 2020 10:00 AM	";
+  let phoneNumberContent: string = "080803234553245";
+
+  const textEmailTruncate = () => {
+    const textEmail = emailContent.split("");
+    if (textEmail.length > 20) {
+      textEmail.splice(20, textEmail.length - 20, "...");
+      const textEmailToString = textEmail.join("").replace("....", "...");
+      return textEmailToString;
     } else {
-      return note;
+      return textEmail;
     }
   };
 
-  const email = textTruncate();
+  const email = textEmailTruncate();
+
+  const userNameTruncate = () => {
+    const userName = userNameContent.split("");
+    if (userName.length > 15) {
+      userName.splice(15, userName.length - 15, "...");
+      const userNameToString = userName.join("");
+      return userNameToString;
+    } else {
+      return userName;
+    }
+  };
+
+  const userName = userNameTruncate();
+
+  const organizationTruncate = () => {
+    const organization = organizationContent.split("");
+    if (organization.length > 15) {
+      organization.splice(15, organization.length - 15, "...");
+      const organizationToString = organization.join("");
+      return organizationToString;
+    } else {
+      return organization;
+    }
+  };
+
+  const organization = organizationTruncate();
+
+  const dateTruncate = () => {
+    const date = dateContent.split("");
+    if (date.length > 21) {
+      date.splice(21, date.length - 21, "...");
+      const dateToString = date.join("");
+      return dateToString;
+    } else {
+      return date;
+    }
+  };
+
+  const date = dateTruncate();
+
+  const phoneNumberTruncate = () => {
+    const phoneNumber = phoneNumberContent.split("");
+    if (phoneNumber.length > 13) {
+      phoneNumber.splice(13, phoneNumber.length - 13, "...");
+      const phoneNumberToString = phoneNumber.join("");
+      return phoneNumberToString;
+    } else {
+      return phoneNumber;
+    }
+  };
+
+  const phoneNumber = phoneNumberTruncate();
 
   return (
     <div className="UsersTable">
@@ -61,11 +118,11 @@ const UsersTable = () => {
         </thead>
         <tbody>
           <tr>
-            <td>Lendsqr</td>
-            <td>Adedeji</td>
-            <td title={note}>{email}</td>
-            <td>08078903721</td>
-            <td>May 15, 2020 10:00 AM</td>
+            <td title={organizationContent}>{organization}</td>
+            <td title={userNameContent}>{userName}</td>
+            <td title={emailContent}>{email}</td>
+            <td title={phoneNumberContent}>{phoneNumber}</td>
+            <td title={dateContent}>{date}</td>
             <td>
               <span style={checkActiveStyle}>Inactive</span>
             </td>
@@ -75,11 +132,11 @@ const UsersTable = () => {
           </tr>
           {/* <div></div> */}
           <tr>
-            <td>Lendsqr</td>
-            <td>Adedeji</td>
-            <td title={note}>{email}</td>
-            <td>08078903721</td>
-            <td>May 15, 2020 10:00 AM</td>
+            <td title={organizationContent}>{organization}</td>
+            <td title={userNameContent}>{userName}</td>
+            <td title={emailContent}>{email}</td>
+            <td title={phoneNumberContent}>{phoneNumber}</td>
+            <td title={dateContent}>{date}</td>
             <td>
               <span style={checkActiveStyle}>Inactive</span>
             </td>
@@ -89,11 +146,11 @@ const UsersTable = () => {
           </tr>
           {/* <div></div> */}
           <tr>
-            <td>Lendsqr</td>
-            <td>Adedeji</td>
-            <td title={note}>{email}</td>
-            <td>08078903721</td>
-            <td>May 15, 2020 10:00 AM</td>
+            <td title={organizationContent}>{organization}</td>
+            <td title={userNameContent}>{userName}</td>
+            <td title={emailContent}>{email}</td>
+            <td title={phoneNumberContent}>{phoneNumber}</td>
+            <td title={dateContent}>{date}</td>
             <td>
               <span style={checkActiveStyle}>Inactive</span>
             </td>

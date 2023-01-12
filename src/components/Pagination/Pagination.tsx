@@ -7,7 +7,7 @@ const Pagination = () => {
   const [buttonTextContent, setButtonTextContext] = useState<any>(1);
   
   const buttonText = (i: number) => {
-    const list = Array.from(Array(14).keys()).splice(1);
+    const list = Array.from(Array(17).keys()).splice(1);
     let initialList = list.length;
     let lastValues = list.length - 2;
     let dots: any = "...";
