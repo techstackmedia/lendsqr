@@ -1,13 +1,26 @@
 import "./UsersTable.scss";
 import filterButton from "../../images/filter-button.png";
 import verticalMenu from "../../images/vertical-menu.png";
+import watchEye from "../../images/watch.png";
+import blacklistUser from "../../images/blacklist.png";
+import activeUser from "../../images/active.png";
+
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const UsersTable = () => {
+  const [state, setState] = useState(true);
   const checkActiveStyle = {
     backgroundColor: "rgba(84, 95, 125, 0.06)",
     borderRadius: "100px",
     color: "#545f7d",
     padding: "10px 20px",
+  };
+
+  const onClick = () => {
+    setState(() => {
+      return !state;
+    });
   };
 
   let emailContent: string = "adedejijohndsdsds.com";
@@ -126,7 +139,7 @@ const UsersTable = () => {
             <td>
               <span style={checkActiveStyle}>Inactive</span>
             </td>
-            <td>
+            <td onClick={onClick} className={`${state}`}>
               <img src={verticalMenu} alt="verival menu icon on table header" />
             </td>
           </tr>
@@ -141,6 +154,36 @@ const UsersTable = () => {
               <span style={checkActiveStyle}>Inactive</span>
             </td>
             <td>
+              <img src={verticalMenu} alt="verival menu icon on table header" />
+              <div>
+                <ul>
+                  <li>
+                    <img src={watchEye} alt="watch or view icon" />{" "}
+                    <Link to="/dashboard/users/detail">View Details</Link>
+                  </li>
+                  <li>
+                    <img src={blacklistUser} alt="deleted user icon" />{" "}
+                    Blacklist User
+                  </li>
+                  <li>
+                    <img src={activeUser} alt="active user icon" />
+                    Activate User
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          {/* <div></div> */}
+          <tr>
+            <td title={organizationContent}>{organization}</td>
+            <td title={userNameContent}>{userName}</td>
+            <td title={emailContent}>{email}</td>
+            <td title={phoneNumberContent}>{phoneNumber}</td>
+            <td title={dateContent}>{date}</td>
+            <td>
+              <span style={checkActiveStyle}>Inactive</span>
+            </td>
+            <td onClick={onClick} className={`${state}`}>
               <img src={verticalMenu} alt="verival menu icon on table header" />
             </td>
           </tr>

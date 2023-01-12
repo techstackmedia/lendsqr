@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const Pagination = () => {
   const [buttonTextContent, setButtonTextContext] = useState<any>(1);
-  
+
   const buttonText = (i: number) => {
     const list = Array.from(Array(17).keys()).splice(1);
     let initialList = list.length;
@@ -44,7 +44,7 @@ const Pagination = () => {
         list.splice(4, 0, i + 1);
       }
       if (i === initialList) {
-        list.splice(3,0,initialList - 2)
+        list.splice(3, 0, initialList - 2);
       }
     }
 
@@ -86,29 +86,13 @@ const Pagination = () => {
     <div className="paginationButtons">
       <div>
         <span>Showing</span>{" "}
-        <button
-          type="button"
-          style={{
-            backgroundColor: "rgba(33, 63, 125, 0.1)",
-            borderRadius: 4,
-            border: 0,
-            fontFamily: "Work Sans",
-            fontWeight: 500,
-            fontSize: 14,
-            color: "#213F7D",
-            padding: "5px 10px",
-          }}
-        >
-          100{" "}
-          <img
-            src={paginatedRowArrow}
-            alt="arrow down button"
-            style={{ marginLeft: 10, position: "relative", top: 2 }}
-          />
+        <button type="button">
+          100
+          <img src={paginatedRowArrow} alt="arrow down button" />
         </button>{" "}
         <span>out of 100</span>
       </div>
-      <div style={{ marginRight: 15, display: "flex", alignItems: "center" }}>
+      <div>
         <span>
           <img src={arrowRight} alt="arrow pointing to the right" />
         </span>

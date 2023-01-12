@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,400;0,500;0,600;1,300&display=swap");
-
-div.paginationButtons {
+.paginationButtons {
   margin-left: 284px;
   margin-bottom: 200px;
   margin-top: 19px;
@@ -9,15 +8,36 @@ div.paginationButtons {
   align-items: center;
   font-family: "Work Sans";
   font-size: 14px;
-  color: #545f7d;
+  color: rgb(84, 95, 125);
+  div:first-child {
+    button {
+      background-color: rgba(33, 63, 125, 0.1);
+      border-radius: 4px;
+      font-weight: 500;
+      color: #213f7d;
+      padding: 5px 10px;
+      position: relative;
+    }
+    img {
+      margin-left: 10px;
+      position: relative;
+      top: 2px;
+    }
+  }
+  div:nth-child(2) {
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+  }
   button {
     background-color: transparent;
     border: 0;
     font-family: "Work Sans";
     font-size: 14px;
-    color: rgb(84, 95, 125, 0.6);
+    color: #545f7d99;
     margin: 4px;
     cursor: pointer;
+    position: relative;
   }
   .active {
     color: #545f7d;
