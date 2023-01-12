@@ -7,10 +7,10 @@ const Login = () => {
   return (
     <>
       <LeadSqrLogo />
-      <section className="login">
+      <main className="login">
         <LoginImage />
         <LoginForm />
-      </section>
+      </main>
     </>
   );
 };

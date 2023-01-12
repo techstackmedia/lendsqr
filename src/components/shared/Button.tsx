@@ -6,6 +6,7 @@ interface buttonType {
   buttonBorderRadius: string;
   buttonBorder: string;
   fontSize: string;
+  handleButtonClick: any;
 }
 
 const Button = ({
@@ -16,6 +17,7 @@ const Button = ({
   buttonBorderRadius,
   buttonBorder,
   fontSize,
+  handleButtonClick,
 }: buttonType) => {
   const buttonStyle = {
     color: textColor,
@@ -27,7 +29,7 @@ const Button = ({
     cursor: "pointer",
   };
   return (
-    <button type="button" style={buttonStyle}>
+    <button onClick={handleButtonClick} type="button" style={buttonStyle}>
       {text.toUpperCase()}
     </button>
   );
