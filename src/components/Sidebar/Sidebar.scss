@@ -64,6 +64,7 @@ $textColor: #213f7d;
       a {
         color: $textColor;
         text-decoration: none;
+        display: flex;
       }
     }
   }
