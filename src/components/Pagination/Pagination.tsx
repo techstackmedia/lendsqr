@@ -5,9 +5,9 @@ import { useState } from "react";
 
 const Pagination = () => {
   const [buttonTextContent, setButtonTextContext] = useState<any>(1);
-
+  
   const buttonText = (i: number) => {
-    const list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const list = Array.from(Array(14).keys()).splice(1);
     let initialList = list.length;
     let lastValues = list.length - 2;
     let dots: any = "...";
@@ -42,6 +42,9 @@ const Pagination = () => {
       }
       if (initialList - 3 === i) {
         list.splice(4, 0, i + 1);
+      }
+      if (i === initialList) {
+        list.splice(3,0,initialList - 2)
       }
     }
 
