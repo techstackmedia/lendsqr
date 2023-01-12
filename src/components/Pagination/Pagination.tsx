@@ -1,8 +1,11 @@
 import paginatedRowArrow from "../../images/pagination-down-button.png";
 import "./Pagination.scss";
 import arrowRight from "../../images/arrow-right.png";
+import { useState } from "react";
 
 const Pagination = () => {
+  const [buttonTextContent, setButtonTextContext] = useState(1);
+
   const buttonText = (i: number) => {
     const list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     let initialList = list.length;
@@ -33,6 +36,12 @@ const Pagination = () => {
         list.splice(2, 0, dots);
       }
     }
+
+    const handleClick = (event: any) => {
+      const text = event.currentTarget.textContent;
+      setButtonTextContext(+text);
+    };
+
     const Button = list.map((item, index) => {
       let button: any;
       if (item === i) {
@@ -43,7 +52,7 @@ const Pagination = () => {
         );
       } else {
         button = (
-          <button key={index} type="button">
+          <button onClick={handleClick} key={index} type="button">
             {item}
           </button>
         );
@@ -84,7 +93,7 @@ const Pagination = () => {
         <span>
           <img src={arrowRight} alt="arrow pointing to the right" />
         </span>
-        {buttonText(8)}
+        {buttonText(buttonTextContent)}
         <span>
           <img src={arrowRight} alt="arrow pointing to the right" />
         </span>
