@@ -32,15 +32,51 @@ const Detail = () => {
             </span>
           </button>
         </section>
-        <section
-          className="DashboardURLSlug"
-          style={{
-            marginTop: "6px",
-            color: "#545F7D",
-          }}
-        >
-          <span className="span">Users Details</span>
-        </section>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <section
+            className="DashboardURLSlug"
+            style={{
+              marginTop: "6px",
+              color: "#545F7D",
+            }}
+          >
+            <span className="span">Users Details</span>
+          </section>
+          <div style={{ marginRight: 15 }}>
+            <button
+              style={{
+                color: "#E4033B",
+                backgroundColor: "transparent",
+                border: "1px solid #E4033B",
+                fontWeight: 600,
+                fontSize: 14,
+                textTransform: "uppercase",
+                borderRadius: 8,
+                padding: 10,
+                marginRight: 10,
+                fontFamily: "Work Sans, sans-serif",
+              }}
+            >
+              Blacklist User
+            </button>
+            <button
+              style={{
+                color: "#39CDCC",
+                backgroundColor: "transparent",
+                border: "1px solid #39CDCC",
+                fontWeight: 600,
+                fontSize: 14,
+                textTransform: "uppercase",
+                borderRadius: 8,
+                padding: 10,
+                marginLeft: 10,
+                fontFamily: "Work Sans, sans-serif",
+              }}
+            >
+              Activate User
+            </button>
+          </div>
+        </div>
       </div>
       <div className="userCountSidebar">
         <UsersTier />
