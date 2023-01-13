@@ -24,8 +24,8 @@ const UsersTable = () => {
   };
 
   const onMouseLeave = () => {
-    if (state === true) {
-      setState(false)
+    if (state === false) {
+      setState(true)
     }
   }
 

@@ -122,10 +122,10 @@ $d-block: block;
           }
         }
         .false {
-          display: none;
+          display: flex;
         }
         .true {
-          display: flex;
+          display: none;
         }
       }
       // div {
