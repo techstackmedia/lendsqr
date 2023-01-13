@@ -6,7 +6,7 @@ import UsersDetail from "../UsersDetail/UsersDetail";
 
 const UsersTier = () => {
   return (
-    <section style={{overflowX: 'auto'}}>
+    <section>
       <header
         className="usersCount"
         style={{
