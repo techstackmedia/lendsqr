@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar";
 import Sidebar from "../components/Sidebar/Sidebar";
-import UsersDetail from "../components/UsersDetail/UsersDetail";
 import arrowLeft from "../images/arrow-left.png";
+import UsersTier from "../components/UsersTier/UsersTier";
 
 const Detail = () => {
   const navigate = useNavigate();
@@ -43,7 +43,7 @@ const Detail = () => {
         </section>
       </div>
       <div className="userCountSidebar">
-        <UsersDetail />
+        <UsersTier />
         <Sidebar />
       </div>
     </>

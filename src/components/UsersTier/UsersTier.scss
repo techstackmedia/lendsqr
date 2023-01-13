@@ -1,0 +1,22 @@
+@font-face {
+  font-family: "SF Compact Text";
+  src: url("../../../src/fonts/SFCompactText-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+.nav {
+  div {
+    font-family: "SF Compact Text";
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    padding: 0 17px 10px;
+    border-bottom: 2px solid transparent;
+    position: relative;
+    top: 15px;
+    color: rgba(0, 0, 0, 0.8);
+    &:hover {
+      color: #39cdcc;
+      border-bottom: 2px solid #39cdcc;
+    }
+  }
+}
