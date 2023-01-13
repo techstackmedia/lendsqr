@@ -55,6 +55,7 @@ const Detail = () => {
                 padding: 10,
                 marginRight: 10,
                 fontFamily: "Work Sans, sans-serif",
+                cursor: "pointer",
               }}
             >
               Blacklist User
@@ -71,6 +72,7 @@ const Detail = () => {
                 padding: 10,
                 marginLeft: 10,
                 fontFamily: "Work Sans, sans-serif",
+                cursor: "pointer",
               }}
             >
               Activate User
