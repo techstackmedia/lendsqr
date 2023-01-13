@@ -9,6 +9,7 @@
   font-family: "Work Sans";
   font-size: 14px;
   color: rgb(84, 95, 125);
+  flex-wrap: wrap;
   div:first-child {
     button {
       background-color: rgba(33, 63, 125, 0.1);
@@ -70,6 +71,16 @@
       img {
         transform: rotate(180deg);
       }
+    }
+  }
+}
+
+
+@media (max-width: 772px) {
+  .paginationButtons {
+    justify-content: center;
+    div:nth-child(2) {
+      margin-top: 20px;
     }
   }
 }

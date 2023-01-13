@@ -23,6 +23,12 @@ const UsersTable = () => {
     });
   };
 
+  const onMouseLeave = () => {
+    if (state === true) {
+      setState(false)
+    }
+  }
+
   let emailContent: string = "adedejijohndsdsds.com";
   let userNameContent: string = "Bello Osagisdsdse";
   let organizationContent: string = "Techstack Media Bello";
@@ -139,7 +145,7 @@ const UsersTable = () => {
             <td>
               <span style={checkActiveStyle}>Inactive</span>
             </td>
-            <td onClick={onClick} className={`${state}`}>
+            <td>
               <img src={verticalMenu} alt="verival menu icon on table header" />
             </td>
           </tr>
@@ -153,9 +159,9 @@ const UsersTable = () => {
             <td>
               <span style={checkActiveStyle}>Inactive</span>
             </td>
-            <td>
+            <td onClick={onClick} onMouseLeave={onMouseLeave}>
               <img src={verticalMenu} alt="verival menu icon on table header" />
-              <div>
+              <div className={`${state}`}>
                 <ul>
                   <li>
                     <img src={watchEye} alt="watch or view icon" />{" "}

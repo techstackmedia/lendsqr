@@ -83,8 +83,8 @@ $d-block: block;
         div {
           position: absolute;
           right: 8px;
-          width: 171px;
-          height: 100px;
+          width: 180px;
+          height: 130px;
           background: #ffffff;
           border: 1px solid rgba(84, 95, 125, 0.04);
           box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
@@ -95,16 +95,17 @@ $d-block: block;
           align-items: center;
           justify-content: center;
           //
-          // top: 24px;
-          // right: -28px;
+          top: 20px;
+          right: 0px;
           //
+
           ul {
             list-style-type: none;
             margin-left: -16px;
             position: absolute;
             left: 0;
             li {
-              padding-block: 8px;
+              padding-block: 13px;
               font-weight: 500;
               font-size: 14px;
               color: #545f7d;
@@ -119,6 +120,12 @@ $d-block: block;
               }
             }
           }
+        }
+        .false {
+          display: none;
+        }
+        .true {
+          display: flex;
         }
       }
       // div {
