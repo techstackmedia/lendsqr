@@ -18,14 +18,18 @@ const LoginForm = () => {
   };
   const handleButtonClick = () => {
     if (
-      document.querySelectorAll("input")[0].value === "" ||
-      document.querySelectorAll("input")[1].value === ""
+      (document.querySelectorAll("input")[0].value === "" &&
+        emailText.trim().length === 0) ||
+      (document.querySelectorAll("input")[1].value === "" &&
+        passwordText.trim().length === 0)
     ) {
       navigate("/login");
       if (document.querySelectorAll("input")[0].value === "") {
         setValidationMessage("Email is required");
+        navigate("/login");
       } else if (document.querySelectorAll("input")[1].value === "") {
         setValidationMessage("Password is required");
+        navigate("/login");
       }
     } else {
       navigate("/dashboard");
