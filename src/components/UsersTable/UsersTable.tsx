@@ -147,7 +147,7 @@ const UsersTable = () => {
             <td title={phoneNumberContent.length > 13 && phoneNumberContent}>
               {phoneNumber}
             </td>
-            <td title={dateContent.length > 13 && dateContent}>{date}</td>
+            <td title={dateContent.length > 21 && dateContent}>{date}</td>
             <td>
               <span style={checkActiveStyle}>Inactive</span>
             </td>
@@ -167,7 +167,7 @@ const UsersTable = () => {
             <td title={phoneNumberContent.length > 13 && phoneNumberContent}>
               {phoneNumber}
             </td>
-            <td title={dateContent.length > 13 && dateContent}>{date}</td>
+            <td title={dateContent.length > 21 && dateContent}>{date}</td>
             <td>
               <span style={checkActiveStyle}>Inactive</span>
             </td>
@@ -203,7 +203,7 @@ const UsersTable = () => {
             <td title={phoneNumberContent.length > 13 && phoneNumberContent}>
               {phoneNumber}
             </td>
-            <td title={dateContent.length > 13 && dateContent}>{date}</td>
+            <td title={dateContent.length > 21 && dateContent}>{date}</td>
             <td>
               <span style={checkActiveStyle}>Inactive</span>
             </td>
@@ -223,7 +223,7 @@ const UsersTable = () => {
             <td title={phoneNumberContent.length > 13 && phoneNumberContent}>
               {phoneNumber}
             </td>
-            <td title={dateContent.length > 13 && dateContent}>{date}</td>
+            <td title={dateContent.length > 21 && dateContent}>{date}</td>
             <td>
               <span style={checkActiveStyle}>Inactive</span>
             </td>
