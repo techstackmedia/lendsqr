@@ -61,7 +61,7 @@ section {
 
 @media (max-width: 755px) {
   section {
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     &::-webkit-scrollbar {
       display: none;
     }

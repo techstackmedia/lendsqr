@@ -1,13 +1,16 @@
 import paginatedRowArrow from "../../images/pagination-down-button.png";
 import "./Pagination.scss";
 import arrowRight from "../../images/arrow-right.png";
+import arrowEnabled from "../../images/arrow-enabled.png";
+import arrowInactive from "../../images/arrow-inactive.png";
+import arrowActive from "../../images/arrow-active.png";
 import { useState } from "react";
 
 const Pagination = () => {
   const [buttonTextContent, setButtonTextContext] = useState<any>(1);
 
+  let list = Array.from(Array(17).keys()).splice(1);
   const buttonText = (i: number) => {
-    const list = Array.from(Array(17).keys()).splice(1);
     let initialList = list.length;
     let lastValues = list.length - 2;
     let dots: any = "...";
@@ -82,6 +85,8 @@ const Pagination = () => {
     return Button;
   };
 
+  // console.log(list.length, buttonTextContent);
+
   return (
     <div className="paginationButtons">
       <div>
@@ -94,11 +99,28 @@ const Pagination = () => {
       </div>
       <div>
         <span>
-          <img src={arrowRight} alt="arrow pointing to the right" />
+          <img
+            style={{
+              transform: buttonTextContent !== 1 ? "rotate(180deg)" : "initial",
+            }}
+            src={buttonTextContent !== 1 ? arrowEnabled : arrowRight}
+            alt="arrow pointing to the right"
+          />
         </span>
         {buttonText(buttonTextContent)}
         <span>
-          <img src={arrowRight} alt="arrow pointing to the right" />
+          <img
+            style={{
+              transform:
+                buttonTextContent === list.length
+                  ? "rotate(180deg)"
+                  : "initial",
+            }}
+            src={
+              list.length === buttonTextContent ? arrowInactive : arrowActive
+            }
+            alt="arrow pointing to the right"
+          />
         </span>
       </div>
     </div>

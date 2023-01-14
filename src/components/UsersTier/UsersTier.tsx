@@ -5,6 +5,20 @@ import "./UsersTier.scss";
 import UsersDetail from "../UsersDetail/UsersDetail";
 
 const UsersTier = () => {
+  let nameContent: any = "Grace Effiomasas";
+
+  const textNameTruncate = () => {
+    const textName = nameContent.split("");
+    if (textName.length > 12) {
+      textName.splice(12, textName.length - 12, "...");
+      const textNameToString = textName.join("").replace("....", "...");
+      return textNameToString;
+    } else {
+      return textName;
+    }
+  };
+
+  const name = textNameTruncate();
   return (
     <section>
       <header
@@ -55,6 +69,7 @@ const UsersTier = () => {
               }}
             >
               <div
+                title={nameContent.length > 12 && nameContent}
                 style={{
                   fontWeight: 500,
                   fontSize: 22,
@@ -62,7 +77,7 @@ const UsersTier = () => {
                   width: 150,
                 }}
               >
-                Grace Effiom
+                {name}
               </div>
               <div
                 style={{

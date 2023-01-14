@@ -25,15 +25,15 @@ const UsersTable = () => {
 
   const onMouseLeave = () => {
     if (state === false) {
-      setState(true)
+      setState(true);
     }
-  }
+  };
 
-  let emailContent: string = "adedejijohndsdsds.com";
-  let userNameContent: string = "Bello Osagisdsdse";
-  let organizationContent: string = "Techstack Media Bello";
-  let dateContent: string = "SEPT 15, 2020 10:00 AM	";
-  let phoneNumberContent: string = "080803234553245";
+  let emailContent: any = "adedejijohn.com";
+  let userNameContent: any = "Bello Osagie";
+  let organizationContent: any = "Techstack Media";
+  let dateContent: any = "MAY 15, 2020 10:00 AM";
+  let phoneNumberContent: any = "08080323455";
 
   const textEmailTruncate = () => {
     const textEmail = emailContent.split("");
@@ -137,11 +137,17 @@ const UsersTable = () => {
         </thead>
         <tbody>
           <tr>
-            <td title={organizationContent}>{organization}</td>
-            <td title={userNameContent}>{userName}</td>
-            <td title={emailContent}>{email}</td>
-            <td title={phoneNumberContent}>{phoneNumber}</td>
-            <td title={dateContent}>{date}</td>
+            <td title={organizationContent.length > 15 && organizationContent}>
+              {organization}
+            </td>
+            <td title={userNameContent.length > 15 && userNameContent}>
+              {userName}
+            </td>
+            <td title={emailContent.length > 20 && emailContent}>{email}</td>
+            <td title={phoneNumberContent.length > 13 && phoneNumberContent}>
+              {phoneNumber}
+            </td>
+            <td title={dateContent.length > 13 && dateContent}>{date}</td>
             <td>
               <span style={checkActiveStyle}>Inactive</span>
             </td>
@@ -151,11 +157,17 @@ const UsersTable = () => {
           </tr>
           {/* <div></div> */}
           <tr>
-            <td title={organizationContent}>{organization}</td>
-            <td title={userNameContent}>{userName}</td>
-            <td title={emailContent}>{email}</td>
-            <td title={phoneNumberContent}>{phoneNumber}</td>
-            <td title={dateContent}>{date}</td>
+            <td title={organizationContent.length > 15 && organizationContent}>
+              {organization}
+            </td>
+            <td title={userNameContent.length > 15 && userNameContent}>
+              {userName}
+            </td>
+            <td title={emailContent.length > 20 && emailContent}>{email}</td>
+            <td title={phoneNumberContent.length > 13 && phoneNumberContent}>
+              {phoneNumber}
+            </td>
+            <td title={dateContent.length > 13 && dateContent}>{date}</td>
             <td>
               <span style={checkActiveStyle}>Inactive</span>
             </td>
@@ -181,11 +193,17 @@ const UsersTable = () => {
           </tr>
           {/* <div></div> */}
           <tr>
-            <td title={organizationContent}>{organization}</td>
-            <td title={userNameContent}>{userName}</td>
-            <td title={emailContent}>{email}</td>
-            <td title={phoneNumberContent}>{phoneNumber}</td>
-            <td title={dateContent}>{date}</td>
+            <td title={organizationContent.length > 15 && organizationContent}>
+              {organization}
+            </td>
+            <td title={userNameContent.length > 15 && userNameContent}>
+              {userName}
+            </td>
+            <td title={emailContent.length > 20 && emailContent}>{email}</td>
+            <td title={phoneNumberContent.length > 13 && phoneNumberContent}>
+              {phoneNumber}
+            </td>
+            <td title={dateContent.length > 13 && dateContent}>{date}</td>
             <td>
               <span style={checkActiveStyle}>Inactive</span>
             </td>
@@ -195,11 +213,17 @@ const UsersTable = () => {
           </tr>
           {/* <div></div> */}
           <tr>
-            <td title={organizationContent}>{organization}</td>
-            <td title={userNameContent}>{userName}</td>
-            <td title={emailContent}>{email}</td>
-            <td title={phoneNumberContent}>{phoneNumber}</td>
-            <td title={dateContent}>{date}</td>
+            <td title={organizationContent.length > 15 && organizationContent}>
+              {organization}
+            </td>
+            <td title={userNameContent.length > 15 && userNameContent}>
+              {userName}
+            </td>
+            <td title={emailContent.length > 20 && emailContent}>{email}</td>
+            <td title={phoneNumberContent.length > 13 && phoneNumberContent}>
+              {phoneNumber}
+            </td>
+            <td title={dateContent.length > 13 && dateContent}>{date}</td>
             <td>
               <span style={checkActiveStyle}>Inactive</span>
             </td>
