@@ -118,7 +118,7 @@ const UsersTable = ({ users }: any) => {
       .join(" ");
 
     return (
-      <tr>
+      <tr key={item.id}>
         <td title={item.orgName.length > 15 && orgTitle}>{orgName}</td>
         <td title={item.userName.length > 15 && item.userName}>{userName}</td>
         <td title={item.email.length > 20 && item.email}>{email}</td>
