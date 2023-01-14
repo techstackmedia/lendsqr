@@ -141,7 +141,9 @@ const UsersTable = ({ users }: any) => {
               <ul>
                 <li>
                   <img src={watchEye} alt="watch or view icon" />{" "}
-                  <Link to="/dashboard/users/detail">View Details</Link>
+                  <Link to={`/dashboard/users/detail/${userList[0].id}`}>
+                    View Details
+                  </Link>
                 </li>
                 <li>
                   <img src={blacklistUser} alt="deleted user icon" /> Blacklist

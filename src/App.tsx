@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [users, setUsers] = useState([]);
-
   useEffect(() => {
     const fetchUsersAPI = async () => {
       const response = await fetch(
@@ -27,7 +26,7 @@ function App() {
         <Route path="/dashboard/:slug" element={<Dashboard users={users} />} />
         <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
-        <Route path="dashboard/users/detail" element={<Detail />} />
+        <Route path="dashboard/users/detail/:id" element={<Detail />} />
       </Routes>
     </BrowserRouter>
   );
