@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 
 const UsersTable = ({ users }: any) => {
   const [state, setState] = useState(true);
+  const [userList, setUserList] = useState<any>([]);
   const checkActiveStyle = {
     backgroundColor: "rgba(84, 95, 125, 0.06)",
     borderRadius: "100px",
@@ -17,10 +18,14 @@ const UsersTable = ({ users }: any) => {
     padding: "10px 20px",
   };
 
-  const onClick = () => {
-    setState(() => {
-      return !state;
-    });
+  const onClick = (id: any) => {
+    if (state) {
+      const filterUserList = users.filter((item: any) => item.id === id);
+      setUserList(filterUserList);
+      setState((prev) => {
+        return !prev;
+      });
+    }
   };
 
   const onMouseLeave = () => {
@@ -129,8 +134,26 @@ const UsersTable = ({ users }: any) => {
         <td>
           <span style={checkActiveStyle}>Inactive</span>
         </td>
-        <td>
+        <td onClick={() => onClick(item.id)} onMouseLeave={onMouseLeave}>
           <img src={verticalMenu} alt="verival menu icon on table header" />
+          {userList.length !== 0 && userList[0].id === item.id && (
+            <div className={`${state}`}>
+              <ul>
+                <li>
+                  <img src={watchEye} alt="watch or view icon" />{" "}
+                  <Link to="/dashboard/users/detail">View Details</Link>
+                </li>
+                <li>
+                  <img src={blacklistUser} alt="deleted user icon" /> Blacklist
+                  User
+                </li>
+                <li>
+                  <img src={activeUser} alt="active user icon" />
+                  Activate User
+                </li>
+              </ul>
+            </div>
+          )}
         </td>
       </tr>
     );
