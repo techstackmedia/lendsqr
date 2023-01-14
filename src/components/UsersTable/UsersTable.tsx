@@ -8,7 +8,7 @@ import activeUser from "../../images/active.png";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const UsersTable = () => {
+const UsersTable = ({ users }: any) => {
   const [state, setState] = useState(true);
   const checkActiveStyle = {
     backgroundColor: "rgba(84, 95, 125, 0.06)",
@@ -29,79 +29,107 @@ const UsersTable = () => {
     }
   };
 
-  let emailContent: any = "adedejijohn.com";
-  let userNameContent: any = "Bello Osagie";
-  let organizationContent: any = "Techstack Media";
-  let dateContent: any = "MAY 15, 2020 10:00 AM";
-  let phoneNumberContent: any = "08080323455";
+  const getUsers = users.map((item: any) => {
+    const orgNameTruncate = () => {
+      const orgName = item.orgName.split("");
+      if (orgName.length > 15) {
+        orgName.splice(15, orgName.length - 15, "...");
+        const orgNameToString = orgName.join("");
+        return orgNameToString.replaceAll("-", " ").replace(" ...", "...");
+      } else {
+        return item.orgName.replaceAll("-", " ");
+      }
+    };
+    const organization = orgNameTruncate();
 
-  const textEmailTruncate = () => {
-    const textEmail = emailContent.split("");
-    if (textEmail.length > 20) {
-      textEmail.splice(20, textEmail.length - 20, "...");
-      const textEmailToString = textEmail.join("").replace("....", "...");
-      return textEmailToString;
-    } else {
-      return textEmail;
-    }
-  };
+    const orgArr = organization.split(" ");
+    const orgName = orgArr
+      .map((item: any) => {
+        return item[0].toUpperCase() + item.slice(1);
+      })
+      .join(" ");
 
-  const email = textEmailTruncate();
+    const userNameTruncate = () => {
+      const userName = item.userName.split("");
+      if (userName.length > 15) {
+        userName.splice(15, userName.length - 15, "...");
+        const userNameToString = userName.join("");
+        return userNameToString;
+      } else {
+        return item.userName;
+      }
+    };
+    const userName = userNameTruncate();
 
-  const userNameTruncate = () => {
-    const userName = userNameContent.split("");
-    if (userName.length > 15) {
-      userName.splice(15, userName.length - 15, "...");
-      const userNameToString = userName.join("");
-      return userNameToString;
-    } else {
-      return userName;
-    }
-  };
+    const emailTruncate = () => {
+      const email = item.email.split("");
+      if (email.length > 20) {
+        email.splice(20, email.length - 20, "...");
+        const emailToString = email.join("");
+        return emailToString;
+      } else {
+        return item.email;
+      }
+    };
+    const email = emailTruncate();
 
-  const userName = userNameTruncate();
+    const phoneNumberTruncate = () => {
+      const phoneNumber = item.phoneNumber.split("");
+      if (phoneNumber.length > 15) {
+        phoneNumber.splice(15, phoneNumber.length - 15, "...");
+        const phoneNumberToString = phoneNumber.join("");
+        return phoneNumberToString.replace(" ...", "...");
+      } else {
+        return item.phoneNumber;
+      }
+    };
+    const phoneNumber = phoneNumberTruncate();
 
-  const organizationTruncate = () => {
-    const organization = organizationContent.split("");
-    if (organization.length > 15) {
-      organization.splice(15, organization.length - 15, "...");
-      const organizationToString = organization.join("");
-      return organizationToString;
-    } else {
-      return organization;
-    }
-  };
+    const newDate = new Date(item.createdAt);
+    const dateString =
+      newDate.toDateString() + " " + newDate.toLocaleTimeString();
+    const dateArr = dateString.toUpperCase().split(" ");
+    dateArr[0] = "";
+    dateArr[2] = dateArr[2] + ",";
+    const d = dateArr[4].split(":");
+    d[2] = "";
+    const elem = d.join(" ").replace(" ", ":");
+    dateArr[4] = elem;
+    const date: any = dateArr.join(" ");
+    const createdAtTruncate = () => {
+      const createdAt = date.split("");
 
-  const organization = organizationTruncate();
+      if (createdAt.length > 22) {
+        createdAt.splice(22, createdAt.length - 22, "...");
+        const createdAtToString = createdAt.join("");
+        return createdAtToString.replace("....", "...");
+      } else {
+        return createdAt;
+      }
+    };
+    const createdAt = createdAtTruncate();
 
-  const dateTruncate = () => {
-    const date = dateContent.split("");
-    if (date.length > 21) {
-      date.splice(21, date.length - 21, "...");
-      const dateToString = date.join("");
-      return dateToString;
-    } else {
-      return date;
-    }
-  };
-
-  const date = dateTruncate();
-
-  const phoneNumberTruncate = () => {
-    const phoneNumber = phoneNumberContent.split("");
-    if (phoneNumber.length > 13) {
-      phoneNumber.splice(13, phoneNumber.length - 13, "...");
-      const phoneNumberToString = phoneNumber.join("");
-      return phoneNumberToString;
-    } else {
-      return phoneNumber;
-    }
-  };
-
-  const phoneNumber = phoneNumberTruncate();
+    return (
+      <tr>
+        <td title={item.orgName.length > 15 && item.orgName}>{orgName}</td>
+        <td title={item.userName.length > 15 && item.userName}>{userName}</td>
+        <td title={item.email.length > 20 && item.email}>{email}</td>
+        <td title={item.phoneNumber.length > 15 && item.phoneNumber}>
+          {phoneNumber}
+        </td>
+        <td title={item.createdAt.length > 21 && date}>{createdAt}</td>
+        <td>
+          <span style={checkActiveStyle}>Inactive</span>
+        </td>
+        <td>
+          <img src={verticalMenu} alt="verival menu icon on table header" />
+        </td>
+      </tr>
+    );
+  });
 
   return (
-    <div className="UsersTable">
+    <div className="UsersTable" style={{ maxHeight: 640, overflowY: "auto" }}>
       <table>
         <thead>
           <tr>
@@ -135,104 +163,7 @@ const UsersTable = () => {
             <th></th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td title={organizationContent.length > 15 && organizationContent}>
-              {organization}
-            </td>
-            <td title={userNameContent.length > 15 && userNameContent}>
-              {userName}
-            </td>
-            <td title={emailContent.length > 20 && emailContent}>{email}</td>
-            <td title={phoneNumberContent.length > 13 && phoneNumberContent}>
-              {phoneNumber}
-            </td>
-            <td title={dateContent.length > 21 && dateContent}>{date}</td>
-            <td>
-              <span style={checkActiveStyle}>Inactive</span>
-            </td>
-            <td>
-              <img src={verticalMenu} alt="verival menu icon on table header" />
-            </td>
-          </tr>
-          {/* <div></div> */}
-          <tr>
-            <td title={organizationContent.length > 15 && organizationContent}>
-              {organization}
-            </td>
-            <td title={userNameContent.length > 15 && userNameContent}>
-              {userName}
-            </td>
-            <td title={emailContent.length > 20 && emailContent}>{email}</td>
-            <td title={phoneNumberContent.length > 13 && phoneNumberContent}>
-              {phoneNumber}
-            </td>
-            <td title={dateContent.length > 21 && dateContent}>{date}</td>
-            <td>
-              <span style={checkActiveStyle}>Inactive</span>
-            </td>
-            <td onClick={onClick} onMouseLeave={onMouseLeave}>
-              <img src={verticalMenu} alt="verival menu icon on table header" />
-              <div className={`${state}`}>
-                <ul>
-                  <li>
-                    <img src={watchEye} alt="watch or view icon" />{" "}
-                    <Link to="/dashboard/users/detail">View Details</Link>
-                  </li>
-                  <li>
-                    <img src={blacklistUser} alt="deleted user icon" />{" "}
-                    Blacklist User
-                  </li>
-                  <li>
-                    <img src={activeUser} alt="active user icon" />
-                    Activate User
-                  </li>
-                </ul>
-              </div>
-            </td>
-          </tr>
-          {/* <div></div> */}
-          <tr>
-            <td title={organizationContent.length > 15 && organizationContent}>
-              {organization}
-            </td>
-            <td title={userNameContent.length > 15 && userNameContent}>
-              {userName}
-            </td>
-            <td title={emailContent.length > 20 && emailContent}>{email}</td>
-            <td title={phoneNumberContent.length > 13 && phoneNumberContent}>
-              {phoneNumber}
-            </td>
-            <td title={dateContent.length > 21 && dateContent}>{date}</td>
-            <td>
-              <span style={checkActiveStyle}>Inactive</span>
-            </td>
-            <td onClick={onClick} className={`${state}`}>
-              <img src={verticalMenu} alt="verival menu icon on table header" />
-            </td>
-          </tr>
-          {/* <div></div> */}
-          <tr>
-            <td title={organizationContent.length > 15 && organizationContent}>
-              {organization}
-            </td>
-            <td title={userNameContent.length > 15 && userNameContent}>
-              {userName}
-            </td>
-            <td title={emailContent.length > 20 && emailContent}>{email}</td>
-            <td title={phoneNumberContent.length > 13 && phoneNumberContent}>
-              {phoneNumber}
-            </td>
-            <td title={dateContent.length > 21 && dateContent}>{date}</td>
-            <td>
-              <span style={checkActiveStyle}>Inactive</span>
-            </td>
-            <td>
-              <img src={verticalMenu} alt="verival menu icon on table header" />
-            </td>
-          </tr>
-          {/* <div></div> */}
-        </tbody>
+        <tbody>{getUsers}</tbody>
       </table>
     </div>
   );

@@ -6,7 +6,7 @@ import arrowInactive from "../../images/arrow-inactive.png";
 import arrowActive from "../../images/arrow-active.png";
 import { useState } from "react";
 
-const Pagination = () => {
+const Pagination = ({ users }: any) => {
   const [buttonTextContent, setButtonTextContext] = useState<any>(1);
 
   let list = Array.from(Array(17).keys()).splice(1);

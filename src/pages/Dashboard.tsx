@@ -6,7 +6,7 @@ import "./Dashboard.scss";
 import UsersTable from "../components/UsersTable/UsersTable";
 import Pagination from "../components/Pagination/Pagination";
 
-const Dashboard = () => {
+const Dashboard = ({ users }: any) => {
   const { slug } = useParams();
   const slugText = `${slug?.toUpperCase()[0]}${slug?.slice(1)}`;
 
@@ -28,8 +28,8 @@ const Dashboard = () => {
         <UsersCount />
         <Sidebar />
       </div>
-      <UsersTable />
-      <Pagination />
+      <UsersTable users={users} />
+      <Pagination users={users} />
     </>
   );
 };

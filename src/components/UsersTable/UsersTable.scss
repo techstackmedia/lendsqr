@@ -32,6 +32,9 @@ $d-block: block;
       font-family: "Work Sans", sans-serif;
       color: #545f7d;
       width: 17%;
+      img {
+        cursor: pointer;
+      }
       span {
         position: relative;
         bottom: 4px;
