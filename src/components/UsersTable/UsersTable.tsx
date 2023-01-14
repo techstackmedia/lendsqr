@@ -109,9 +109,17 @@ const UsersTable = ({ users }: any) => {
     };
     const createdAt = createdAtTruncate();
 
+    const orgNameTitle = item.orgName.replaceAll("-", " ");
+    const orgArray = orgNameTitle.split(" ");
+    const orgTitle = orgArray
+      .map((item: any) => {
+        return item[0].toUpperCase() + item.slice(1);
+      })
+      .join(" ");
+
     return (
       <tr>
-        <td title={item.orgName.length > 15 && item.orgName}>{orgName}</td>
+        <td title={item.orgName.length > 15 && orgTitle}>{orgName}</td>
         <td title={item.userName.length > 15 && item.userName}>{userName}</td>
         <td title={item.email.length > 20 && item.email}>{email}</td>
         <td title={item.phoneNumber.length > 15 && item.phoneNumber}>
