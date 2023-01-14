@@ -19,16 +19,21 @@ const UsersTier = () => {
       setUser(data);
     };
     fetchUserAPI();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const firstName: string | undefined =
-    user.profile?.firstName === undefined ? "" : user.profile?.firstName;
+    user.profile?.firstName === undefined
+      ? "Loading..."
+      : user.profile?.firstName;
   const lastName: string | undefined =
     user.profile?.lastName === undefined ? "" : user.profile?.lastName;
   const accountBalance =
-    user?.accountBalance === undefined ? "" : user.accountBalance;
+    user?.accountBalance === undefined ? "Loading..." : user.accountBalance;
   const avatarImg =
     user.profile?.avatar === undefined ? avatar : user.profile?.avatar;
+
+  const bvn = user.profile?.bvn === undefined ? "Loading" : user.profile?.bvn;
 
   let nameContent: any = `${firstName} ${lastName}`;
 
@@ -44,6 +49,25 @@ const UsersTier = () => {
   };
 
   const name = textNameTruncate();
+
+  let accountAccount: any =
+    user?.accountNumber === undefined ? "Loading..." : user?.accountNumber;
+  console.log(accountAccount);
+  const textBankAccountTruncate = () => {
+    const textBankAccount = accountAccount.split("");
+    if (textBankAccount.length > 12) {
+      textBankAccount.splice(12, textBankAccount.length - 12, "...");
+      const textBankAccountToString = textBankAccount
+        .join("")
+        .replace("....", "...");
+      return textBankAccountToString;
+    } else {
+      return textBankAccount;
+    }
+  };
+
+  const bankAccount = textBankAccountTruncate();
+
   return (
     <section>
       <header
@@ -105,14 +129,16 @@ const UsersTier = () => {
                 {name}
               </div>
               <div
+                title={accountAccount > 12 && accountAccount}
                 style={{
                   fontSize: 14,
                   color: "#545F7D",
                   position: "relative",
-                  right: 31,
+                  display: "flex",
+                  marginRight: "auto",
                 }}
               >
-                {user.accountNumber}
+                {bankAccount}
               </div>
             </div>
           </div>
@@ -175,7 +201,7 @@ const UsersTier = () => {
                   right: 8,
                 }}
               >
-                {`${user.profile?.bvn}/Providus Bank`}
+                {`${bvn}/Providus Bank`}
               </div>
             </div>
           </div>
