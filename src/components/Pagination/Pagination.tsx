@@ -92,6 +92,12 @@ const Pagination = ({ users }: any) => {
     });
   };
 
+  const onMouseLeave = () => {
+    if (!isTrue) {
+      setIsTrue(true);
+    }
+  };
+
   return (
     <div className="paginationButtons">
       <div style={{ position: "relative" }}>
@@ -109,6 +115,7 @@ const Pagination = ({ users }: any) => {
               background: "#fff",
               borderRadius: 4,
             }}
+            onMouseLeave={onMouseLeave}
           >
             <div className="rowDropdown">
               <div className="rows">Rows</div>
