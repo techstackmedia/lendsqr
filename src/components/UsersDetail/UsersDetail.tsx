@@ -29,8 +29,8 @@ const UsersDetail = () => {
 
   const textNameTruncate = () => {
     const textName = nameContent.split("");
-    if (textName.length > 12) {
-      textName.splice(12, textName.length - 12, "...");
+    if (textName.length > 14) {
+      textName.splice(14, textName.length - 14, "...");
       const textNameToString = textName.join("").replace("....", "...");
       return textNameToString;
     } else {
@@ -296,7 +296,7 @@ const UsersDetail = () => {
           <div className="row first">
             <div className="column">
               <div className="header">full Name</div>
-              <div title={nameContent > 12 && nameContent} className="data">
+              <div title={nameContent.length > 14 && nameContent} className="data">
                 {name}
               </div>
             </div>
