@@ -39,7 +39,7 @@ const Sidebar = () => {
   const dashboardCustomerItems = dashboardCustomersList.map((item: any) => {
     return (
       <div key={item}>
-        <Link className="activeLink" to={`/dashboard/${item.toLowerCase().replaceAll(" ", "-")}`}>
+        <Link to={`/dashboard/${item.toLowerCase().replaceAll(" ", "-")}`}>
           <img
             src={require(`../../images/${item
               .toLowerCase()
