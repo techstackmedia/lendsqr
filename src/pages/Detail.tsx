@@ -48,7 +48,6 @@ const Detail = () => {
           <div
             className="buttons"
             style={{
-              marginRight: 58,
               display: "flex",
               alignItems: "baseline",
             }}

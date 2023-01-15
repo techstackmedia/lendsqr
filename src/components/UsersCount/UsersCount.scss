@@ -59,6 +59,15 @@ section {
   }
 }
 
+@media (max-width: 772px) {
+  .counted {
+    flex-wrap: nowrap;
+  }
+  .detailed {
+    flex-wrap: nowrap;
+  }
+}
+
 @media (max-width: 755px) {
   section {
     flex-wrap: wrap;

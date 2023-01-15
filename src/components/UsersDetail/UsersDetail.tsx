@@ -32,7 +32,7 @@ const UsersDetail = () => {
     if (textName.length > 14) {
       textName.splice(14, textName.length - 14, "...");
       const textNameToString = textName.join("").replace("....", "...");
-      return textNameToString.replace(' ...', '...');
+      return textNameToString.replace(" ...", "...");
     } else {
       return textName;
     }
@@ -56,7 +56,7 @@ const UsersDetail = () => {
       const textGuarantorNameToString = textGuarantorName
         .join("")
         .replace("....", "...");
-      return textGuarantorNameToString.replace(' ...', '...');
+      return textGuarantorNameToString.replace(" ...", "...");
     } else {
       return textGuarantorName;
     }
@@ -72,7 +72,7 @@ const UsersDetail = () => {
     if (textPhoneNumber.length > 15) {
       textPhoneNumber.splice(15, textPhoneNumber.length - 15, "...");
       const textPhoneNumberToString = textPhoneNumber.join("");
-      return textPhoneNumberToString.replace(' ...', '...');
+      return textPhoneNumberToString.replace(" ...", "...");
     } else {
       return textPhoneNumber;
     }
@@ -285,9 +285,10 @@ const UsersDetail = () => {
     <div
       className="usersCount box"
       style={{
-        width: "992px",
+        width: "100%",
         position: "relative",
         bottom: 28,
+        boxSizing: "border-box",
       }}
     >
       <div className="usersDetail">
@@ -296,7 +297,10 @@ const UsersDetail = () => {
           <div className="row first">
             <div className="column">
               <div className="header">full Name</div>
-              <div title={nameContent.length > 14 && nameContent} className="data">
+              <div
+                title={nameContent.length > 14 && nameContent}
+                className="data"
+              >
                 {name}
               </div>
             </div>

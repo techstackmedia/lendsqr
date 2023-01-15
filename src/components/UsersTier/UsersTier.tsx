@@ -72,15 +72,15 @@ const UsersTier = () => {
       <header
         className="usersCount"
         style={{
-          width: "992px",
-          height: "174px",
+          width: "100%",
+          height: 193,
           display: "flex",
           flexDirection: "column",
+          boxSizing: "border-box",
         }}
       >
         <div
           style={{
-            // width: "65%",
             width: 613,
             display: "flex",
             justifyContent: "space-around",
@@ -101,7 +101,13 @@ const UsersTier = () => {
           >
             <div>
               <img
-                style={{ position: "relative", left: 45 }}
+                style={{
+                  position: "relative",
+                  left: 45,
+                  borderRadius: "50%",
+                  overflow: "hidden",
+                  border: "1px solid rgba(33, 63, 125, 0.16)",
+                }}
                 width={80}
                 height={80}
                 src={avatarImg}

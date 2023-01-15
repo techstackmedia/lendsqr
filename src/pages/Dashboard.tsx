@@ -5,6 +5,7 @@ import UsersCount from "../components/UsersCount/UsersCount";
 import "./Dashboard.scss";
 import UsersTable from "../components/UsersTable/UsersTable";
 import Pagination from "../components/Pagination/Pagination";
+import Spinner from "../components/Spinner/Spinner";
 
 const Dashboard = ({ users }: any) => {
   const { slug } = useParams();
@@ -20,16 +21,22 @@ const Dashboard = ({ users }: any) => {
 
   return (
     <>
-      <Navbar />
-      <section className="DashboardURLSlug">
-        <span>{slug ? dashboardHeader : "Users"}</span>
-      </section>
-      <div className="userCountSidebar">
-        <UsersCount />
-        <Sidebar />
-      </div>
-      <UsersTable users={users} />
-      <Pagination users={users} />
+      {users?.length !== 0 ? (
+        <>
+          <Navbar />
+          <section className="DashboardURLSlug">
+            <span>{slug ? dashboardHeader : "Users"}</span>
+          </section>
+          <div className="userCountSidebar">
+            <UsersCount />
+            <Sidebar />
+          </div>
+          <UsersTable users={users} />
+          <Pagination users={users} />
+        </>
+      ) : (
+        <Spinner />
+      )}
     </>
   );
 };

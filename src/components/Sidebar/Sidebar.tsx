@@ -3,9 +3,17 @@ import switchOrganization from "../../images/switch-organization.png";
 import keyDropDown from "../../images/keydropdown.png";
 import dashboard from "../../images/dashboard.png";
 import logout from "../../images/logout.png";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
+  // const { slug } = useParams();
+  // const initialChar = slug?.toUpperCase()[0];
+  // const slicer = slug?.slice(1);
+  // const slugUrl = `${initialChar}${slicer}`;
+  // console.log(slugUrl);
+
+  const navigate = useNavigate();
+
   const dashboardCustomersList = [
     "Users",
     "Guarantors",
@@ -36,65 +44,66 @@ const Sidebar = () => {
     "Systems Messages",
   ];
 
+  const onClick = () => {
+    navigate(`/dashboard/logout`);
+  };
+
   const dashboardCustomerItems = dashboardCustomersList.map((item: any) => {
+    const onClick = () => {
+      navigate(`/dashboard/${item.toLowerCase().replaceAll(" ", "-")}`);
+    };
     return (
-      <div key={item}>
-        <Link to={`/dashboard/${item.toLowerCase().replaceAll(" ", "-")}`}>
-          <img
-            src={require(`../../images/${item
-              .toLowerCase()
-              .replaceAll(" ", "-")}.png`)}
-            alt={`${item.toLowerCase()} icon`}
-          />
-          <span>{item}</span>
-        </Link>
+      <div onClick={onClick} key={item}>
+        <img
+          src={require(`../../images/${item
+            .toLowerCase()
+            .replaceAll(" ", "-")}.png`)}
+          alt={`${item.toLowerCase()} icon`}
+        />
+        <span>{item}</span>
       </div>
     );
   });
 
   const dashboardBusinessesItems = dashboardBusinessesList.map((item: any) => {
+    const onClick = () => {
+      navigate(`/dashboard/${item.toLowerCase().replaceAll(" ", "-")}`);
+    };
+
     return (
-      <div key={item}>
-        <Link
-          to={`/dashboard/${item
+      <div onClick={onClick} key={item}>
+        <img
+          src={require(`../../images/${item
             .toLowerCase()
-            .replaceAll(" ", "-")
-            .replace("loan-requests", "loan-products")}`}
-        >
-          <img
-            src={require(`../../images/${item
-              .toLowerCase()
-              .replaceAll(" ", "-")}.png`)}
-            alt={`${item.toLowerCase()} icon`}
-          />
-          <span>{item.replace("Requests", "Products")}</span>
-        </Link>
+            .replaceAll(" ", "-")}.png`)}
+          alt={`${item.toLowerCase()} icon`}
+        />
+        <span>{item.replace("Requests", "Products")}</span>
       </div>
     );
   });
 
   const dashboardSettingsItems = dashboardSettingsList.map((item: any) => {
+    const onClick = () => {
+      navigate(`/dashboard/${item.toLowerCase().replaceAll(" ", "-")}`);
+    };
     return (
-      <div key={item}>
-        <Link to={`/dashboard/${item.toLowerCase().replaceAll(" ", "-")}`}>
-          <img
-            src={require(`../../images/${item
-              .toLowerCase()
-              .replaceAll(" ", "-")}.png`)}
-            alt={`${item.toLowerCase()} icon`}
-          />
-          <span>{item.replace("Requests", "Products")}</span>
-        </Link>
+      <div onClick={onClick} key={item}>
+        <img
+          src={require(`../../images/${item
+            .toLowerCase()
+            .replaceAll(" ", "-")}.png`)}
+          alt={`${item.toLowerCase()} icon`}
+        />
+        <span>{item.replace("Requests", "Products")}</span>
       </div>
     );
   });
 
   const dashboardLogOut = (
-    <div style={{ marginBottom: 20 }}>
-      <Link to="/dashboard/logout">
-        <img src={logout} alt="logout icon" />
-        <span>Logout</span>
-      </Link>
+    <div onClick={onClick} style={{ marginBottom: 20 }}>
+      <img src={logout} alt="logout icon" />
+      <span>Logout</span>
     </div>
   );
 
