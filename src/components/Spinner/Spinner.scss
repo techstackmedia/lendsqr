@@ -1,10 +1,17 @@
-.spinner {
-  width: 30px;
-  height: 30px;
-  border: 2px solid #213f7d;
-  border-top-color: transparent;
-  border-radius: 50%;
-  animation: spinner 0.7s linear infinite;
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 180px;
+  margin-left: 203px;
+  .spinner {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #213f7d;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spinner 0.7s linear infinite;
+  }
 }
 @keyframes spinner {
   from {

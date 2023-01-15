@@ -7,6 +7,7 @@ import activeUser from "../../images/active.png";
 
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Spinner from "../Spinner/Spinner";
 
 const UsersTable = ({ users }: any) => {
   const [state, setState] = useState(true);
@@ -207,7 +208,7 @@ const UsersTable = ({ users }: any) => {
     );
   });
 
-  return (
+  return users.length !== 0 ? (
     <div className="UsersTable" style={{ maxHeight: 640, overflowY: "auto" }}>
       <table>
         <thead>
@@ -245,6 +246,8 @@ const UsersTable = ({ users }: any) => {
         <tbody>{getUsers}</tbody>
       </table>
     </div>
+  ) : (
+    <Spinner />
   );
 };
 
