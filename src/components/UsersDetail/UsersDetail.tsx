@@ -32,7 +32,7 @@ const UsersDetail = () => {
     if (textName.length > 14) {
       textName.splice(14, textName.length - 14, "...");
       const textNameToString = textName.join("").replace("....", "...");
-      return textNameToString;
+      return textNameToString.replace(' ...', '...');
     } else {
       return textName;
     }
@@ -56,7 +56,7 @@ const UsersDetail = () => {
       const textGuarantorNameToString = textGuarantorName
         .join("")
         .replace("....", "...");
-      return textGuarantorNameToString;
+      return textGuarantorNameToString.replace(' ...', '...');
     } else {
       return textGuarantorName;
     }
@@ -72,7 +72,7 @@ const UsersDetail = () => {
     if (textPhoneNumber.length > 15) {
       textPhoneNumber.splice(15, textPhoneNumber.length - 15, "...");
       const textPhoneNumberToString = textPhoneNumber.join("");
-      return textPhoneNumberToString;
+      return textPhoneNumberToString.replace(' ...', '...');
     } else {
       return textPhoneNumber;
     }

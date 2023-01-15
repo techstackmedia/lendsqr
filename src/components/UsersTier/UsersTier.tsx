@@ -85,7 +85,7 @@ const UsersTier = () => {
             display: "flex",
             justifyContent: "space-around",
             position: "relative",
-            left: 28,
+            left: 43,
             height: 138,
           }}
         >
@@ -122,7 +122,7 @@ const UsersTier = () => {
                   fontWeight: 500,
                   fontSize: 22,
                   color: "#213F7D",
-                  width: 150,
+                  width: 157,
                 }}
               >
                 {name}
@@ -135,6 +135,7 @@ const UsersTier = () => {
                   position: "relative",
                   display: "flex",
                   marginRight: "auto",
+                  left: 5,
                 }}
               >
                 {bankAccount}

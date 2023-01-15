@@ -182,7 +182,12 @@ const UsersTable = ({ users }: any) => {
               <ul>
                 <li>
                   <img src={watchEye} alt="watch or view icon" />{" "}
-                  <Link to={`/dashboard/users/detail/${userList[0].id}`}>
+                  <Link
+                    onClick={() => {
+                      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+                    }}
+                    to={`/dashboard/users/detail/${userList[0].id}`}
+                  >
                     View Details
                   </Link>
                 </li>
