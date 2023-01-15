@@ -51,6 +51,12 @@ section {
   }
 }
 
+@media (min-width: 773px) {
+  .detailed {
+    width: 100%;
+  }
+}
+
 @media (min-width: 1275px) {
   section {
     .usersCount {
