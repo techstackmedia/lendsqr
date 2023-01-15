@@ -11,7 +11,7 @@ const Navbar = () => {
     <header className="navbar">
       <div>
         <img src={logo} alt="leadsqr logo" />
-        <span>leadsqr</span>
+        <Link to='/'>leadsqr</Link>
         <input
           type="search"
           name=""

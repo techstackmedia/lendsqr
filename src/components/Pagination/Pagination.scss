@@ -39,6 +39,7 @@
     margin: 4px;
     cursor: pointer;
     position: relative;
+    outline: none;
   }
   .active {
     color: #545f7d;
@@ -74,7 +75,6 @@
     }
   }
 }
-
 
 @media (max-width: 772px) {
   .paginationButtons {

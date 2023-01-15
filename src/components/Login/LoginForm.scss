@@ -83,3 +83,43 @@ $formChildrenMarginRight: 5%;
     border-radius: 4px;
   }
 }
+
+@media (max-width: 616px) {
+  .loginForm {
+    input {
+      width: 388px;
+    }
+  }
+}
+
+@media (max-width: 476px) {
+  .loginForm {
+    input {
+      width: 331px;
+    }
+  }
+}
+
+@media (max-width: 408px) {
+  .loginForm {
+    input {
+      width: 294px;
+    }
+  }
+}
+
+@media (max-width: 408px) {
+  .loginForm {
+    input {
+      width: 294px;
+    }
+  }
+}
+
+@media (max-width: 373px) {
+  .loginForm {
+    input {
+      width: 245px;
+    }
+  }
+}
