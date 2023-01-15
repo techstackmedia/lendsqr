@@ -109,7 +109,11 @@ const Pagination = ({ users }: any) => {
         <span>Showing</span>{" "}
         <button type="button" onClick={onClick}>
           {text.replace("Rows", users.length)}
-          <img src={paginatedRowArrow} alt="arrow down button" />
+          <img
+            style={{ transform: !isTrue ? "rotate(180deg)" : "rotate(0)" }}
+            src={paginatedRowArrow}
+            alt="arrow down button"
+          />
         </button>{" "}
         <span>out of 100</span>
         {!isTrue && (
