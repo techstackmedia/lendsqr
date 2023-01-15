@@ -298,7 +298,7 @@ const UsersDetail = () => {
             <div className="column">
               <div className="header">full Name</div>
               <div
-                title={nameContent.length > 14 && nameContent}
+                title={nameContent.length > 14 ? nameContent : null}
                 className="data"
               >
                 {name}
@@ -307,7 +307,9 @@ const UsersDetail = () => {
             <div className="column">
               <div className="header">Phone Number</div>
               <div
-                title={phoneNumberContent.length > 15 && phoneNumberContent}
+                title={
+                  phoneNumberContent.length > 15 ? phoneNumberContent : null
+                }
                 className="data"
               >
                 {phoneNumber}
@@ -316,7 +318,7 @@ const UsersDetail = () => {
             <div className="column">
               <div className="header">Email Address</div>
               <div
-                title={emailContent.length > 17 && emailContent}
+                title={emailContent.length > 17 ? emailContent : null}
                 className="data"
               >
                 {email}
@@ -325,7 +327,7 @@ const UsersDetail = () => {
             <div className="column">
               <div className="header">BVN</div>
               <div
-                title={bvnContent.length > 15 && bvnContent}
+                title={bvnContent.length > 15 ? bvnContent : null}
                 className="data"
               >
                 {bvn}
@@ -360,7 +362,9 @@ const UsersDetail = () => {
               <div className="header">level of education</div>
               <div
                 title={
-                  educationLevelContent.length > 11 && educationLevelContent
+                  educationLevelContent.length > 11
+                    ? educationLevelContent
+                    : null
                 }
                 className="data"
               >
@@ -375,8 +379,9 @@ const UsersDetail = () => {
               <div className="header">sector of employment</div>
               <div
                 title={
-                  employmentSectionContent.length > 15 &&
-                  employmentSectionContent
+                  employmentSectionContent.length > 15
+                    ? employmentSectionContent
+                    : null
                 }
                 className="data"
               >
@@ -391,7 +396,9 @@ const UsersDetail = () => {
             <div className="column">
               <div className="header">office email</div>
               <div
-                title={officeEmailContent.length > 17 && officeEmailContent}
+                title={
+                  officeEmailContent.length > 17 ? officeEmailContent : null
+                }
                 className="data"
               >
                 {officeEmail}
@@ -401,7 +408,9 @@ const UsersDetail = () => {
             <div className="column">
               <div className="header">Monthly income</div>
               <div
-                title={monthlyIncomeContent.length > 41 && monthlyIncomeContent}
+                title={
+                  monthlyIncomeContent.length > 41 ? monthlyIncomeContent : null
+                }
                 className="data"
               >
                 {monthlyIncome}
@@ -443,7 +452,9 @@ const UsersDetail = () => {
             <div className="column">
               <div className="header">Full Name</div>
               <div
-                title={guarantorNameContent.length > 14 && guarantorNameContent}
+                title={
+                  guarantorNameContent.length > 14 ? guarantorNameContent : null
+                }
                 className="data"
               >
                 {guarantorName}
@@ -453,8 +464,9 @@ const UsersDetail = () => {
               <div className="header">Phone Number</div>
               <div
                 title={
-                  guarantorPhoneNumberContent.length > 15 &&
-                  guarantorPhoneNumberContent
+                  guarantorPhoneNumberContent.length > 15
+                    ? guarantorPhoneNumberContent
+                    : null
                 }
                 className="data"
               >
@@ -465,7 +477,9 @@ const UsersDetail = () => {
               <div className="header">Email Address</div>
               <div
                 title={
-                  guarantorEmailContent.length > 17 && guarantorEmailContent
+                  guarantorEmailContent.length > 17
+                    ? guarantorEmailContent
+                    : null
                 }
                 className="data"
               >

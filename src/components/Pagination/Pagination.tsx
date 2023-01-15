@@ -9,6 +9,7 @@ import { useState } from "react";
 const Pagination = ({ users }: any) => {
   const [buttonTextContent, setButtonTextContext] = useState<any>(1);
   const [isTrue, setIsTrue] = useState(true);
+  const [text, setText] = useState<any>("100");
 
   let list = Array.from(Array(17).keys()).splice(1);
   const buttonText = (i: number) => {
@@ -98,27 +99,35 @@ const Pagination = ({ users }: any) => {
     }
   };
 
+  const handleClick = (e: any) => {
+    return setText(e.target.textContent);
+  };
+
   return (
     <div className="paginationButtons">
-      <div style={{ position: "relative" }}>
+      <div>
         <span>Showing</span>{" "}
         <button type="button" onClick={onClick}>
-          100
+          {text.replace("Rows", users.length)}
           <img src={paginatedRowArrow} alt="arrow down button" />
         </button>{" "}
         <span>out of 100</span>
         {!isTrue && (
           <div
+            onClick={handleClick}
             style={{
               position: "absolute",
               width: "100%",
               background: "#fff",
               borderRadius: 4,
+              zIndex: 1,
             }}
             onMouseLeave={onMouseLeave}
           >
             <div className="rowDropdown">
-              <div className="rows">Rows</div>
+              <div className="rows" title="Reset to default rows">
+                Rows
+              </div>
               <div className="firstRow">5</div>
               <div>10</div>
               <div>20</div>

@@ -11,6 +11,8 @@
   color: rgb(84, 95, 125);
   flex-wrap: wrap;
   div:first-child {
+    position: relative;
+    min-width: 210.406px;
     button {
       background-color: rgba(33, 63, 125, 0.1);
       border-radius: 4px;
@@ -105,7 +107,15 @@
       margin-top: 10px;
       margin: auto;
       cursor: pointer;
+      width: 100%;
+      display: flex;
+      justify-content: center;
     }
+  }
+  .rowValues {
+    min-width: 22.891px;
+    display: flex;
+    justify-content: center;
   }
 }
 

@@ -164,13 +164,13 @@ const UsersTable = ({ users }: any) => {
 
     return (
       <tr key={item.id}>
-        <td title={item.orgName.length > 15 && orgTitle}>{orgName}</td>
-        <td title={item.userName.length > 15 && item.userName}>{userName}</td>
-        <td title={item.email.length > 20 && item.email}>{email}</td>
-        <td title={item.phoneNumber.length > 15 && item.phoneNumber}>
+        <td title={item.orgName.length > 15 ? orgTitle : null}>{orgName}</td>
+        <td title={item.userName.length > 15 ? item.userName : null}>{userName}</td>
+        <td title={item.email.length > 20 ? item.email : null}>{email}</td>
+        <td title={item.phoneNumber.length > 15 ? item.phoneNumber : null}>
           {phoneNumber}
         </td>
-        <td title={item.createdAt.length > 21 && date}>{createdAt}</td>
+        <td title={item.createdAt.length > 21 ? date : null}>{createdAt}</td>
         {/* api doesn't have active, blacklist, and inactive states */}
         <td>
           <span style={checkActiveStyle}>{active}</span>

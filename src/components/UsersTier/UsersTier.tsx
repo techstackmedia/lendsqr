@@ -123,7 +123,7 @@ const UsersTier = () => {
               }}
             >
               <div
-                title={nameContent.length > 12 && nameContent}
+                title={nameContent.length > 12 ? nameContent : null}
                 style={{
                   fontWeight: 500,
                   fontSize: 22,
@@ -134,7 +134,7 @@ const UsersTier = () => {
                 {name}
               </div>
               <div
-                title={accountAccount > 12 && accountAccount}
+                title={accountAccount > 12 ? accountAccount : null}
                 style={{
                   fontSize: 14,
                   color: "#545F7D",
