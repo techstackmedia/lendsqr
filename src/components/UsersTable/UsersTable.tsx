@@ -11,12 +11,6 @@ import { Link } from "react-router-dom";
 const UsersTable = ({ users }: any) => {
   const [state, setState] = useState(true);
   const [userList, setUserList] = useState<any>([]);
-  const checkActiveStyle = {
-    backgroundColor: "rgba(84, 95, 125, 0.06)",
-    borderRadius: "100px",
-    color: "#545f7d",
-    padding: "10px 20px",
-  };
 
   const onClick = (id: any) => {
     if (state) {
@@ -122,6 +116,52 @@ const UsersTable = ({ users }: any) => {
       })
       .join(" ");
 
+    const time = item.createdAt;
+    const splitter = time.split("-");
+    splitter.splice(1, 2, "");
+    const year = splitter.join("");
+
+    let activeState: any;
+    const activeUsers = () => {
+      if (year < 2023) {
+        activeState = "Blacklist";
+      } else if (year > 2023 && year < 2050) {
+        activeState = "Inactive";
+      } else if (year > 2050 && year < 2065) {
+        activeState = "Pending";
+      } else {
+        activeState = "Active";
+      }
+      return activeState;
+    };
+
+    const active = activeUsers();
+
+    const checkActiveStyle: any = {
+      backgroundColor:
+        active === "Inactive"
+          ? "rgba(84, 95, 125, 0.06)"
+          : active === "Blacklist"
+          ? "rgba(228, 3, 59, 0.06)"
+          : active === "Pending"
+          ? "rgba(233, 178, 0, 0.06)"
+          : active === "Active"
+          ? "rgba(57, 205, 98, 0.06)"
+          : null,
+      borderRadius: "100px",
+      color:
+        active === "Inactive"
+          ? "#545F7D"
+          : active === "Blacklist"
+          ? "#E4033B"
+          : active === "Pending"
+          ? "#E9B200"
+          : active === "Active"
+          ? "#39CD62"
+          : null,
+      padding: "10px 20px",
+    };
+
     return (
       <tr key={item.id}>
         <td title={item.orgName.length > 15 && orgTitle}>{orgName}</td>
@@ -131,8 +171,9 @@ const UsersTable = ({ users }: any) => {
           {phoneNumber}
         </td>
         <td title={item.createdAt.length > 21 && date}>{createdAt}</td>
+        {/* api doesn't have active, blacklist, and inactive states */}
         <td>
-          <span style={checkActiveStyle}>Inactive</span>
+          <span style={checkActiveStyle}>{active}</span>
         </td>
         <td onClick={() => onClick(item.id)} onMouseLeave={onMouseLeave}>
           <img src={verticalMenu} alt="verival menu icon on table header" />

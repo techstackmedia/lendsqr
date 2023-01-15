@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import userProfileImg from "../../images/smiling-woman.png";
 import notification from "../../images/notification.png";
 import dropdown from "../../images/dropdown.png";
 import search from "../../images/search.png";
@@ -24,10 +25,7 @@ const Navbar = () => {
       <div>
         <Link to="/documentation">Docs</Link>
         <img src={notification} alt="notification icon" />
-        <img
-          src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/592.jpg"
-          alt="user's profile"
-        />
+        <img src={userProfileImg} alt="smiling woman user's profile" />
         <span>Adedeji</span>
         <img src={dropdown} alt="dropdown icon" />
       </div>

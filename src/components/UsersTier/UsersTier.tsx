@@ -25,15 +25,15 @@ const UsersTier = () => {
   const firstName: string | undefined =
     user.profile?.firstName === undefined
       ? "Loading..."
-      : user.profile?.firstName;
+      : user.profile.firstName;
   const lastName: string | undefined =
-    user.profile?.lastName === undefined ? "" : user.profile?.lastName;
+    user.profile?.lastName === undefined ? "" : user.profile.lastName;
   const accountBalance =
     user?.accountBalance === undefined ? "Loading..." : user.accountBalance;
   const avatarImg =
-    user.profile?.avatar === undefined ? avatar : user.profile?.avatar;
+    user.profile?.avatar === undefined ? avatar : user.profile.avatar;
 
-  const bvn = user.profile?.bvn === undefined ? "Loading" : user.profile?.bvn;
+  const bvn = user.profile?.bvn === undefined ? "Loading..." : user.profile.bvn;
 
   let nameContent: any = `${firstName} ${lastName}`;
 
@@ -51,7 +51,7 @@ const UsersTier = () => {
   const name = textNameTruncate();
 
   let accountAccount: any =
-    user?.accountNumber === undefined ? "Loading..." : user?.accountNumber;
+    user.accountNumber === undefined ? "Loading..." : user.accountNumber;
   console.log(accountAccount);
   const textBankAccountTruncate = () => {
     const textBankAccount = accountAccount.split("");
