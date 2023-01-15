@@ -85,8 +85,6 @@ const Pagination = ({ users }: any) => {
     return Button;
   };
 
-  // console.log(list.length, buttonTextContent);
-
   return (
     <div className="paginationButtons">
       <div>

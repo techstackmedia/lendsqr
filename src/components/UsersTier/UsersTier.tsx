@@ -52,7 +52,6 @@ const UsersTier = () => {
 
   let accountAccount: any =
     user.accountNumber === undefined ? "Loading..." : user.accountNumber;
-  console.log(accountAccount);
   const textBankAccountTruncate = () => {
     const textBankAccount = accountAccount.split("");
     if (textBankAccount.length > 12) {
