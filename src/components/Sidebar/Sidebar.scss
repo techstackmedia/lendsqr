@@ -86,3 +86,44 @@ $textColor: #213f7d;
     bottom: 10px;
   }
 }
+
+@media (max-width: 772px) {
+  .dashboard {
+    &__position {
+      // display: flex;
+      // justify-content: center;
+      // flex-direction: column;
+      // align-items: center;
+      margin-left: -15px;
+      overflow-x: hidden;
+      width: 75px;
+      div,
+      p {
+        display: flex;
+        justify-content: center;
+      }
+      span {
+        display: none !important;
+      }
+    }
+  }
+
+  #root {
+    margin-left: -180px;
+    position: relative;
+    top: -113px;
+  }
+  .navbar {
+    display: none;
+  }
+  .paginationButtons div:nth-child(2) {
+    position: relative;
+    top: -11px;
+  }
+  .paginationButtons {
+    justify-content: space-between;
+  }
+  .dashboard__position div:nth-child(1) {
+    margin-top: 41px;
+  }
+}
