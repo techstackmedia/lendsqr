@@ -103,6 +103,22 @@ const Pagination = ({ users }: any) => {
     return setText(e.target.textContent);
   };
 
+  const goPreviousPage = () => {
+    if (buttonTextContent > 1) {
+      setButtonTextContext((prev: any) => {
+        return prev - 1;
+      });
+    }
+  };
+
+  const goNextPage = () => {
+    if (buttonTextContent < 16) {
+      setButtonTextContext((prev: any) => {
+        return prev + 1;
+      });
+    }
+  };
+
   return (
     <div className="paginationButtons">
       <div>
@@ -143,7 +159,7 @@ const Pagination = ({ users }: any) => {
         )}
       </div>
       <div>
-        <span>
+        <span onClick={goPreviousPage}>
           <img
             style={{
               transform: buttonTextContent !== 1 ? "rotate(180deg)" : "initial",
@@ -153,7 +169,7 @@ const Pagination = ({ users }: any) => {
           />
         </span>
         {buttonText(buttonTextContent)}
-        <span>
+        <span onClick={goNextPage}>
           <img
             style={{
               transform:
