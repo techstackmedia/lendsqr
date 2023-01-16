@@ -4,13 +4,13 @@ import verticalMenu from "../../images/vertical-menu.png";
 import watchEye from "../../images/watch.png";
 import blacklistUser from "../../images/blacklist.png";
 import activeUser from "../../images/active.png";
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const UsersTable = ({ users }: any) => {
   const [state, setState] = useState(true);
   const [userList, setUserList] = useState<any>([]);
+  const [showFilter, setShowFilter] = useState(true);
 
   const onClick = (id: any) => {
     if (state) {
@@ -26,6 +26,12 @@ const UsersTable = ({ users }: any) => {
     if (state === false) {
       setState(true);
     }
+  };
+
+  const filterInput = () => {
+    setShowFilter((prev) => {
+      return !prev;
+    });
   };
 
   const getUsers = users.map((item: any) => {
@@ -165,7 +171,9 @@ const UsersTable = ({ users }: any) => {
     return (
       <tr key={item.id}>
         <td title={item.orgName.length > 15 ? orgTitle : null}>{orgName}</td>
-        <td title={item.userName.length > 15 ? item.userName : null}>{userName}</td>
+        <td title={item.userName.length > 15 ? item.userName : null}>
+          {userName}
+        </td>
         <td title={item.email.length > 20 ? item.email : null}>{email}</td>
         <td title={item.phoneNumber.length > 15 ? item.phoneNumber : null}>
           {phoneNumber}
@@ -207,37 +215,95 @@ const UsersTable = ({ users }: any) => {
     );
   });
 
+  const filter = (
+    <>
+      <div className="filter" style={{}}>
+        <div>
+          <div>Organization</div>
+          <input placeholder="Select" value="Select" type="button" />
+        </div>
+        <div>
+          <div>Username</div>
+          <input placeholder="User" type="text" name="" id="" />
+        </div>
+        <div>
+          <div>Email</div>
+          <input placeholder="Email" type="email" name="" id="" />
+        </div>
+        <div>
+          <div>Date</div>
+          <input value="2020-10-08" type="date" name="" id="" />
+        </div>
+        <div>
+          <div>Phone number</div>
+          <input type="number" name="" id="" placeholder="phone number" />
+        </div>
+        <div>
+          <div>Status</div>
+          <input placeholder="Select" value="Select" type="button" />
+        </div>
+        <div>
+          <input type="button" value="Filter" />
+          <input type="button" value="Reset" />
+        </div>
+      </div>
+    </>
+  );
+
   return (
     <div className="UsersTable" style={{ maxHeight: 640, overflowY: "auto" }}>
-      <table>
+      <table style={{ position: "relative" }}>
+        {!showFilter && filter}
         <thead>
           <tr>
             <th>
               <span>Organization</span>
-              <img src={filterButton} alt="filter button on table header" />
+              <img
+                onClick={filterInput}
+                src={filterButton}
+                alt="filter button on table header"
+              />
             </th>
+            {/* {filter} */}
             <th>
               <span>Username</span>
-              <img src={filterButton} alt="filter button on table header" />
+              <img
+                onClick={filterInput}
+                src={filterButton}
+                alt="filter button on table header"
+              />
             </th>
             <th>
               <span>Email</span>
               <img
+                onClick={filterInput}
                 src={filterButton}
                 alt="filter button icon on table header"
               />
             </th>
             <th>
               <span>Phone Number</span>
-              <img src={filterButton} alt="filter button on table header" />
+              <img
+                onClick={filterInput}
+                src={filterButton}
+                alt="filter button on table header"
+              />
             </th>
             <th>
               <span>Date Joined</span>
-              <img src={filterButton} alt="filter button on table header" />
+              <img
+                onClick={filterInput}
+                src={filterButton}
+                alt="filter button on table header"
+              />
             </th>
             <th>
               <span>Status</span>
-              <img src={filterButton} alt="filter button on table header" />
+              <img
+                onClick={filterInput}
+                src={filterButton}
+                alt="filter button on table header"
+              />
             </th>
             <th></th>
           </tr>
