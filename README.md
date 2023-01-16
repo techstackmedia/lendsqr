@@ -11,7 +11,7 @@ If you want to follow along the project, click on the branch drop-down and you w
 ## Clone Project
  - `git clone https://github.com/techstackmedia/lendsqr-fe-test.git`
  - `npm install`
- - `git checkout <branch-name>
+ - `git checkout <branch-name>`
 
 Note: Git must be installed for commands to work. Check if git is installed with the command `git --version`. If it is already available on PC the version will show up.
 
