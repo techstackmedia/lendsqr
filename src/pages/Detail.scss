@@ -3,6 +3,7 @@
   section {
     position: relative;
     margin-top: 150px;
+    
     button {
       margin-left: 26px;
       background-color: transparent;
@@ -35,8 +36,11 @@
     section {
       button {
         margin-left: -195px;
-        margin-top: -240px;
+        margin-top: -164px;
       }
     }
+  }
+  #root .buttonDetail {
+    margin-top: -84px;
   }
 }

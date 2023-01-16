@@ -29,7 +29,7 @@ const Detail = () => {
             </span>
           </button>
         </section>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div className="buttonDetail" style={{ display: "flex", justifyContent: "space-between" }}>
           <section
             className="DashboardURLSlug"
             style={{

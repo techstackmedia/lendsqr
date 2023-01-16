@@ -168,8 +168,7 @@ $d-block: block;
       font-family: "Work Sans";
       font-weight: 500;
       font-size: 14px;
-
-      color: #545f7d;
+      color: rgba(84, 95, 125, 0.7);
       input,
       .date {
         background: #ffffff;
@@ -180,17 +179,19 @@ $d-block: block;
         margin-top: 2px;
         text-indent: 10px;
         text-align: left;
-        color: #545f7d;
-        opacity: 0.7;
+        color: rgba(84, 95, 125, 0.7);
         margin-top: 5px;
         font-family: "Work Sans";
         outline: none;
-        &[type='number'] {
+        &[type="number"] {
           height: 38px;
-        }&[type='button'] {
+        }
+        &[type="button"] {
           cursor: pointer;
         }
-
+        &::placeholder {
+          color: rgba(84, 95, 125, 0.7);
+        }
       }
 
       .date {
@@ -203,11 +204,13 @@ $d-block: block;
           position: absolute;
           right: 10px;
           top: 12px;
+          cursor: pointer;
         }
         span {
           position: relative;
           top: 12px;
           left: 3px;
+          color: rgba(84, 95, 125, 0.7);
         }
       }
 
@@ -221,6 +224,7 @@ $d-block: block;
         input:first-child {
           margin-right: 5px;
           color: #545f7d;
+          color: rgba(84, 95, 125, 0.7);
         }
         input:last-child {
           margin-left: 5px;
