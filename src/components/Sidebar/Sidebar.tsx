@@ -46,11 +46,13 @@ const Sidebar = () => {
 
   const onClick = () => {
     navigate(`/dashboard/logout`);
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
 
   const dashboardCustomerItems = dashboardCustomersList.map((item: any) => {
     const onClick = () => {
       navigate(`/dashboard/${item.toLowerCase().replaceAll(" ", "-")}`);
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     };
     return (
       <div onClick={onClick} key={item}>
@@ -69,6 +71,7 @@ const Sidebar = () => {
   const dashboardBusinessesItems = dashboardBusinessesList.map((item: any) => {
     const onClick = () => {
       navigate(`/dashboard/${item.toLowerCase().replaceAll(" ", "-")}`);
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     };
 
     return (
@@ -88,6 +91,7 @@ const Sidebar = () => {
   const dashboardSettingsItems = dashboardSettingsList.map((item: any) => {
     const onClick = () => {
       navigate(`/dashboard/${item.toLowerCase().replaceAll(" ", "-")}`);
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     };
     return (
       <div onClick={onClick} key={item}>
