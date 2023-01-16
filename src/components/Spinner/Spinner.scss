@@ -24,3 +24,11 @@
     transform: rotate(360deg);
   }
 }
+
+@media (max-width: 772px) {
+  .container {
+    margin-left: 204px;
+    position: relative;
+    top: 113px;
+  }
+}

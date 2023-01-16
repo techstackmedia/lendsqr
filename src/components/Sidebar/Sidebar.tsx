@@ -55,6 +55,7 @@ const Sidebar = () => {
     return (
       <div onClick={onClick} key={item}>
         <img
+          title={item}
           src={require(`../../images/${item
             .toLowerCase()
             .replaceAll(" ", "-")}.png`)}
@@ -73,6 +74,7 @@ const Sidebar = () => {
     return (
       <div onClick={onClick} key={item}>
         <img
+          title={item}
           src={require(`../../images/${item
             .toLowerCase()
             .replaceAll(" ", "-")}.png`)}
@@ -90,6 +92,7 @@ const Sidebar = () => {
     return (
       <div onClick={onClick} key={item}>
         <img
+          title={item}
           src={require(`../../images/${item
             .toLowerCase()
             .replaceAll(" ", "-")}.png`)}
@@ -102,7 +105,7 @@ const Sidebar = () => {
 
   const dashboardLogOut = (
     <div onClick={onClick} style={{ marginBottom: 20 }}>
-      <img src={logout} alt="logout icon" />
+      <img title="Logout" src={logout} alt="logout icon" />
       <span>Logout</span>
     </div>
   );
@@ -111,12 +114,16 @@ const Sidebar = () => {
     <aside className="dashboard">
       <div className="dashboard__position">
         <div>
-          <img src={switchOrganization} alt="suit case icon" />
+          <img
+            title="Switch Organization"
+            src={switchOrganization}
+            alt="suit case icon"
+          />
           <span>Switch Organization</span>
           <img src={keyDropDown} alt="dropdown icon" />
         </div>
         <div>
-          <img src={dashboard} alt="home icon" />
+          <img title="Dashboard" src={dashboard} alt="home icon" />
           <span>Dashboard</span>
         </div>
         <p>Customers</p>

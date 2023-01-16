@@ -94,7 +94,7 @@ $textColor: #213f7d;
       // justify-content: center;
       // flex-direction: column;
       // align-items: center;
-      margin-left: -15px;
+      margin-left: -21px;
       overflow-x: hidden;
       width: 75px;
       div,
@@ -109,7 +109,7 @@ $textColor: #213f7d;
   }
 
   #root {
-    margin-left: -180px;
+    margin-left: -204px;
     position: relative;
     top: -113px;
   }
@@ -123,7 +123,27 @@ $textColor: #213f7d;
   .paginationButtons {
     justify-content: space-between;
   }
-  .dashboard__position div:nth-child(1) {
-    margin-top: 41px;
+  .dashboard__position {
+    p {
+      display: none;
+      position: relative;
+      // &::after {
+      //   position: absolute;
+      //   left: 50%;
+      //   right: 50%;
+      //   transform: translate(-50%, -50%);
+      //   content: '...';
+      // }
+    }
+    div:nth-child(1) {
+      margin-top: 41px;
+      img:nth-child(3) {
+        display: none;
+      }
+    }
+    div:nth-child(2) {
+      margin-bottom: 13px;
+      margin-left: -4px;
+    }
   }
 }
