@@ -6,6 +6,8 @@ import blacklistUser from "../../images/blacklist.png";
 import activeUser from "../../images/active.png";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import calendar from "../../images/calendar.png";
+import dropdown from "../../images/keydropdown.png";
 
 const UsersTable = ({ users }: any) => {
   const [state, setState] = useState(true);
@@ -220,7 +222,10 @@ const UsersTable = ({ users }: any) => {
       <div className="filter" style={{}}>
         <div>
           <div>Organization</div>
-          <input placeholder="Select" value="Select" type="button" />
+          <div className="date select">
+            <span>Select</span>
+            <img src={dropdown} alt="calendar" />
+          </div>
         </div>
         <div>
           <div>Username</div>
@@ -232,19 +237,25 @@ const UsersTable = ({ users }: any) => {
         </div>
         <div>
           <div>Date</div>
-          <input value="2020-10-08" type="date" name="" id="" />
+          <div className="date">
+            <span>Date</span>
+            <img src={calendar} alt="calendar" />
+          </div>
         </div>
         <div>
           <div>Phone number</div>
-          <input type="number" name="" id="" placeholder="phone number" />
+          <input type="number" name="" id="" placeholder="Phone number" />
         </div>
         <div>
           <div>Status</div>
-          <input placeholder="Select" value="Select" type="button" />
+          <div className="date select">
+            <span>Select</span>
+            <img src={dropdown} alt="calendar" />
+          </div>
         </div>
         <div>
-          <input type="button" value="Filter" />
-          <input type="button" value="Reset" />
+          <input onClick={filterInput} type="button" value="Filter" />
+          <input onClick={filterInput} type="button" value="Reset" />
         </div>
       </div>
     </>
