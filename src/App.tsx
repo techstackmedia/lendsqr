@@ -1,6 +1,6 @@
 import "./App.css";
 import Login from "./pages/Login";
-import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import Detail from "./pages/Detail";
 import { useEffect, useState } from "react";

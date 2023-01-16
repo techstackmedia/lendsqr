@@ -3,16 +3,10 @@ import usersIcon from "../../images/users-.png";
 import activeUsers from "../../images/active-users.png";
 import usersWithLoans from "../../images/users-with-loans.png";
 import usersWithSavings from "../../images/users-with-savings.png";
-import { useParams } from "react-router-dom";
 
 const UsersCount = () => {
-  const { slug } = useParams();
-  // console.log(slug);
-
   return (
-    <section
-      className={slug === 'users' ? "detailed" : "counted"}
-    >
+    <section className="counted">
       <div className="usersCount">
         <div>
           <img src={usersIcon} alt="user icons" />

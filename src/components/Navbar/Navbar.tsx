@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import userProfileImg from "../../images/smiling-woman.png";
 import notification from "../../images/notification.png";
 import dropdown from "../../images/dropdown.png";
