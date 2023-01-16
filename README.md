@@ -31,6 +31,7 @@ Technology used are:
  - Email
  - Username
  - Status
+ - Date Joined
 
 The API for the users is shown below:
 
@@ -38,7 +39,7 @@ The API for the users is shown below:
 https://www.google.com/url?q=https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users/
 ```
 
-Paste it on your browser search or any API platform like Postman, Insomnia, etc. to get the full data
+Paste it on your browser search bar or any API platform like [Postman](https://www.postman.com/), [Insomnia](https://insomnia.rest/), etc. to get the full data
 
 2.) The project has a couple of components listed below;
  - Logo
@@ -52,6 +53,7 @@ Paste it on your browser search or any API platform like Postman, Insomnia, etc.
  - Filter
  - User Detail
  - Spinner
+ - Pagination
 
 3.) The user detail page contails all detail of a specific user based on the id. It also has detailed information of the guarantor like the name, phone number, email, and relationship with the user. You can get the API as shown below:
  ```
