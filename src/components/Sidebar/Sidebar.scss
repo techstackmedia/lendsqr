@@ -108,10 +108,29 @@ $textColor: #213f7d;
     }
   }
 
+  .DashboardURLSlug {
+    margin-left: 43px !important;
+    margin-top: 35px !important;
+    section {
+      span {
+        margin-top: 10px;
+      }
+    }
+  }
+  
+
   #root {
-    margin-left: -204px;
-    position: relative;
-    top: -113px;
+    .userCountSidebar {
+      margin-left: -201px;
+    }
+    .UsersTable {
+      margin-left: 72px;
+    }
+    .paginationButtons {
+      margin-left: 72px;
+      display: flex;
+      justify-content: space-between;
+    }
   }
   .navbar {
     display: none;
@@ -127,13 +146,6 @@ $textColor: #213f7d;
     p {
       display: none;
       position: relative;
-      // &::after {
-      //   position: absolute;
-      //   left: 50%;
-      //   right: 50%;
-      //   transform: translate(-50%, -50%);
-      //   content: '...';
-      // }
     }
     div:nth-child(1) {
       margin-top: 41px;
@@ -144,6 +156,15 @@ $textColor: #213f7d;
     div:nth-child(2) {
       margin-bottom: 13px;
       margin-left: -4px;
+    }
+  }
+}
+
+@media (max-width: 547px) {
+  #root {
+    .paginationButtons {
+      margin-left: 72px;
+      justify-content: center;
     }
   }
 }

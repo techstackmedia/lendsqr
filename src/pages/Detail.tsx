@@ -14,18 +14,13 @@ const Detail = () => {
   return (
     <>
       <Navbar />
-      <div style={{ marginTop: 190 }}>
-        <section style={{ position: "relative", marginTop: "150px" }}>
+      <div className="Detail">
+        <section>
           <button
             type="button"
             onClick={previousPage}
             style={{
-              marginLeft: 26,
-              backgroundColor: "transparent",
-              border: 0,
-              position: "relative",
-              top: -20,
-              cursor: "pointer",
+              
             }}
           >
             <img src={arrowLeft} alt="long arrow left icon" />

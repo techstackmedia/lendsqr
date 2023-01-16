@@ -1,3 +1,22 @@
+.Detail {
+  margin-top: 190px;
+  section {
+    position: relative;
+    margin-top: 150px;
+    button {
+      margin-left: 26px;
+      background-color: transparent;
+      border: 0;
+      position: relative;
+      top: -20px;
+      cursor: pointer;
+      span {
+        color: #545f7d;
+        margin-left: 10px;
+      }
+    }
+  }
+}
 .buttons {
   margin-right: 15px;
 }
@@ -7,5 +26,17 @@
     display: flex;
     flex-direction: column;
     align-items: baseline;
+  }
+}
+
+@media (max-width: 772px) {
+  .Detail {
+    margin-top: 52px;
+    section {
+      button {
+        margin-left: -195px;
+        margin-top: -240px;
+      }
+    }
   }
 }
