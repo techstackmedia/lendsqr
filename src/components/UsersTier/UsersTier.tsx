@@ -8,7 +8,6 @@ import { useParams } from "react-router-dom";
 
 const UsersTier = () => {
   const [user, setUser] = useState<any>([]);
-
   const { id } = useParams();
   useEffect(() => {
     const fetchUserAPI = async () => {
@@ -68,116 +67,87 @@ const UsersTier = () => {
   const bankAccount = textBankAccountTruncate();
 
   return (
-    <section>
-      <header
-        className="usersCount"
-        style={{
-          width: "100%",
-          height: 193,
-          display: "flex",
-          flexDirection: "column",
-          boxSizing: "border-box",
-        }}
-      >
-        <div
+    <>
+      <section>
+        <header
+          className="usersCount"
           style={{
-            width: 613,
+            width: "100%",
+            height: 193,
             display: "flex",
-            justifyContent: "space-around",
-            position: "relative",
-            left: 43,
-            height: 138,
+            flexDirection: "column",
+            boxSizing: "border-box",
           }}
         >
           <div
             style={{
+              width: 613,
               display: "flex",
               justifyContent: "space-around",
-              height: 100,
-              alignItems: "center",
               position: "relative",
-              right: 7,
+              left: 43,
+              height: 138,
             }}
           >
-            <div>
-              <img
-                style={{
-                  position: "relative",
-                  left: 45,
-                  borderRadius: "50%",
-                  overflow: "hidden",
-                  border: "1px solid rgba(33, 63, 125, 0.16)",
-                }}
-                width={80}
-                height={80}
-                src={avatarImg}
-                alt="default users avatar - all gray color"
-              />
-            </div>
             <div
               style={{
                 display: "flex",
-                flexDirection: "column",
+                justifyContent: "space-around",
+                height: 100,
                 alignItems: "center",
-                justifyContent: "center",
+                position: "relative",
+                right: 7,
               }}
             >
-              <div
-                title={nameContent.length > 12 ? nameContent : null}
-                style={{
-                  fontWeight: 500,
-                  fontSize: 22,
-                  color: "#213F7D",
-                  width: 157,
-                }}
-              >
-                {name}
+              <div>
+                <img
+                  style={{
+                    position: "relative",
+                    left: 45,
+                    borderRadius: "50%",
+                    overflow: "hidden",
+                    border: "1px solid rgba(33, 63, 125, 0.16)",
+                  }}
+                  width={80}
+                  height={80}
+                  src={avatarImg}
+                  alt="default users avatar - all gray color"
+                />
               </div>
               <div
-                title={accountAccount > 12 ? accountAccount : null}
                 style={{
-                  fontSize: 14,
-                  color: "#545F7D",
-                  position: "relative",
                   display: "flex",
-                  marginRight: "auto",
-                  left: 5,
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "center",
                 }}
               >
-                {bankAccount}
+                <div
+                  title={nameContent.length > 12 ? nameContent : null}
+                  style={{
+                    fontWeight: 500,
+                    fontSize: 22,
+                    color: "#213F7D",
+                    width: 157,
+                  }}
+                >
+                  {name}
+                </div>
+                <div
+                  title={accountAccount > 12 ? accountAccount : null}
+                  style={{
+                    fontSize: 14,
+                    color: "#545F7D",
+                    position: "relative",
+                    display: "flex",
+                    marginRight: "auto",
+                    left: 5,
+                  }}
+                >
+                  {bankAccount}
+                </div>
               </div>
             </div>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              height: 100,
-              justifyContent: "center",
-              position: "relative",
-              right: 74,
-              borderInline: "1px solid rgba(84, 95, 125, 0.2)",
-              paddingInline: 10,
-            }}
-          >
-            <div
-              style={{
-                fontWeight: 500,
-                fontSize: 14,
-                color: "#545F7D",
-                width: 67,
-              }}
-            >
-              User's Tier
-            </div>
-            <div>
-              <img src={fullStar} alt="full star" />
-              <img src={emptyStar} alt="empty star" />
-              <img src={emptyStar} alt="empty star" />
-            </div>
-          </div>
-          <div>
             <div
               style={{
                 display: "flex",
@@ -186,47 +156,78 @@ const UsersTier = () => {
                 height: 100,
                 justifyContent: "center",
                 position: "relative",
-                right: 120,
+                right: 74,
+                borderInline: "1px solid rgba(84, 95, 125, 0.2)",
+                paddingInline: 10,
               }}
             >
               <div
                 style={{
                   fontWeight: 500,
-                  fontSize: 22,
-                  color: "#213F7D",
-                  width: 167,
+                  fontSize: 14,
+                  color: "#545F7D",
+                  width: 67,
                 }}
               >
-                {`₦${accountBalance}`}
+                User's Tier
               </div>
+              <div>
+                <img src={fullStar} alt="full star" />
+                <img src={emptyStar} alt="empty star" />
+                <img src={emptyStar} alt="empty star" />
+              </div>
+            </div>
+            <div>
               <div
                 style={{
-                  fontSize: 12,
-                  color: "#213F7D",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  height: 100,
+                  justifyContent: "center",
                   position: "relative",
-                  right: 8,
+                  right: 120,
                 }}
               >
-                {`${bvn}/Providus Bank`}
+                <div
+                  style={{
+                    fontWeight: 500,
+                    fontSize: 22,
+                    color: "#213F7D",
+                    width: 167,
+                  }}
+                >
+                  {`₦${accountBalance}`}
+                </div>
+                <div
+                  style={{
+                    fontSize: 12,
+                    color: "#213F7D",
+                    position: "relative",
+                    right: 8,
+                  }}
+                >
+                  {`${bvn}/Providus Bank`}
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <nav
-          className="nav"
-          style={{ display: "flex", justifyContent: "space-around" }}
-        >
-          <div className="active">General Details</div>
-          <div>Documents</div>
-          <div>Blank Details</div>
-          <div>Loans</div>
-          <div>Savings</div>
-          <div>App and Systems</div>
-        </nav>
-      </header>
+          <nav
+            className="nav"
+            style={{ display: "flex", justifyContent: "space-around" }}
+          >
+            <div className="active">General Details</div>
+            <div>Documents</div>
+            <div>Blank Details</div>
+            <div>Loans</div>
+            <div>Savings</div>
+            <div>App and Systems</div>
+          </nav>
+        </header>
 
-      <UsersDetail />
-    </section>
+        <UsersDetail />
+      </section>
+    </>
   );
 };
 

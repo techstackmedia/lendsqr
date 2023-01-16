@@ -16,20 +16,17 @@ const Detail = () => {
       <Navbar />
       <div className="Detail">
         <section>
-          <button
-            type="button"
-            onClick={previousPage}
-            style={{
-              
-            }}
-          >
+          <button type="button" onClick={previousPage} style={{}}>
             <img src={arrowLeft} alt="long arrow left icon" />
             <span style={{ color: "#545F7D", marginLeft: 10 }}>
               Back to Users
             </span>
           </button>
         </section>
-        <div className="buttonDetail" style={{ display: "flex", justifyContent: "space-between" }}>
+        <div
+          className="buttonDetail"
+          style={{ display: "flex", justifyContent: "space-between" }}
+        >
           <section
             className="DashboardURLSlug"
             style={{

@@ -92,6 +92,12 @@
   }
 }
 
+@media (min-width: 773px) {
+  .menu {
+    display: none;
+  }
+}
+
 @media (max-width: 1000px) {
   .navbar {
     div:nth-child(1) {
@@ -112,3 +118,4 @@
     }
   }
 }
+
