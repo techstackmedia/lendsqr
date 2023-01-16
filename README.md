@@ -1,12 +1,12 @@
 # Lead Sqr Front end Project
 ## Installation
- - `npm install <project-name> --template typescript`
+ - `npx create-react-app <project-name> --template typescript`
  - `npm start`
  - `npm install sass`
 
-Note: Make sure [Node](https://nodejs.org/en/) is installed.
+Note: Make sure [Node](https://nodejs.org/en/) is installed. To be 100% sure you use **npm** run the command `npx create-react-app <project-name> --template typescript --use-npm`.
 
-If you want to follow along the project, click on the branch drop-down and you will see a list of dropdown branches
+If you want to follow along the project, click on the branch drop-down and you will see a list of dropdown branches.
 
 ## Clone Project
  - `git clone https://github.com/techstackmedia/lendsqr-fe-test.git`
@@ -25,7 +25,7 @@ Technology used are:
 
 ## Project Description
 
-1.) The project is dashboard that shows users activity. It has a table that displays users that have an account. Must relevant data displayed in the users page are
+1.) The project dashboard or users page shows users detail on a table. Must relevant data displayed in the users page are:
  - Organization
  - Phone Number
  - Email
@@ -34,14 +34,13 @@ Technology used are:
  - Date Joined
 
 The API for the users is shown below:
-
 ```
 https://www.google.com/url?q=https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users/
 ```
 
-Paste it on your browser search bar or any API platform like [Postman](https://www.postman.com/), [Insomnia](https://insomnia.rest/), etc. to get the full data
+Paste it on your browser search bar or any API platform like [Postman](https://www.postman.com/), [Insomnia](https://insomnia.rest/), etc. to get the full data.
 
-2.) The project has a couple of components listed below;
+2.) The project has a couple of components listed below:
  - Logo
  - Button
  - Login Form
@@ -80,7 +79,20 @@ Note: You do not have to run `npm run build` to have the project in production e
 You will get a unique random link. To rename the link run the command:
 - `heroku apps:rename <newname>`
 
-The link to the made up [project can be found here](https://bello-osagie-lendsqr-fe-test.herokuapp.com/)
+The link to the made up [project can be found here](https://bello-osagie-lendsqr-fe-test.herokuapp.com/).
+
+## Resources
+🌍 Useful Links
+- [React](https://beta.reactjs.org/)
+- [Sass](http://sass-lang.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [TypeScript and React](https://www.typescriptlang.org/docs/handbook/react.html)
+- [React Router](https://reactrouter.com/en/main)
+- [Git](https://git-scm.com/)
+- [Heroku](https://www.heroku.com)
+- [Heroku Deployment with Git](https://devcenter.heroku.com/articles/git)
+
+You may also [checkout my website at Techstack Media](https://techstackmedia.com) for my resources.
 
 ---
 
