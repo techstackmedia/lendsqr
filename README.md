@@ -4,7 +4,11 @@
  - `npm start`
  - `npm install sass`
 
-Note: Make sure [Node](https://nodejs.org/en/) is installed. To be 100% sure you use **npm** run the command `npx create-react-app <project-name> --template typescript --use-npm`.
+Note: Make sure [Node](https://nodejs.org/en/) is installed. To be 100% sure you use **npm** run the command below:
+
+```
+npx create-react-app <project-name> --template typescript --use-npm
+```
 
 If you want to follow along the project, click on the branch drop-down and you will see a list of dropdown branches.
 
