@@ -25,7 +25,7 @@ Technology used are:
 
 ## Project Description
 
-1. The project is dashboard that shows users activity. It has a table that displays users that have an account. Must relevant data displayed in the users page are
+1.) The project is dashboard that shows users activity. It has a table that displays users that have an account. Must relevant data displayed in the users page are
  - Organization
  - Phone Number
  - Email
@@ -40,7 +40,7 @@ https://www.google.com/url?q=https://6270020422c706a0ae70b72c.mockapi.io/lendsqr
 
 Paste it on your browser search or any API platform like Postman, Insomnia, etc. to get the full data
 
-2. The project has a couple of components listed below;
+2.) The project has a couple of components listed below;
  - Logo
  - Button
  - Login Form
@@ -53,18 +53,17 @@ Paste it on your browser search or any API platform like Postman, Insomnia, etc.
  - User Detail
  - Spinner
 
-3. The user detail page contails all detail of a specific user based on the id. It also has detailed information of the guarantor like the name, phone number, email, and relationship with the user. You can get the API as shown below:
+3.) The user detail page contails all detail of a specific user based on the id. It also has detailed information of the guarantor like the name, phone number, email, and relationship with the user. You can get the API as shown below:
  ```
 https://www.google.com/url?q=https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users/:id
 ```
 Paste it on your browser search or any API platform like Postman, Insomnia, etc. to get the full data.
 Based on the current id, it is between `1 to 100`. That is replace `:id` to any number between 1 to 100.
 
-4. Design
-
+4.) Design
 Click the [link to get the Figma design](https://www.google.com/url?q=https://www.figma.com/file/ZKILoCoIoy1IESdBpq3GNC/Frontend&sa=D&source=editors&ust=1673861562837685&usg=AOvVaw13_5gDNbAIEaae_KDWvVyu)
  
-5. Deployment
+5.) Deployment
 To [deploy the app using Heroku](https://www.heroku.com/nodejs) make sure Heroku is installed on PC. To install Heroku [click the link here](https://devcenter.heroku.com/articles/heroku-cli) and follow the instructions based on your Operating System. Also make sure you have a file named **Procfile** with no extension is in the project root directory. The Procfile must have the text `web: npm start` for it to work. Follow the steps below:
  - `git add .`
  - `git commit -m 'commit message here'`
@@ -80,6 +79,7 @@ You will get a unique random link. To rename the link run the command:
 - `heroku apps:rename <newname>`
 
 The link to the made up [project can be found here](https://bello-osagie-lendsqr-fe-test.herokuapp.com/)
+
 ---
 
 Happy Coding! 😊
