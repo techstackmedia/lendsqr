@@ -61,10 +61,11 @@ Paste it on your browser search or any API platform like Postman, Insomnia, etc.
 Based on the current id, it is between `1 to 100`. That is replace `:id` to any number between 1 to 100.
 
 4. Design
+
 Click the [link to get the Figma design](https://www.google.com/url?q=https://www.figma.com/file/ZKILoCoIoy1IESdBpq3GNC/Frontend&sa=D&source=editors&ust=1673861562837685&usg=AOvVaw13_5gDNbAIEaae_KDWvVyu)
  
 5. Deployment
-To deploy the app using Heroku, make sure Heroku is installed on PC. Also make sure you have a file named **Procfile** with no extension. The Procfile must have the text `web: npm start` for it to work. Follow the steps below:
+To [deploy the app using Heroku](https://www.heroku.com/nodejs) make sure Heroku is installed on PC. To install Heroku [click the link here](https://devcenter.heroku.com/articles/heroku-cli) and follow the instructions based on your Operating System. Also make sure you have a file named **Procfile** with no extension is in the project root directory. The Procfile must have the text `web: npm start` for it to work. Follow the steps below:
  - `git add .`
  - `git commit -m 'commit message here'`
  - `git push origin <branch-name>`
@@ -74,11 +75,11 @@ To deploy the app using Heroku, make sure Heroku is installed on PC. Also make s
 
 Note: You do not have to run `npm run build` to have the project in production environment. This will be done automatically by Heroku.
 
-6. Link
+## Project Link
 You will get a unique random link. To rename the link run the command:
 - `heroku apps:rename <newname>`
 
 The link to the made up [project can be found here](https://bello-osagie-lendsqr-fe-test.herokuapp.com/)
 ---
 
-Happy Coding 😊
+Happy Coding! 😊
