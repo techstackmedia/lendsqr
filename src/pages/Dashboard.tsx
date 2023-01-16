@@ -6,6 +6,7 @@ import "./Dashboard.scss";
 import UsersTable from "../components/UsersTable/UsersTable";
 import Pagination from "../components/Pagination/Pagination";
 import Spinner from "../components/Spinner/Spinner";
+import menuBar from "../images/menu-bar.svg";
 
 const Dashboard = ({ users }: any) => {
   const { slug } = useParams();
@@ -19,10 +20,36 @@ const Dashboard = ({ users }: any) => {
     })
     .join(" ");
 
+  const menubarStyledComp = () => {
+    let styles: any;
+    if (slugText === "Login" || slugText === "") {
+      styles = {
+        display: "none",
+      };
+    } else {
+      styles = {
+        position: "absolute",
+        right: 15,
+        top: 20,
+        cursor: "pointer",
+      };
+    }
+    return styles;
+  };
+  const menuStyle = menubarStyledComp();
+
   return (
     <>
       {users?.length !== 0 ? (
         <>
+          <img
+            className="menu"
+            style={menuStyle}
+            src={menuBar}
+            alt="menu bar icon"
+            width={30}
+            height={30}
+          />
           <Navbar />
           <section className="DashboardURLSlug">
             <span>{slug ? dashboardHeader : "Users"}</span>
