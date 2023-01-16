@@ -1,46 +1,84 @@
-# Getting Started with Create React App
+# Lead Sqr Front end Project
+## Installation
+ - `npm install <project-name> --template typescript`
+ - `npm start`
+ - `npm install sass`
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Note: Make sure [Node](https://nodejs.org/en/) is installed.
 
-## Available Scripts
+If you want to follow along the project, click on the branch drop-down and you will see a list of dropdown branches
 
-In the project directory, you can run:
+## Clone Project
+ - `git clone https://github.com/techstackmedia/lendsqr-fe-test.git`
+ - `npm install`
+ - `git checkout <branch-name>
 
-### `npm start`
+Note: Git must be installed for commands to work. Check if git is installed with the command `git --version`. If it is already available on PC the version will show up.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Techstack
+Technology used are:
+ - React
+ - TypeScript
+ - SCSS
+ - React Router
+ - Heroku
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Project Description
 
-### `npm test`
+1. The project is dashboard that shows users activity. It has a table that displays users that have an account. Must relevant data displayed in the users page are
+ - Organization
+ - Phone Number
+ - Email
+ - Username
+ - Status
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The API for the users is shown below:
 
-### `npm run build`
+```
+https://www.google.com/url?q=https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users/
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Paste it on your browser search or any API platform like Postman, Insomnia, etc. to get the full data
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. The project has a couple of components listed below;
+ - Logo
+ - Button
+ - Login Form
+ - User Table
+ - Navbar
+ - Sidebar
+ - Pagination
+ - User Tier
+ - Filter
+ - User Detail
+ - Spinner
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. The user detail page contails all detail of a specific user based on the id. It also has detailed information of the guarantor like the name, phone number, email, and relationship with the user. You can get the API as shown below:
+ ```
+https://www.google.com/url?q=https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users/:id
+```
+Paste it on your browser search or any API platform like Postman, Insomnia, etc. to get the full data.
+Based on the current id, it is between `1 to 100`. That is replace `:id` to any number between 1 to 100.
 
-### `npm run eject`
+4. Design
+Click the [link to get the Figma design](https://www.google.com/url?q=https://www.figma.com/file/ZKILoCoIoy1IESdBpq3GNC/Frontend&sa=D&source=editors&ust=1673861562837685&usg=AOvVaw13_5gDNbAIEaae_KDWvVyu)
+ 
+5. Deployment
+To deploy the app using Heroku, make sure Heroku is installed on PC. Also make sure you have a file named **Procfile** with no extension. The Procfile must have the text `web: npm start` for it to work. Follow the steps below:
+ - `git add .`
+ - `git commit -m 'commit message here'`
+ - `git push origin <branch-name>`
+ - `heroku login`
+ - `heroku create`
+ - `git push heroku <branch-name>`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Note: You do not have to run `npm run build` to have the project in production environment. This will be done automatically by Heroku.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+6. Link
+You will get a unique random link. To rename the link run the command:
+- `heroku apps:rename <newname>`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The link to the made up [project can be found here](https://bello-osagie-lendsqr-fe-test.herokuapp.com/)
+---
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Happy Coding 😊
