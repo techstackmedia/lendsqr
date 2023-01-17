@@ -19,47 +19,49 @@ const Pagination = ({ users, text, handleTextClick, sliceUsersList }: any) => {
 
   let list = Array.from(Array(pages).keys()).splice(1);
   const buttonText = (i: number) => {
-    let initialList = list.length;
-    let lastValues = list.length - 2;
-    let dots: any = "...";
-    let splicer;
-    if (i === 1) {
-      splicer = i + 2;
-    } else {
-      if (list.length - 3 === i) {
-        splicer = i;
+    if (pages > 7) {
+      let initialList = list.length;
+      let lastValues = list.length - 2;
+      let dots: any = "...";
+      let splicer;
+      if (i === 1) {
+        splicer = i + 2;
       } else {
-        splicer = i + 1;
-      }
+        if (list.length - 3 === i) {
+          splicer = i;
+        } else {
+          splicer = i + 1;
+        }
 
-      if (i === 2) {
-        lastValues = list.length - 2;
+        if (i === 2) {
+          lastValues = list.length - 2;
+        } else {
+          lastValues = list.length - 1;
+        }
+      }
+      if (lastValues - splicer === 1) {
+        list.splice(splicer, lastValues - (i + 1), dots);
       } else {
-        lastValues = list.length - 1;
+        list.splice(splicer, lastValues - splicer, dots);
+        list.splice(1, i - 3, dots);
+
+        if (i === 1 || i === 2) {
+          list.splice(1, 1);
+        } else if (i === initialList || i === initialList - 1) {
+          list.pop();
+          list[1] = 2;
+          list.splice(2, 0, dots);
+        }
+        if (initialList - 3 === i) {
+          list.splice(4, 0, i + 1);
+        }
+        if (i === initialList) {
+          list.splice(3, 0, initialList - 2);
+        }
       }
     }
-    if (lastValues - splicer === 1) {
-      list.splice(splicer, lastValues - (i + 1), dots);
-    } else {
-      list.splice(splicer, lastValues - splicer, dots);
-      list.splice(1, i - 3, dots);
 
-      if (i === 1 || i === 2) {
-        list.splice(1, 1);
-      } else if (i === initialList || i === initialList - 1) {
-        list.pop();
-        list[1] = 2;
-        list.splice(2, 0, dots);
-      }
-      if (initialList - 3 === i) {
-        list.splice(4, 0, i + 1);
-      }
-      if (i === initialList) {
-        list.splice(3, 0, initialList - 2);
-      }
-    }
-
-    const x: number[] = [...new Set(list)]
+    const x: number[] = [...new Set(list)];
 
     const handleClick = (event: any) => {
       const text = event.currentTarget.textContent;
