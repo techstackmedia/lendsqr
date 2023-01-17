@@ -7,12 +7,7 @@ import arrowActive from "../../images/arrow-active.png";
 import { useState } from "react";
 
 const Pagination = ({ users, text, handleTextClick, sliceUsersList }: any) => {
-  // console.log(sliceUsersList);
-  // 100 - 10
-  // 20 - x
-
   const pages = Math.ceil(users?.length / sliceUsersList.length) + 1;
-  console.log(pages);
 
   const [buttonTextContent, setButtonTextContext] = useState<any>(1);
   const [isTrue, setIsTrue] = useState(true);
@@ -158,7 +153,7 @@ const Pagination = ({ users, text, handleTextClick, sliceUsersList }: any) => {
               <div>10</div>
               <div>20</div>
               <div>25</div>
-              {/* <div>50</div> */}
+              <div>50</div>
               <div>100</div>
             </div>
           </div>
