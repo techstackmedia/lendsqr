@@ -90,10 +90,6 @@ $textColor: #213f7d;
 @media (max-width: 772px) {
   .dashboard {
     &__position {
-      // display: flex;
-      // justify-content: center;
-      // flex-direction: column;
-      // align-items: center;
       margin-left: -21px;
       overflow-x: hidden;
       width: 75px;

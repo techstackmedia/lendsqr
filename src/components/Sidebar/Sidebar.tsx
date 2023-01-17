@@ -6,12 +6,6 @@ import logout from "../../images/logout.png";
 import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
-  // const { slug } = useParams();
-  // const initialChar = slug?.toUpperCase()[0];
-  // const slicer = slug?.slice(1);
-  // const slugUrl = `${initialChar}${slicer}`;
-  // console.log(slugUrl);
-
   const navigate = useNavigate();
 
   const dashboardCustomersList = [

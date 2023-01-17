@@ -25,19 +25,31 @@ function App() {
     setText(e.target.textContent);
   };
 
+  const sliceUsersList = users.slice(0, +text);
+
   return (
     <BrowserRouter>
       <Routes>
         <Route
           path="/dashboard"
           element={
-            <Dashboard text={text} handleTextClick={handleTextClick} users={users} />
+            <Dashboard
+              text={text}
+              handleTextClick={handleTextClick}
+              users={users}
+              sliceUsersList={sliceUsersList}
+            />
           }
         />
         <Route
           path="/dashboard/:slug"
           element={
-            <Dashboard text={text} handleTextClick={handleTextClick} users={users} />
+            <Dashboard
+              text={text}
+              handleTextClick={handleTextClick}
+              users={users}
+              sliceUsersList={sliceUsersList}
+            />
           }
         />
         <Route path="/" element={<Login />} />

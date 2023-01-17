@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import calendar from "../../images/calendar.png";
 import dropdown from "../../images/keydropdown.svg";
 
-const UsersTable = ({ users, text }: any) => {
+const UsersTable = ({ users, text, sliceUsersList }: any) => {
   const [state, setState] = useState(true);
   const [userList, setUserList] = useState<any>([]);
   const [showFilter, setShowFilter] = useState(true);
@@ -36,7 +36,7 @@ const UsersTable = ({ users, text }: any) => {
     });
   };
 
-  const getUsers = users.slice(0, text).map((item: any) => {
+  const getUsers = sliceUsersList.map((item: any) => {
     const orgNameTruncate = () => {
       const orgName = item.orgName.split("");
       if (orgName.length > 15) {

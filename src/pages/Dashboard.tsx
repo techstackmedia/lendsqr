@@ -7,7 +7,7 @@ import UsersTable from "../components/UsersTable/UsersTable";
 import Pagination from "../components/Pagination/Pagination";
 import Spinner from "../components/Spinner/Spinner";
 
-const Dashboard = ({ users, handleTextClick, text }: any) => {
+const Dashboard = ({ users, handleTextClick, text, sliceUsersList }: any) => {
   const { slug } = useParams();
   const slugText = `${slug?.toUpperCase()[0]}${slug?.slice(1)}`;
 
@@ -35,11 +35,13 @@ const Dashboard = ({ users, handleTextClick, text }: any) => {
             text={text}
             handleTextClick={handleTextClick}
             users={users}
+            sliceUsersList={sliceUsersList}
           />
           <Pagination
             text={text}
             handleTextClick={handleTextClick}
             users={users}
+            sliceUsersList={sliceUsersList}
           />
         </>
       ) : (

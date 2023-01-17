@@ -6,12 +6,18 @@ import arrowInactive from "../../images/arrow-inactive.png";
 import arrowActive from "../../images/arrow-active.png";
 import { useState } from "react";
 
-const Pagination = ({ users, text, handleTextClick }: any) => {
+const Pagination = ({ users, text, handleTextClick, sliceUsersList }: any) => {
+  // console.log(sliceUsersList);
+  // 100 - 10
+  // 20 - x
+
+  const pages = Math.ceil(users?.length / sliceUsersList.length) + 1;
+  console.log(pages);
+
   const [buttonTextContent, setButtonTextContext] = useState<any>(1);
   const [isTrue, setIsTrue] = useState(true);
-  // const [text, setText] = useState<any>("100");
 
-  let list = Array.from(Array(17).keys()).splice(1);
+  let list = Array.from(Array(pages).keys()).splice(1);
   const buttonText = (i: number) => {
     let initialList = list.length;
     let lastValues = list.length - 2;
@@ -53,6 +59,8 @@ const Pagination = ({ users, text, handleTextClick }: any) => {
       }
     }
 
+    const x: number[] = [...new Set(list)]
+
     const handleClick = (event: any) => {
       const text = event.currentTarget.textContent;
       if (text !== "...") {
@@ -62,7 +70,7 @@ const Pagination = ({ users, text, handleTextClick }: any) => {
       }
     };
 
-    const Button = list.map((item: number | string, index) => {
+    const Button = x.map((item: number | string, index) => {
       let button: any;
       if (item === i || item === "...") {
         button = (
@@ -98,12 +106,6 @@ const Pagination = ({ users, text, handleTextClick }: any) => {
       setIsTrue(true);
     }
   };
-
-  // const handleClick = (e: any) => {
-  //   return setText(e.target.textContent);
-  // };
-
-  console.log(text)
 
   const goPreviousPage = () => {
     if (buttonTextContent > 1) {
@@ -154,13 +156,13 @@ const Pagination = ({ users, text, handleTextClick }: any) => {
               <div>10</div>
               <div>20</div>
               <div>25</div>
-              <div>50</div>
+              {/* <div>50</div> */}
               <div>100</div>
             </div>
           </div>
         )}
       </div>
-      <div>
+      <div style={{ visibility: text < users?.length ? "visible" : "hidden" }}>
         <span onClick={goPreviousPage}>
           <img
             style={{
