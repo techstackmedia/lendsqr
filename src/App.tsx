@@ -7,6 +7,8 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [users, setUsers] = useState([]);
+  const [text, setText] = useState<string>("100");
+
   useEffect(() => {
     const fetchUsersAPI = async () => {
       const response = await fetch(
@@ -19,11 +21,25 @@ function App() {
     fetchUsersAPI();
   }, []);
 
+  const handleTextClick = (e: any) => {
+    setText(e.target.textContent);
+  };
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/dashboard" element={<Dashboard users={users} />} />
-        <Route path="/dashboard/:slug" element={<Dashboard users={users} />} />
+        <Route
+          path="/dashboard"
+          element={
+            <Dashboard text={text} handleTextClick={handleTextClick} users={users} />
+          }
+        />
+        <Route
+          path="/dashboard/:slug"
+          element={
+            <Dashboard text={text} handleTextClick={handleTextClick} users={users} />
+          }
+        />
         <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="dashboard/users/detail/:id" element={<Detail />} />

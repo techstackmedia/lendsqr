@@ -6,10 +6,10 @@ import arrowInactive from "../../images/arrow-inactive.png";
 import arrowActive from "../../images/arrow-active.png";
 import { useState } from "react";
 
-const Pagination = ({ users }: any) => {
+const Pagination = ({ users, text, handleTextClick }: any) => {
   const [buttonTextContent, setButtonTextContext] = useState<any>(1);
   const [isTrue, setIsTrue] = useState(true);
-  const [text, setText] = useState<any>("100");
+  // const [text, setText] = useState<any>("100");
 
   let list = Array.from(Array(17).keys()).splice(1);
   const buttonText = (i: number) => {
@@ -99,9 +99,11 @@ const Pagination = ({ users }: any) => {
     }
   };
 
-  const handleClick = (e: any) => {
-    return setText(e.target.textContent);
-  };
+  // const handleClick = (e: any) => {
+  //   return setText(e.target.textContent);
+  // };
+
+  console.log(text)
 
   const goPreviousPage = () => {
     if (buttonTextContent > 1) {
@@ -134,7 +136,7 @@ const Pagination = ({ users }: any) => {
         <span>out of 100</span>
         {!isTrue && (
           <div
-            onClick={handleClick}
+            onClick={handleTextClick}
             style={{
               position: "absolute",
               width: "100%",
