@@ -7,7 +7,7 @@ import activeUser from "../../images/active.png";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import calendar from "../../images/calendar.png";
-import dropdown from "../../images/keydropdown.png";
+import dropdown from "../../images/keydropdown.svg";
 
 const UsersTable = ({ users }: any) => {
   const [state, setState] = useState(true);
