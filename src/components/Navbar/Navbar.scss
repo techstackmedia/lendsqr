@@ -92,28 +92,22 @@
   }
 }
 
-@media (min-width: 773px) {
-  .menu {
-    display: none;
-  }
-}
-
 @media (max-width: 1000px) {
   .navbar {
     div:nth-child(1) {
       input {
-        margin-left: 110px;
+        margin-left: 35px;
       }
     }
   }
 }
 
-@media (max-width: 878px) {
+@media (max-width: 837px) {
   .navbar {
     div:nth-child(1) {
       input,
       button {
-        display: none;
+        margin-left: 10px;
       }
     }
   }

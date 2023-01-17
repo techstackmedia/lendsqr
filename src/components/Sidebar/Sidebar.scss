@@ -117,7 +117,6 @@ $textColor: #213f7d;
       }
     }
   }
-  
 
   #root {
     .userCountSidebar {
@@ -132,9 +131,7 @@ $textColor: #213f7d;
       justify-content: space-between;
     }
   }
-  .navbar {
-    display: none;
-  }
+
   .paginationButtons div:nth-child(2) {
     position: relative;
     top: -11px;
@@ -156,6 +153,14 @@ $textColor: #213f7d;
     div:nth-child(2) {
       margin-bottom: 13px;
       margin-left: -4px;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  #root {
+    .navbar {
+      display: none;
     }
   }
 }
