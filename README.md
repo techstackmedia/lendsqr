@@ -16,9 +16,11 @@ If you want to follow along the project, click on the branch drop-down and you w
 
 ## Clone Project
 
-- `git clone https://github.com/techstackmedia/lendsqr-fe-test.git`
-- `npm install`
-- `git checkout <branch-name>`
+```bash
+git clone https://github.com/techstackmedia/lendsqr-fe-test.git
+npm install
+git checkout <branch-name>
+```
 
 Note: Git must be installed for commands to work. Check if Git is installed with the command `git --version`. If it is already available on PC the version will show up. If you get an error, [download and install Git](https://git-scm.com/downloads) on your PC.
 
@@ -83,12 +85,14 @@ Click the [link to get the Figma design](https://www.google.com/url?q=https://ww
 
 To [deploy the app using Heroku](https://www.heroku.com/nodejs) make sure Heroku is installed on PC. To install Heroku [click the link here](https://devcenter.heroku.com/articles/heroku-cli) and follow the instructions based on your Operating System. Also make sure you have a file named **Procfile** with no extension is in the project root directory. The Procfile must have the text `web: npm start` for it to work. Follow the steps below:
 
-- `git add .`
-- `git commit -m 'commit message here'`
-- `git push origin <branch-name>`
-- `heroku login`
-- `heroku create`
-- `git push heroku <branch-name>`
+```bash
+git add .
+git commit -m 'commit message here'
+git push origin <branch-name>
+heroku login
+heroku create
+git push heroku <branch-name>
+```
 
 Note: You do not have to run `npm run build` to have the project in production environment. This will be done automatically by Heroku.
 
@@ -96,7 +100,9 @@ Note: You do not have to run `npm run build` to have the project in production e
 
 You will get a unique random link. To rename the link run the command:
 
-- `heroku apps:rename <newname>`
+```bash
+heroku apps:rename <newname>
+```
 
 The link to the made up [project can be found here](https://bello-osagie-lendsqr-fe-test.herokuapp.com/).
 
