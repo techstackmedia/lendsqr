@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 function App() {
   const [users, setUsers] = useState([]);
   const [text, setText] = useState<string>("100");
+  const [buttonTextContent, setButtonTextContext] = useState<any>(1);
 
   useEffect(() => {
     const fetchUsersAPI = async () => {
@@ -25,7 +26,40 @@ function App() {
     setText(e.target.textContent);
   };
 
-  const sliceUsersList = users.slice(0, +text);
+  const handleClick = (event: any) => {
+    const text = event.currentTarget.textContent;
+    if (text !== "...") {
+      setButtonTextContext(+text);
+    } else {
+      setButtonTextContext(null);
+    }
+  };
+
+  const goPreviousPage = () => {
+    if (buttonTextContent > 1) {
+      setButtonTextContext((prev: any) => {
+        return prev - 1;
+      });
+    }
+  };
+
+  const goNextPage = () => {
+    if (buttonTextContent < 16) {
+      setButtonTextContext((prev: any) => {
+        return prev + 1;
+      });
+    }
+  };
+
+  let sliceUsersList: any;
+  if (buttonTextContent === 1) {
+    sliceUsersList = users.slice(0, +text);
+  } else {
+    sliceUsersList = users.slice(
+      buttonTextContent * +text - +text,
+      buttonTextContent * +text + +text - +text
+    );
+  }
 
   return (
     <BrowserRouter>
@@ -38,6 +72,10 @@ function App() {
               handleTextClick={handleTextClick}
               users={users}
               sliceUsersList={sliceUsersList}
+              handleClick={handleClick}
+              goPreviousPage={goPreviousPage}
+              goNextPage={goNextPage}
+              buttonTextContent={buttonTextContent}
             />
           }
         />
@@ -49,6 +87,10 @@ function App() {
               handleTextClick={handleTextClick}
               users={users}
               sliceUsersList={sliceUsersList}
+              handleClick={handleClick}
+              goPreviousPage={goPreviousPage}
+              goNextPage={goNextPage}
+              buttonTextContent={buttonTextContent}
             />
           }
         />

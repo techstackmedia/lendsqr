@@ -9,11 +9,10 @@ import { Link } from "react-router-dom";
 import calendar from "../../images/calendar.png";
 import dropdown from "../../images/keydropdown.svg";
 
-const UsersTable = ({ users, text, sliceUsersList }: any) => {
+const UsersTable = ({ users, sliceUsersList }: any) => {
   const [state, setState] = useState(true);
   const [userList, setUserList] = useState<any>([]);
   const [showFilter, setShowFilter] = useState(true);
-
   const onClick = (id: any) => {
     if (state) {
       const filterUserList = users.filter((item: any) => item.id === id);
@@ -23,19 +22,16 @@ const UsersTable = ({ users, text, sliceUsersList }: any) => {
       });
     }
   };
-
   const onMouseLeave = () => {
     if (state === false) {
       setState(true);
     }
   };
-
   const filterInput = () => {
     setShowFilter((prev) => {
       return !prev;
     });
   };
-
   const getUsers = sliceUsersList.map((item: any) => {
     const orgNameTruncate = () => {
       const orgName = item.orgName.split("");
@@ -48,14 +44,12 @@ const UsersTable = ({ users, text, sliceUsersList }: any) => {
       }
     };
     const organization = orgNameTruncate();
-
     const orgArr = organization.split(" ");
     const orgName = orgArr
       .map((item: any) => {
         return item[0].toUpperCase() + item.slice(1);
       })
       .join(" ");
-
     const userNameTruncate = () => {
       const userName = item.userName.split("");
       if (userName.length > 15) {
@@ -67,7 +61,6 @@ const UsersTable = ({ users, text, sliceUsersList }: any) => {
       }
     };
     const userName = userNameTruncate();
-
     const emailTruncate = () => {
       const email = item.email.split("");
       if (email.length > 20) {
@@ -79,7 +72,6 @@ const UsersTable = ({ users, text, sliceUsersList }: any) => {
       }
     };
     const email = emailTruncate();
-
     const phoneNumberTruncate = () => {
       const phoneNumber = item.phoneNumber.split("");
       if (phoneNumber.length > 15) {
@@ -91,7 +83,6 @@ const UsersTable = ({ users, text, sliceUsersList }: any) => {
       }
     };
     const phoneNumber = phoneNumberTruncate();
-
     const newDate = new Date(item.createdAt);
     const dateString =
       newDate.toDateString() + " " + newDate.toLocaleTimeString();
@@ -114,8 +105,8 @@ const UsersTable = ({ users, text, sliceUsersList }: any) => {
         return createdAt;
       }
     };
-    const createdAt = createdAtTruncate();
 
+    const createdAt = createdAtTruncate();
     const orgNameTitle = item.orgName.replaceAll("-", " ");
     const orgArray = orgNameTitle.split(" ");
     const orgTitle = orgArray
@@ -123,12 +114,10 @@ const UsersTable = ({ users, text, sliceUsersList }: any) => {
         return item[0].toUpperCase() + item.slice(1);
       })
       .join(" ");
-
     const time = item.createdAt;
     const splitter = time.split("-");
     splitter.splice(1, 2, "");
     const year = splitter.join("");
-
     let activeState: any;
     const activeUsers = () => {
       if (year < 2023) {
@@ -142,7 +131,6 @@ const UsersTable = ({ users, text, sliceUsersList }: any) => {
       }
       return activeState;
     };
-
     const active = activeUsers();
 
     const checkActiveStyle: any = {
@@ -216,7 +204,6 @@ const UsersTable = ({ users, text, sliceUsersList }: any) => {
       </tr>
     );
   });
-
   const filter = (
     <>
       <div className="filter" style={{}}>
@@ -239,7 +226,7 @@ const UsersTable = ({ users, text, sliceUsersList }: any) => {
           <div>Date</div>
           <div className="date">
             <span>Date</span>
-            <img src={calendar} alt="calendar" />
+            <img className="calendar" src={calendar} alt="calendar" />
           </div>
         </div>
         <div>

@@ -151,7 +151,7 @@ $d-block: block;
     top: 60px;
     min-width: 250px;
     background-color: #fff;
-    z-index: 5;
+    z-index: 1;
     min-height: 270px;
     display: flex;
     justify-content: space-between;
@@ -201,8 +201,11 @@ $d-block: block;
         img {
           position: absolute;
           right: 10px;
-          top: 12px;
+          top: 14px;
           cursor: pointer;
+        }
+        .calendar {
+          top: 12px;
         }
         span {
           position: relative;

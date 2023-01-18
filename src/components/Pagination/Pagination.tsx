@@ -6,12 +6,18 @@ import arrowInactive from "../../images/arrow-inactive.png";
 import arrowActive from "../../images/arrow-active.png";
 import { useState } from "react";
 
-const Pagination = ({ users, text, handleTextClick, sliceUsersList }: any) => {
+const Pagination = ({
+  users,
+  text,
+  handleTextClick,
+  sliceUsersList,
+  handleClick,
+  goPreviousPage,
+  goNextPage,
+  buttonTextContent,
+}: any) => {
   const pages = Math.ceil(users?.length / sliceUsersList.length) + 1;
-
-  const [buttonTextContent, setButtonTextContext] = useState<any>(1);
   const [isTrue, setIsTrue] = useState(true);
-
   let list = Array.from(Array(pages).keys()).splice(1);
   const buttonText = (i: number) => {
     if (pages > 7) {
@@ -57,16 +63,6 @@ const Pagination = ({ users, text, handleTextClick, sliceUsersList }: any) => {
     }
 
     const x: number[] = [...new Set(list)];
-
-    const handleClick = (event: any) => {
-      const text = event.currentTarget.textContent;
-      if (text !== "...") {
-        setButtonTextContext(+text);
-      } else {
-        setButtonTextContext(null);
-      }
-    };
-
     const Button = x.map((item: number | string, index) => {
       let button: any;
       if (item === i || item === "...") {
@@ -101,22 +97,6 @@ const Pagination = ({ users, text, handleTextClick, sliceUsersList }: any) => {
   const onMouseLeave = () => {
     if (!isTrue) {
       setIsTrue(true);
-    }
-  };
-
-  const goPreviousPage = () => {
-    if (buttonTextContent > 1) {
-      setButtonTextContext((prev: any) => {
-        return prev - 1;
-      });
-    }
-  };
-
-  const goNextPage = () => {
-    if (buttonTextContent < 16) {
-      setButtonTextContext((prev: any) => {
-        return prev + 1;
-      });
     }
   };
 
