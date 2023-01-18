@@ -85,6 +85,10 @@ $textColor: #213f7d;
     position: relative;
     bottom: 10px;
   }
+  .board {
+    background-color: rgba(57, 205, 204, 0.06);
+    border-left: 4px solid #39cdcc;
+  }
 }
 
 @media (max-width: 772px) {

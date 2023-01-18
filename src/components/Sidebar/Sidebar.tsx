@@ -3,10 +3,23 @@ import switchOrganization from "../../images/switch-organization.png";
 import keyDropDown from "../../images/keydropdown.png";
 import dashboard from "../../images/dashboard.png";
 import logout from "../../images/logout.png";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const Sidebar = () => {
   const navigate = useNavigate();
+  const { slug } = useParams();
+  const slugText = `${slug?.toUpperCase()[0]}${slug?.slice(1)}`;
+
+  const splitByDashes = slugText.split("-");
+  const dashboardHeader = splitByDashes
+    .map((item) => {
+      const text = `${item?.toUpperCase()[0]}${item?.slice(1)}`;
+      return text;
+    })
+    .join(" ");
+  const dashboardLink = dashboardHeader.toLowerCase();
+  const board = dashboardLink.replace(" ", "-");
+  console.log(board === slug);
 
   const dashboardCustomersList = [
     "Users",
@@ -48,8 +61,13 @@ const Sidebar = () => {
       navigate(`/dashboard/${item.toLowerCase().replaceAll(" ", "-")}`);
       window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     };
+    const active = item.toLowerCase().replace(" ", "-");
     return (
-      <div onClick={onClick} key={item}>
+      <div
+        className={`${active}` === `${slug}` ? "board" : undefined}
+        onClick={onClick}
+        key={item}
+      >
         <img
           title={item}
           src={require(`../../images/${item
