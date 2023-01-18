@@ -8,18 +8,6 @@ import { useNavigate, useParams } from "react-router-dom";
 const Sidebar = () => {
   const navigate = useNavigate();
   const { slug } = useParams();
-  const slugText = `${slug?.toUpperCase()[0]}${slug?.slice(1)}`;
-
-  const splitByDashes = slugText.split("-");
-  const dashboardHeader = splitByDashes
-    .map((item) => {
-      const text = `${item?.toUpperCase()[0]}${item?.slice(1)}`;
-      return text;
-    })
-    .join(" ");
-  const dashboardLink = dashboardHeader.toLowerCase();
-  const board = dashboardLink.replace(" ", "-");
-  console.log(board === slug);
 
   const dashboardCustomersList = [
     "Users",
@@ -31,7 +19,6 @@ const Sidebar = () => {
     "Whitelists",
     "Karma",
   ];
-
   const dashboardBusinessesList = [
     "Organization",
     "Loan Requests",
@@ -43,25 +30,28 @@ const Sidebar = () => {
     "Settlements",
     "Reports",
   ];
-
   const dashboardSettingsList = [
     "Preferences",
     "Fees and Pricing",
     "Audit Logs",
     "Systems Messages",
   ];
-
   const onClick = () => {
     navigate(`/dashboard/logout`);
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
 
+  const navigateLogout = () => {
+    navigate("/");
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
   const dashboardCustomerItems = dashboardCustomersList.map((item: any) => {
     const onClick = () => {
       navigate(`/dashboard/${item.toLowerCase().replaceAll(" ", "-")}`);
       window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     };
     const active = item.toLowerCase().replace(" ", "-");
+
     return (
       <div
         className={`${active}` === `${slug}` ? "board" : undefined}
@@ -85,9 +75,13 @@ const Sidebar = () => {
       navigate(`/dashboard/${item.toLowerCase().replaceAll(" ", "-")}`);
       window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     };
+    const active = item.toLowerCase().replace(" ", "-");
 
     return (
-      <div onClick={onClick} key={item}>
+      <div
+        className={`${active}` === `${slug}` ? "board" : undefined}
+        onClick={onClick}
+      >
         <img
           title={item}
           src={require(`../../images/${item
@@ -105,8 +99,13 @@ const Sidebar = () => {
       navigate(`/dashboard/${item.toLowerCase().replaceAll(" ", "-")}`);
       window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     };
+    const active = item.toLowerCase().replace(" ", "-");
+
     return (
-      <div onClick={onClick} key={item}>
+      <div
+        className={`${active}` === `${slug}` ? "board" : undefined}
+        onClick={onClick}
+      >
         <img
           title={item}
           src={require(`../../images/${item
@@ -120,7 +119,7 @@ const Sidebar = () => {
   });
 
   const dashboardLogOut = (
-    <div onClick={onClick} style={{ marginBottom: 20 }}>
+    <div onClick={navigateLogout} style={{ marginBottom: 20 }}>
       <img title="Logout" src={logout} alt="logout icon" />
       <span>Logout</span>
     </div>
