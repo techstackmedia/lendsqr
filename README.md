@@ -2,7 +2,7 @@
 
 ## Installation
 
-Node.js installation is needed in order to use npx through npm to install React
+Node.js installation is needed in order to use `npx` through `npm` to install **React**
 
 ```bash
 npx create-react-app <project-name> --template typescript
@@ -10,7 +10,7 @@ npm start
 npm install sass
 ```
 
-Note: Make sure [Node](https://nodejs.org/en/) is installed. To be 100% sure you use **npm** run the command below:
+Note: Make sure [Node.js](https://nodejs.org/en/) is installed. To be 100% sure you use `npm` instead of `yarn` run the command below:
 
 ```bash
 npx create-react-app <project-name> --template typescript --use-npm
@@ -20,10 +20,20 @@ If you want to follow along the project, click on the branch drop-down and you w
 
 ## Clone Project
 
+You can clone or download the zip file from the **green code button** with a dropdown or [click the link here](https://github.com/techstackmedia/lendsqr-fe-test/archive/refs/heads/master.zip). Extract the file in your folder and you are good to go.
+
+Note: The green code button won't be seen for tab screen size or lesser. [Click the link to download the zip file](https://github.com/techstackmedia/lendsqr-fe-test/archive/refs/heads/master.zip) for smaller screens less than 768 pixel `<768px`.
+
 ```bash
 git clone https://github.com/techstackmedia/lendsqr-fe-test.git
 npm install
 git checkout <branch-name>
+```
+
+To see all the project branches remotely run the code:
+
+```bash
+git branch -r
 ```
 
 Note: Git must be installed for commands to work. Check if Git is installed with the command `git --version`. If it is already available on PC the version will show up. If you get an error, [download and install Git](https://git-scm.com/downloads) on your PC.
