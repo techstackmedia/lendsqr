@@ -2,9 +2,13 @@
 
 ## Installation
 
-- `npx create-react-app <project-name> --template typescript`
-- `npm start`
-- `npm install sass`
+Node.js installation is needed in order to use npx through npm to install React
+
+```bash
+npx create-react-app <project-name> --template typescript
+npm start
+npm install sass
+```
 
 Note: Make sure [Node](https://nodejs.org/en/) is installed. To be 100% sure you use **npm** run the command below:
 
