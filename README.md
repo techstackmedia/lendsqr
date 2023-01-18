@@ -97,7 +97,7 @@ Click the [link to get the Figma design](https://www.google.com/url?q=https://ww
 
 ## Deployment
 
-To [deploy the app using Heroku](https://www.heroku.com/nodejs) make sure Heroku is installed on PC. To install Heroku [click the link here](https://devcenter.heroku.com/articles/heroku-cli) and follow the instructions based on your Operating System. Also make sure you have a file named **Procfile** with no extension is in the project root directory. The Procfile must have the text `web: npm start` for it to work. Follow the steps below:
+To [deploy the app using Heroku](https://www.heroku.com/nodejs) make sure Heroku is installed on PC. To install Heroku [click the link here](https://devcenter.heroku.com/articles/heroku-cli) and follow the instructions based on your Operating System. Also make sure you have a file named **Procfile** with no extension in the project root directory. The Procfile must have the text `web: npm start` for it to work. Follow the steps below:
 
 ```bash
 git add .
