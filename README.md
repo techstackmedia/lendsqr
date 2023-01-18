@@ -133,7 +133,7 @@ The link to the made up [project can be found here](https://bello-osagie-lendsqr
 - [Heroku](https://www.heroku.com)
 - [Heroku Deployment with Git](https://devcenter.heroku.com/articles/git)
 
-You may also [checkout my website at Techstack Media](https://techstackmedia.com) for my resources.
+You may also [checkout my website at Techstack Media](https://techstackmedia.com) for more resources.
 
 ---
 
