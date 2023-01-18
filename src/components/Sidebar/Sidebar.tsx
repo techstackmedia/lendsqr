@@ -36,10 +36,6 @@ const Sidebar = () => {
     "Audit Logs",
     "Systems Messages",
   ];
-  const onClick = () => {
-    navigate(`/dashboard/logout`);
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  };
 
   const navigateLogout = () => {
     navigate("/");
