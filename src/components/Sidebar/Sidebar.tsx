@@ -7,7 +7,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 const Sidebar = () => {
   const navigate = useNavigate();
-  const { slug } = useParams();
+  const { slug } = useParams();  
 
   const dashboardCustomersList = [
     "Users",
@@ -77,6 +77,7 @@ const Sidebar = () => {
       <div
         className={`${active}` === `${slug}` ? "board" : undefined}
         onClick={onClick}
+        key={item}
       >
         <img
           title={item}
@@ -101,6 +102,7 @@ const Sidebar = () => {
       <div
         className={`${active}` === `${slug}` ? "board" : undefined}
         onClick={onClick}
+        key={item}
       >
         <img
           title={item}
