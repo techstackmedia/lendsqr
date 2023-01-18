@@ -259,61 +259,34 @@ const UsersTable = ({ users, sliceUsersList }: any) => {
     </>
   );
 
+  const header = [
+    "Organization",
+    "Username",
+    "Email",
+    "Phone Number",
+    "Date Joined",
+    "Status",
+  ];
+  const tableHeader = header.map((item: any) => {
+    return (
+      <th key={item}>
+        <span>{item}</span>
+        <img
+          onClick={filterInput}
+          src={filterButton}
+          alt="filter button on table header"
+        />
+      </th>
+    );
+  });
+
   return (
     <Card className="UsersTable" style={{ maxHeight: 640, overflowY: "auto" }}>
       <table style={{ position: "relative" }}>
         {!showFilter && filter}
         <thead>
           <tr>
-            <th>
-              <span>Organization</span>
-              <img
-                onClick={filterInput}
-                src={filterButton}
-                alt="filter button on table header"
-              />
-            </th>
-            {/* {filter} */}
-            <th>
-              <span>Username</span>
-              <img
-                onClick={filterInput}
-                src={filterButton}
-                alt="filter button on table header"
-              />
-            </th>
-            <th>
-              <span>Email</span>
-              <img
-                onClick={filterInput}
-                src={filterButton}
-                alt="filter button icon on table header"
-              />
-            </th>
-            <th>
-              <span>Phone Number</span>
-              <img
-                onClick={filterInput}
-                src={filterButton}
-                alt="filter button on table header"
-              />
-            </th>
-            <th>
-              <span>Date Joined</span>
-              <img
-                onClick={filterInput}
-                src={filterButton}
-                alt="filter button on table header"
-              />
-            </th>
-            <th>
-              <span>Status</span>
-              <img
-                onClick={filterInput}
-                src={filterButton}
-                alt="filter button on table header"
-              />
-            </th>
+            {tableHeader}
             <th></th>
           </tr>
         </thead>
