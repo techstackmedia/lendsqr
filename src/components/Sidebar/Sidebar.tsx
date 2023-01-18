@@ -3,11 +3,12 @@ import switchOrganization from "../../images/switch-organization.png";
 import keyDropDown from "../../images/keydropdown.png";
 import dashboard from "../../images/dashboard.png";
 import logout from "../../images/logout.png";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 
 const Sidebar = () => {
   const navigate = useNavigate();
-  const { slug } = useParams();  
+  let { slug } = useParams();
+  const { pathname } = useLocation();
 
   const dashboardCustomersList = [
     "Users",
@@ -47,6 +48,9 @@ const Sidebar = () => {
       window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     };
     const active = item.toLowerCase().replace(" ", "-");
+    if (pathname === "/dashboard") {
+      slug = "users";
+    }
 
     return (
       <div
