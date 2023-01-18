@@ -14,10 +14,6 @@ $d-block: block;
 .UsersTable {
   margin-left: calc(258px + 26px);
   overflow-x: auto;
-  background-color: #ffffff;
-  border: 1px solid rgba(33, 63, 125, 0.06);
-  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
-  border-radius: 4px;
   margin-right: 15px;
   @include display-card($isTrue: false);
   table {

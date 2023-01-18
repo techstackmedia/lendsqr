@@ -8,6 +8,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import calendar from "../../images/calendar.png";
 import dropdown from "../../images/keydropdown.svg";
+import Card from "../shared/Card";
 
 const UsersTable = ({ users, sliceUsersList }: any) => {
   const [state, setState] = useState(true);
@@ -259,7 +260,7 @@ const UsersTable = ({ users, sliceUsersList }: any) => {
   );
 
   return (
-    <div className="UsersTable" style={{ maxHeight: 640, overflowY: "auto" }}>
+    <Card className="UsersTable" style={{ maxHeight: 640, overflowY: "auto" }}>
       <table style={{ position: "relative" }}>
         {!showFilter && filter}
         <thead>
@@ -318,7 +319,7 @@ const UsersTable = ({ users, sliceUsersList }: any) => {
         </thead>
         <tbody>{getUsers}</tbody>
       </table>
-    </div>
+    </Card>
   );
 };
 

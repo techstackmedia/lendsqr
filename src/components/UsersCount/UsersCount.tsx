@@ -3,11 +3,12 @@ import usersIcon from "../../images/users-.png";
 import activeUsers from "../../images/active-users.png";
 import usersWithLoans from "../../images/users-with-loans.png";
 import usersWithSavings from "../../images/users-with-savings.png";
+import Card from "../shared/Card";
 
 const UsersCount = () => {
   return (
     <section className="counted">
-      <div className="usersCount">
+      <Card className="usersCount">
         <div>
           <img src={usersIcon} alt="user icons" />
         </div>
@@ -17,9 +18,9 @@ const UsersCount = () => {
         <div>
           <span>2,453</span>
         </div>
-      </div>
+      </Card>
 
-      <div className="usersCount">
+      <Card className="usersCount">
         <div>
           <img src={activeUsers} alt="user icons" />
         </div>
@@ -29,9 +30,9 @@ const UsersCount = () => {
         <div>
           <span>2,453</span>
         </div>
-      </div>
+      </Card>
 
-      <div className="usersCount">
+      <Card className="usersCount">
         <div>
           <img src={usersWithLoans} alt="user icons" />
         </div>
@@ -41,9 +42,9 @@ const UsersCount = () => {
         <div>
           <span>12,453</span>
         </div>
-      </div>
+      </Card>
 
-      <div className="usersCount">
+      <Card className="usersCount">
         <div>
           <img src={usersWithSavings} alt="user icons" />
         </div>
@@ -53,7 +54,7 @@ const UsersCount = () => {
         <div>
           <span>102,453</span>
         </div>
-      </div>
+      </Card>
     </section>
   );
 };
