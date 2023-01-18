@@ -146,15 +146,11 @@ $d-block: block;
     left: 25px;
     top: 60px;
     min-width: 250px;
-    background-color: #fff;
     z-index: 1;
     min-height: 270px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    border: 1px solid rgba(84, 95, 125, 0.14);
-    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
-    border-radius: 4px;
     padding: 5px;
     & > div {
       padding: 10px 0;

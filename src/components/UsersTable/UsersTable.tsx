@@ -207,7 +207,7 @@ const UsersTable = ({ users, sliceUsersList }: any) => {
   });
   const filter = (
     <>
-      <div className="filter" style={{}}>
+      <Card className="filter" style={{}}>
         <div>
           <div>Organization</div>
           <div className="date select">
@@ -255,7 +255,7 @@ const UsersTable = ({ users, sliceUsersList }: any) => {
             value="Reset"
           />
         </div>
-      </div>
+      </Card>
     </>
   );
 
