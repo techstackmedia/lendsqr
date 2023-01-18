@@ -22,7 +22,7 @@ const Sidebar = () => {
   ];
   const dashboardBusinessesList = [
     "Organization",
-    "Loan Requests",
+    "Loan Products",
     "Savings Products",
     "Fees and Charges",
     "Transactions",
@@ -51,7 +51,7 @@ const Sidebar = () => {
     if (pathname === "/dashboard") {
       slug = "users";
     }
-    
+
     return (
       <div
         className={`${active}` === `${slug}` ? "board" : undefined}
@@ -90,7 +90,7 @@ const Sidebar = () => {
             .replaceAll(" ", "-")}.png`)}
           alt={`${item.toLowerCase()} icon`}
         />
-        <span>{item.replace("Requests", "Products")}</span>
+        <span>{item}</span>
       </div>
     );
   });
@@ -115,7 +115,7 @@ const Sidebar = () => {
             .replaceAll(" ", "-")}.png`)}
           alt={`${item.toLowerCase()} icon`}
         />
-        <span>{item.replace("Requests", "Products")}</span>
+        <span>{item}</span>
       </div>
     );
   });
