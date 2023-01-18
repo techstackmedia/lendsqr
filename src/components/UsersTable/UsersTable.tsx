@@ -241,8 +241,18 @@ const UsersTable = ({ users, sliceUsersList }: any) => {
           </div>
         </div>
         <div>
-          <input onClick={filterInput} type="button" value="Filter" />
-          <input onClick={filterInput} type="button" value="Reset" />
+          <input
+            style={{ textIndent: "initial" }}
+            onClick={filterInput}
+            type="button"
+            value="Filter"
+          />
+          <input
+            style={{ textIndent: "initial" }}
+            onClick={filterInput}
+            type="button"
+            value="Reset"
+          />
         </div>
       </div>
     </>
