@@ -102,7 +102,8 @@
       display: flex;
       justify-content: center;
     }
-    div {
+    div,
+    .activeRow {
       padding: 10px 0;
       margin-top: 10px;
       margin: auto;
@@ -116,6 +117,9 @@
     min-width: 22.891px;
     display: flex;
     justify-content: center;
+  }
+  .divs {
+    background-color: rgba(57, 205, 204, 0.06);
   }
 }
 

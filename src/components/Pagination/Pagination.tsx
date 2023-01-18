@@ -100,19 +100,29 @@ const Pagination = ({
     }
   };
 
+  const divsContent = [5, 10, 20, 25, 50, 100];
+
+  const divs = divsContent.map((item: any) => {
+    return (
+      <div className={item === +text ? "divs" : undefined} key={item}>
+        {item}
+      </div>
+    );
+  });
+
   return (
     <div className="paginationButtons">
       <div>
         <span>Showing</span>{" "}
         <button type="button" onClick={onClick}>
-          {text.replace("Rows", users.length)}
+          100
           <img
             style={{ transform: !isTrue ? "rotate(180deg)" : "rotate(0)" }}
             src={paginatedRowArrow}
             alt="arrow down button"
           />
         </button>{" "}
-        <span>out of 100</span>
+        <span>out of {text.replace("Rows", users.length)}</span>
         {!isTrue && (
           <div
             onClick={handleTextClick}
@@ -129,12 +139,7 @@ const Pagination = ({
               <div className="rows" title="Reset to default rows">
                 Rows
               </div>
-              <div className="firstRow">5</div>
-              <div>10</div>
-              <div>20</div>
-              <div>25</div>
-              <div>50</div>
-              <div>100</div>
+              {divs}
             </div>
           </div>
         )}
