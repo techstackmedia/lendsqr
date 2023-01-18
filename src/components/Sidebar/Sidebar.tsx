@@ -51,7 +51,7 @@ const Sidebar = () => {
     if (pathname === "/dashboard") {
       slug = "users";
     }
-
+    
     return (
       <div
         className={`${active}` === `${slug}` ? "board" : undefined}
