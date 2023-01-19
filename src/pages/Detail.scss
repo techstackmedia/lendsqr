@@ -10,7 +10,6 @@
       border: 0;
       position: relative;
       top: -20px;
-      cursor: pointer;
       span {
         color: #545f7d;
         margin-left: 10px;
@@ -30,7 +29,7 @@
   }
 }
 
-@media (max-width: 772px) {
+@media (max-width: 800px) {
   .Detail {
     margin-top: 52px;
     section {
