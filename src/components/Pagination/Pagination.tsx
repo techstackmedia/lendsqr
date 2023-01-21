@@ -155,12 +155,12 @@ const Pagination = ({
           <img
             style={{
               transform:
-                buttonTextContent === list.length
+                buttonTextContent === list[list.length - 1]
                   ? "rotate(180deg)"
                   : "initial",
             }}
             src={
-              list.length === buttonTextContent ? arrowInactive : arrowActive
+              list[list.length - 1] === buttonTextContent ? arrowInactive : arrowActive
             }
             alt="arrow pointing to the right"
           />
