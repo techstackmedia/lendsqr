@@ -44,7 +44,7 @@ function App() {
   };
 
   const goNextPage = () => {
-    if (buttonTextContent < 16) {
+    if (buttonTextContent < users.length / +text) {
       setButtonTextContext((prev: any) => {
         return prev + 1;
       });
