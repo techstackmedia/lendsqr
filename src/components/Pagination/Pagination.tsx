@@ -94,7 +94,7 @@ const Pagination = ({
     });
   };
 
-  const onMouseLeave = () => {
+  const handleClose = () => {
     if (!isTrue) {
       setIsTrue(true);
     }
@@ -104,7 +104,11 @@ const Pagination = ({
 
   const divs = divsContent.map((item: any) => {
     return (
-      <div className={item === +text ? "divs" : undefined} key={item}>
+      <div
+        onClick={handleClose}
+        className={item === +text ? "divs" : undefined}
+        key={item}
+      >
         {item}
       </div>
     );
@@ -115,7 +119,7 @@ const Pagination = ({
       <div>
         <span>Showing</span>{" "}
         <button type="button" onClick={onClick}>
-        {text.replace("Rows", users.length)}
+          {text.replace("Rows", users.length)}
           <img
             style={{ transform: !isTrue ? "rotate(180deg)" : "rotate(0)" }}
             src={paginatedRowArrow}
@@ -133,10 +137,14 @@ const Pagination = ({
               borderRadius: 4,
               zIndex: 1,
             }}
-            onMouseLeave={onMouseLeave}
+            // onMouseLeave={onMouseLeave}
           >
             <div className="rowDropdown">
-              <div className="rows" title="Reset to default rows">
+              <div
+                onClick={handleClose}
+                className="rows"
+                title="Reset to default rows"
+              >
                 Rows
               </div>
               {divs}

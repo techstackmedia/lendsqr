@@ -23,7 +23,7 @@ function App() {
   }, []);
 
   const handleTextClick = (e: any) => {
-    setText(e.target.textContent);
+    setText(e.target.textContent.replace("Rows", `${users?.length}`));
   };
 
   const handleClick = (event: any) => {
@@ -31,9 +31,8 @@ function App() {
     if (text !== "...") {
       setButtonTextContext(+text);
     } else if (buttonTextContent > users.length / +text) {
-      setButtonTextContext(1)
-    }
-     else {
+      setButtonTextContext(1);
+    } else {
       setButtonTextContext(null);
     }
   };
