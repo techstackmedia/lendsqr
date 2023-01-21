@@ -52,10 +52,10 @@ const Pagination = ({
       list.splice(3, 0, 4);
     }
 
-    if (list[list.length - 1] === '...' && list.length === 5) {      
-      list.pop()
+    if (list[list.length - 1] === "..." && list.length === 5) {
+      list.pop();
       console.log(list);
-      list.splice(4, 0, 5)
+      list.splice(4, 0, 5);
     }
 
     const Button = list.map((item: number | string, index: any) => {
@@ -166,7 +166,9 @@ const Pagination = ({
                   : "initial",
             }}
             src={
-              list[list.length - 1] === buttonTextContent ? arrowInactive : arrowActive
+              list[list.length - 1] === buttonTextContent
+                ? arrowInactive
+                : arrowActive
             }
             alt="arrow pointing to the right"
           />
