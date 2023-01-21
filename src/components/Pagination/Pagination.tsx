@@ -126,7 +126,6 @@ const Pagination = ({
               borderRadius: 4,
               zIndex: 1,
             }}
-            // onMouseLeave={onMouseLeave}
           >
             <div className="rowDropdown">
               <div
