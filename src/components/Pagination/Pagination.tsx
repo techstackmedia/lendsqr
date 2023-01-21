@@ -33,7 +33,7 @@ const Pagination = ({
       list.pop();
     }
 
-    if (i === 1 || i === 2 || i === 3) {
+    if (text < 50 && (i === 1 || i === 2 || i === 3)) {
       list.splice(0, 1);
       list.shift();
       list.unshift(1);
@@ -92,7 +92,7 @@ const Pagination = ({
         {item}
       </div>
     );
-  });
+  });  
 
   return (
     <div className="paginationButtons">
