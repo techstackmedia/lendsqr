@@ -39,10 +39,6 @@ const Pagination = ({
       list.unshift(1);
     }
 
-    if (list[list.length - 2] === "...") {
-      list.splice(5);
-    }
-
     if (text <= 10 && buttonTextContent >= list[list.length - 2]) {
       list.splice(1, 0, 2);
       list.splice(2, 0, 3);
@@ -52,7 +48,7 @@ const Pagination = ({
       list.splice(3, 0, 4);
     }
 
-    if (list[list.length - 1] === "..." && list.length === 5) {
+    if (list[list.length - 1] === "..." && list.length === 5 && text === 20) {
       list.pop();
       console.log(list);
       list.splice(4, 0, 5);
