@@ -52,7 +52,7 @@ function App() {
   };
 
   let sliceUsersList: any;
-  if (buttonTextContent === 1) {
+  if (buttonTextContent === 1 || buttonTextContent > users.length / +text) {
     sliceUsersList = users.slice(0, +text);
   } else {
     sliceUsersList = users.slice(
