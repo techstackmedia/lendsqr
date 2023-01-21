@@ -52,6 +52,10 @@ const Pagination = ({
       list.splice(3, 0, 4);
     }
 
+    if (list[list.length - 1] === '...') {
+      list.pop()
+    }
+
     const Button = list.map((item: number | string, index: any) => {
       let button: any;
       if (item === i || item === "...") {
