@@ -30,7 +30,10 @@ function App() {
     const text = event.currentTarget.textContent;
     if (text !== "...") {
       setButtonTextContext(+text);
-    } else {
+    } else if (buttonTextContent > users.length / +text) {
+      setButtonTextContext(1)
+    }
+     else {
       setButtonTextContext(null);
     }
   };
@@ -57,9 +60,13 @@ function App() {
   } else {
     sliceUsersList = users.slice(
       buttonTextContent * +text - +text,
-      buttonTextContent * +text + +text - +text
+      buttonTextContent * +text
     );
   }
+
+  /*
+  +text(buttonTextContent - 1, buttonTextContent + 1)
+  */
 
   return (
     <BrowserRouter>

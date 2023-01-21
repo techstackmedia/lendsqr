@@ -15,6 +15,7 @@ $d-block: block;
   margin-left: calc(258px + 26px);
   overflow-x: auto;
   margin-right: 15px;
+  max-height: 703px;
   @include display-card($isTrue: false);
   table {
     padding: 28px;
