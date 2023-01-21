@@ -43,6 +43,15 @@ const Pagination = ({
       list.splice(5);
     }
 
+    if (text <= 10 && buttonTextContent >= list[list.length - 2]) {
+      list.splice(1, 0, 2);
+      list.splice(2, 0, 3);
+    }
+
+    if (text <= 10 && buttonTextContent >= list[list.length - 1]) {
+      list.splice(3, 0, 4);
+    }
+
     const Button = list.map((item: number | string, index: any) => {
       let button: any;
       if (item === i || item === "...") {
@@ -92,7 +101,7 @@ const Pagination = ({
         {item}
       </div>
     );
-  });  
+  });
 
   return (
     <div className="paginationButtons">
