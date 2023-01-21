@@ -28,14 +28,8 @@ function App() {
 
   const handleClick = (event: any) => {
     const text = event.currentTarget.textContent;
-    if (text !== "...") {
       setButtonTextContext(+text);
-    } else if (buttonTextContent > users.length / +text) {
-      setButtonTextContext(1);
-    } else {
-      setButtonTextContext(null);
-    }
-  };
+  };  
 
   const goPreviousPage = () => {
     if (buttonTextContent > 1) {
@@ -50,6 +44,8 @@ function App() {
       setButtonTextContext((prev: any) => {
         return prev + 1;
       });
+    } else if (buttonTextContent > users.length / +text) {
+      return setButtonTextContext(2)
     }
   };
 
@@ -62,6 +58,8 @@ function App() {
       buttonTextContent * +text
     );
   }
+
+  const pages = Math.ceil(users?.length / sliceUsersList.length) + 1;
 
   return (
     <BrowserRouter>
@@ -78,6 +76,7 @@ function App() {
               goPreviousPage={goPreviousPage}
               goNextPage={goNextPage}
               buttonTextContent={buttonTextContent}
+              pages={pages}
             />
           }
         />
@@ -93,6 +92,7 @@ function App() {
               goPreviousPage={goPreviousPage}
               goNextPage={goNextPage}
               buttonTextContent={buttonTextContent}
+              pages={pages}
             />
           }
         />

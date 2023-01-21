@@ -10,60 +10,30 @@ const Pagination = ({
   users,
   text,
   handleTextClick,
-  sliceUsersList,
   handleClick,
   goPreviousPage,
   goNextPage,
   buttonTextContent,
+  pages,
 }: any) => {
-  const pages = Math.ceil(users?.length / sliceUsersList.length) + 1;
   const [isTrue, setIsTrue] = useState(true);
-  let list = Array.from(Array(pages).keys()).splice(1);
+  let list: any = Array.from(Array(pages).keys()).splice(1);
   const buttonText = (i: number) => {
-    if (pages > 7) {
-      let initialList = list.length;
-      let lastValues = list.length - 2;
-      let dots: any = "...";
-      let splicer;
-      if (i === 1) {
-        splicer = i + 2;
-      } else {
-        if (list.length - 3 === i) {
-          splicer = i;
-        } else {
-          splicer = i + 1;
-        }
-
-        if (i === 2) {
-          lastValues = list.length - 2;
-        } else {
-          lastValues = list.length - 1;
-        }
-      }
-      if (lastValues - splicer === 1) {
-        list.splice(splicer, lastValues - (i + 1), dots);
-      } else {
-        list.splice(splicer, lastValues - splicer, dots);
-        list.splice(1, i - 3, dots);
-
-        if (i === 1 || i === 2) {
-          list.splice(1, 1);
-        } else if (i === initialList || i === initialList - 1) {
-          list.pop();
-          list[1] = 2;
-          list.splice(2, 0, dots);
-        }
-        if (initialList - 3 === i) {
-          list.splice(4, 0, i + 1);
-        }
-        if (i === initialList) {
-          list.splice(3, 0, initialList - 2);
-        }
-      }
+    if (i > list.length) {
+      i = 1;
     }
 
-    const x: number[] = [...new Set(list)];
-    const Button = x.map((item: number | string, index) => {
+    if (list.length > 3) {
+      let dots: any = "...";
+      list.splice(1, i - 3, dots);
+      list.splice(5, list.length - 7, dots);
+    }
+
+    if (list[list.length - 1] === "...") {
+      list.pop();
+    }
+
+    const Button = list.map((item: number | string, index: any) => {
       let button: any;
       if (item === i || item === "...") {
         button = (

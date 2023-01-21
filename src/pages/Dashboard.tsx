@@ -16,6 +16,7 @@ const Dashboard = ({
   goPreviousPage,
   goNextPage,
   buttonTextContent,
+  pages
 }: any) => {
   const { slug } = useParams();
   const slugText = `${slug?.toUpperCase()[0]}${slug?.slice(1)}`;
@@ -54,6 +55,7 @@ const Dashboard = ({
             goPreviousPage={goPreviousPage}
             goNextPage={goNextPage}
             buttonTextContent={buttonTextContent}
+            pages={pages}
           />
         </>
       ) : (
