@@ -33,6 +33,12 @@ const Pagination = ({
       list.pop();
     }
 
+    if (i === 1 || i === 2 || i === 3) {
+      list.splice(0, 1);
+      list.shift();
+      list.unshift(1);
+    }
+
     const Button = list.map((item: number | string, index: any) => {
       let button: any;
       if (item === i || item === "...") {
