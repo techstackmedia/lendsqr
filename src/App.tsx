@@ -58,14 +58,10 @@ function App() {
     sliceUsersList = users.slice(0, +text);
   } else {
     sliceUsersList = users.slice(
-      buttonTextContent * +text - +text,
+      (buttonTextContent - 1) * +text,
       buttonTextContent * +text
     );
   }
-
-  /*
-  +text(buttonTextContent - 1, buttonTextContent + 1)
-  */
 
   return (
     <BrowserRouter>
