@@ -105,6 +105,7 @@ git commit -m 'commit message here'
 git push origin <branch-name>
 heroku login
 heroku create
+heroku config:set MONGODB_URI=mongodb://localhost:27017/myapp
 git push heroku <branch-name>
 ```
 
@@ -117,7 +118,6 @@ If you are using a backend like node, configure the variable by using the comman
 For example:
 
 ```bash
-heroku config:set PORT=3000
 heroku config:set MONGODB_URI=mongodb://localhost:27017/myapp
 heroku config:set NODEMAILER_EMAIL=test@example.com
 heroku config:set NODEMAILER_PASSWORD=secret
