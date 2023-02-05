@@ -131,7 +131,7 @@ You will get a unique random link. To rename the link run the command:
 heroku apps:rename <newname>
 ```
 
-The link to the made up [project can be found here](https://bello-osagie-lendsqr-fe-test.herokuapp.com/).
+The link to the made up [project can be found here](https://lendsqr.herokuapp.com/).
 
 ## Resources
 
