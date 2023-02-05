@@ -105,10 +105,23 @@ git commit -m 'commit message here'
 git push origin <branch-name>
 heroku login
 heroku create
+heroku config:set MONGODB_URI=mongodb://localhost:27017/myapp
 git push heroku <branch-name>
 ```
 
 Note: You do not have to run `npm run build` to have the project in production environment. This will be done automatically by Heroku.
+
+## Heroku Config
+
+If you are using a backend like node, configure the variable by using the command syntax `heroku config:set <VAR_NAME>=<VAR_VALUE>`
+
+For example:
+
+```bash
+heroku config:set MONGODB_URI=mongodb://localhost:27017/myapp
+heroku config:set NODEMAILER_EMAIL=test@example.com
+heroku config:set NODEMAILER_PASSWORD=secret
+```
 
 ## Project Link
 
