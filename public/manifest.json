@@ -1,6 +1,6 @@
 {
   "short_name": "Dashboard | LendSqr",
-  "name": "This is a simple dashboard built by Bello Osagie with GitHub username techstackmedia - React and SASS. It has a paginated table of selectable rows. It has navbar, sidebar, login form and user detail page.",
+  "name": "This is a simple dashboard built by Bello Osagie with GitHub username techstackmedia - React and SASS was used to implement it. It has a paginated table of selectable rows. It has navbar, sidebar, login form and user detail page.",
   "icons": [
     {
       "src": "favicon.ico",
