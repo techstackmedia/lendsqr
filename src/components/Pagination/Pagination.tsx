@@ -29,6 +29,10 @@ const Pagination = ({
       list.splice(5, list.length - 7, dots);
     }
 
+    if (i === 7) {
+      i = 7;
+    }
+
     if (list[list.length - 1] === "...") {
       list.pop();
     }
@@ -50,8 +54,20 @@ const Pagination = ({
 
     if (list[list.length - 1] === "..." && list.length === 5 && text === 20) {
       list.pop();
-      console.log(list);
       list.splice(4, 0, 5);
+    }
+
+    const dots = list.filter((item: any) => {
+      return item === "...";
+    });
+
+    if (dots.length === 1) {
+      list = [...new Set(list)];
+    }
+
+    if (list[list.length - 2] === '...') {
+      list[list.length - 2] = list[list.length - 1]
+      list.pop()
     }
 
     const Button = list.map((item: number | string, index: any) => {
