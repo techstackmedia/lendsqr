@@ -105,7 +105,7 @@ git commit -m 'commit message here'
 git push origin <branch-name>
 heroku login
 heroku create
-heroku config:set MONGODB_URI=mongodb://localhost:27017/myapp
+heroku config:set MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.m0ghjqa.mongodb.net/?retryWrites=true&w=majority
 git push heroku <branch-name>
 ```
 
