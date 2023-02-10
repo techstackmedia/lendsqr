@@ -6,18 +6,11 @@ import "./Dashboard.scss";
 import UsersTable from "../components/UsersTable/UsersTable";
 import Pagination from "../components/Pagination/Pagination";
 import Spinner from "../components/Spinner/Spinner";
+import UsersContext from "../context/UsersContext";
+import { useContext } from "react";
 
-const Dashboard = ({
-  users,
-  handleTextClick,
-  text,
-  sliceUsersList,
-  handleClick,
-  goPreviousPage,
-  goNextPage,
-  buttonTextContent,
-  pages
-}: any) => {
+const Dashboard = () => {
+  const { users } = useContext(UsersContext);
   const { slug } = useParams();
   const slugText = `${slug?.toUpperCase()[0]}${slug?.slice(1)}`;
 
@@ -41,22 +34,8 @@ const Dashboard = ({
             <UsersCount />
             <Sidebar />
           </div>
-          <UsersTable
-            handleTextClick={handleTextClick}
-            users={users}
-            sliceUsersList={sliceUsersList}
-          />
-          <Pagination
-            text={text}
-            handleTextClick={handleTextClick}
-            users={users}
-            sliceUsersList={sliceUsersList}
-            handleClick={handleClick}
-            goPreviousPage={goPreviousPage}
-            goNextPage={goNextPage}
-            buttonTextContent={buttonTextContent}
-            pages={pages}
-          />
+          <UsersTable />
+          <Pagination />
         </>
       ) : (
         <Spinner />

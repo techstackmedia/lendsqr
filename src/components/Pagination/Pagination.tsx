@@ -4,18 +4,20 @@ import arrowRight from "../../images/arrow-right.png";
 import arrowEnabled from "../../images/arrow-enabled.png";
 import arrowInactive from "../../images/arrow-inactive.png";
 import arrowActive from "../../images/arrow-active.png";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import UsersContext from "../../context/UsersContext";
 
-const Pagination = ({
-  users,
-  text,
-  handleTextClick,
-  handleClick,
-  goPreviousPage,
-  goNextPage,
-  buttonTextContent,
-  pages,
-}: any) => {
+const Pagination = () => {
+  const {
+    users,
+    text,
+    handleTextClick,
+    handleClick,
+    goPreviousPage,
+    goNextPage,
+    buttonTextContent,
+    pages,
+  } = useContext(UsersContext);
   const [isTrue, setIsTrue] = useState(true);
   let list: any = Array.from(Array(pages).keys()).splice(1);
   const buttonText = (i: number) => {
@@ -65,9 +67,9 @@ const Pagination = ({
       list = [...new Set(list)];
     }
 
-    if (list[list.length - 2] === '...') {
-      list[list.length - 2] = list[list.length - 1]
-      list.pop()
+    if (list[list.length - 2] === "...") {
+      list[list.length - 2] = list[list.length - 1];
+      list.pop();
     }
 
     const Button = list.map((item: number | string, index: any) => {
