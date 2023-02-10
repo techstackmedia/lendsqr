@@ -16,7 +16,7 @@ Note: Make sure [Node.js](https://nodejs.org/en/) is installed. To be 100% sure 
 npx create-react-app <project-name> --template typescript --use-npm
 ```
 
-If you want to follow along the project, click on the branch drop-down and you will see a list of dropdown branches.
+If you want to follow along the project, click on the branch dropdown and you will see a list of dropdown branches.
 
 ## Clone Project
 
