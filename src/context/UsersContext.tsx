@@ -58,6 +58,29 @@ const UsersProvider = ({ children }: any) => {
 
   const pages = Math.ceil(users?.length / sliceUsersList.length) + 1;
 
+  const [state, setState] = useState(true);
+  const [userList, setUserList] = useState<any>([]);
+  const [showFilter, setShowFilter] = useState(true);
+  const onClick = (id: any) => {
+    if (state) {
+      const filterUserList = users.filter((item: any) => item.id === id);
+      setUserList(filterUserList);
+      setState((prev) => {
+        return !prev;
+      });
+    }
+  };
+  const onMouseLeave = () => {
+    if (state === false) {
+      setState(true);
+    }
+  };
+  const filterInput = () => {
+    setShowFilter((prev) => {
+      return !prev;
+    });
+  };
+
   return (
     <UsersContext.Provider
       value={{
@@ -70,6 +93,12 @@ const UsersProvider = ({ children }: any) => {
         goPreviousPage,
         goNextPage,
         pages,
+        state,
+        userList,
+        showFilter,
+        onClick,
+        onMouseLeave,
+        filterInput,
       }}
     >
       {children}

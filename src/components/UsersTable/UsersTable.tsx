@@ -4,7 +4,7 @@ import verticalMenu from "../../images/vertical-menu.png";
 import watchEye from "../../images/watch.png";
 import blacklistUser from "../../images/blacklist.png";
 import activeUser from "../../images/active.png";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import calendar from "../../images/calendar.png";
 import dropdown from "../../images/keydropdown.svg";
@@ -12,29 +12,15 @@ import Card from "../shared/Card";
 import UsersContext from "../../context/UsersContext";
 
 const UsersTable = () => {
-  const { users, sliceUsersList } = useContext(UsersContext);
-  const [state, setState] = useState(true);
-  const [userList, setUserList] = useState<any>([]);
-  const [showFilter, setShowFilter] = useState(true);
-  const onClick = (id: any) => {
-    if (state) {
-      const filterUserList = users.filter((item: any) => item.id === id);
-      setUserList(filterUserList);
-      setState((prev) => {
-        return !prev;
-      });
-    }
-  };
-  const onMouseLeave = () => {
-    if (state === false) {
-      setState(true);
-    }
-  };
-  const filterInput = () => {
-    setShowFilter((prev) => {
-      return !prev;
-    });
-  };
+  const {
+    sliceUsersList,
+    state,
+    userList,
+    showFilter,
+    onClick,
+    onMouseLeave,
+    filterInput,
+  } = useContext(UsersContext);
   const getUsers = sliceUsersList.map((item: any) => {
     const orgNameTruncate = () => {
       const orgName = item.orgName.split("");
