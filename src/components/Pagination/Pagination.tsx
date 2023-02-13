@@ -164,9 +164,9 @@ const Pagination = () => {
         <span onClick={goPreviousPage}>
           <img
             style={{
-              transform: buttonTextContent !== 1 ? "rotate(180deg)" : "initial",
+              transform: buttonTextContent === 1 ? "rotate(180deg)" : "initial",
             }}
-            src={buttonTextContent !== 1 ? arrowEnabled : arrowRight}
+            src={buttonTextContent === 1 ? arrowEnabled : arrowRight}
             alt="arrow pointing to the right"
           />
         </span>
