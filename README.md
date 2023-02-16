@@ -2,7 +2,7 @@
 
 ## Installation
 
-Node.js installation is needed in order to use `npx` through `npm` to install **React**
+Node.js installation is needed in order to use `npx` through `npm` to install **React**.
 
 ```bash
 npx create-react-app <project-name> --template typescript
