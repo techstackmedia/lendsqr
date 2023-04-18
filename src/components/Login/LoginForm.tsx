@@ -8,7 +8,7 @@ const LoginForm = () => {
   const [passwordText, setPasswordText] = useState("");
   const [validationMessage, setValidationMessage] = useState("");
   const [showTextPassword, setShowTextPassword] = useState(false);
-  const [textPasswordType, setTextPasswordType] = useState("password");
+  const [textPasswordType, setTextPasswordType] = useState("password")
   const navigate = useNavigate();
   const handleEmailTextChange = (e: any) => {
     setEmailText(e.target.value);
